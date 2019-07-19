@@ -1,4 +1,4 @@
-// pages/deployFunctions/deployFunctions.js
+// miniprogram/pages/account/account.wxml.js
 Page({
 
   /**
