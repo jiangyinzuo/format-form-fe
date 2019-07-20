@@ -1,11 +1,35 @@
 <!--index.wxml-->
 <view class="container">
   <view class="row">
-    <button class="cell" open-type="getUserInfo">新建表单</button>
-    <button class="cell" open-type="getUserInfo">我参与的</button>
+    <button
+      class="cell"
+      data-url="../newForm/newForm"
+      bindtap="navigateTo"
+    >
+      新建表单
+    </button>
+    <button
+      class="cell"
+      data-url="../involved/involved"
+      bindtap="navigateTo"
+    >
+      我参与的
+    </button>
   </view>
   <view class="row">
-    <button class="cell" open-type="getUserInfo">我发起的</button>
-    <button class="cell" open-type="getUserInfo" bindgetuserinfo="foo">我的账号</button>
+    <button
+      class="cell"
+      data-url="../launched/launched"
+      bindtap="navigateTo"
+    >
+      我发起的
+    </button>
+    <button
+      class="cell"
+      data-url='../account/account'
+      bindtap="navigateTo"
+    >
+      我的账号
+    </button>
   </view>
 </view>

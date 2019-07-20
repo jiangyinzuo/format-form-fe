@@ -2,9 +2,9 @@
 const app = getApp()
 
 Page({
-  foo: function () {
+  navigateTo: function (event) {
     wx.navigateTo({
-      url: '../account/account'
+      url: event.currentTarget.dataset.url,
     })
   }
 })
