@@ -7,9 +7,38 @@ page {
 }
 
 .container {
-  margin: 100rpx 20rpx;
+  margin: 20rpx 20rpx 20rpx 20rpx;
   width: 600rpx;
   height: 800rpx;
+}
+
+.container .header {
+  display: flex;
+  background: #da8a8a;
+  height: 250rpx;
+  flex: 1;
+  margin: 20rpx;
+  border-radius: 20rpx;
+  align-items: center;
+}
+
+.container .header .avatar {
+  border: 1rpx solid #000000;
+  border-radius: 100%;
+  width: 170rpx;
+  height: 170rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20rpx;
+}
+
+.container .header .info {
+  border: 1rpx solid #000000;
+  display: flex;
+  flex: 1;
+  height: 180rpx;
+  margin: 20rpx;
 }
 
 .container .row {
@@ -24,4 +53,5 @@ page {
   align-items: center;
   margin: 20rpx;
   line-height: 280rpx;
+  border-radius: 20rpx;
 }

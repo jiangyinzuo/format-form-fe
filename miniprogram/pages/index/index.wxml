@@ -1,12 +1,16 @@
 <!--index.wxml-->
 <view class="container">
+  <view class="header">
+    <view class="avatar">Avatar</view>
+    <view class="info">info</view>
+  </view>
   <view class="row">
     <button
       class="cell"
-      data-url="../newForm/newForm"
+      data-url="../launched/launched"
       bindtap="navigateTo"
     >
-      新建表单
+      我发起的
     </button>
     <button
       class="cell"
@@ -19,17 +23,10 @@
   <view class="row">
     <button
       class="cell"
-      data-url="../launched/launched"
+      data-url="../newForm/newForm"
       bindtap="navigateTo"
     >
-      我发起的
-    </button>
-    <button
-      class="cell"
-      data-url='../account/account'
-      bindtap="navigateTo"
-    >
-      我的账号
+      新建表单
     </button>
   </view>
 </view>

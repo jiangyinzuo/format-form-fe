@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/account/account",
     "pages/involved/involved",
     "pages/launched/launched",
     "pages/newForm/newForm"
