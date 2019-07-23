@@ -1,1 +1,28 @@
 /**app.wxss**/
+page {
+  background: #f6f6f6;
+  display: flex;
+  justify-content: center;
+}
+
+/**global flex layout**/
+.global-layout-container {
+  margin: 20rpx 20rpx 20rpx 20rpx;
+  width: 600rpx;
+  height: 800rpx;
+}
+
+.global-layout-container .global-layout-row {
+  display: flex;
+}
+
+.global-layout-row .global-layout-cell {
+  display: flex;
+  flex: 1;
+  border: 1rpx solid #000000;
+  justify-content: center;
+  align-items: center;
+  margin: 20rpx;
+  line-height: 280rpx;
+  border-radius: 20rpx;
+}

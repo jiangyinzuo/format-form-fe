@@ -1,2 +1,16 @@
 <!--miniprogram/pages/newForm/newForm.wxml-->
-<text>miniprogram/pages/newForm/newForm.wxml</text>
+<view class="global-layout-container">
+  <view class="title">选择表单类型</view>
+  <view class="global-layout-row">
+    <view class="global-layout-cell">自定义</view>
+    <view class="global-layout-cell">群投票</view>
+  </view>
+  <view class="global-layout-row">
+    <view class="global-layout-cell">问卷调查</view>
+    <view class="global-layout-cell">活动报名</view>
+  </view>
+  <view class="global-layout-row">
+    <view class="global-layout-cell">抽奖</view>
+    <view class="global-layout-cell">我的模板</view>
+  </view>
+</view>
