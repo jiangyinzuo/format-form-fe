@@ -2,14 +2,14 @@
 let app = getApp()
 
 Page({
-  onShow: function () {
+  onShow() {
     this.getUserInfo()
   },
   data: {
     intro: '点击头像授权登录',
     avatarUrl: '../../static/avatar.svg'
   },
-  getUserInfo: function (event) {
+  getUserInfo(event) {
     if (app.globalData.userInfo === null) {
       wx.getUserInfo({
         success: (res) => {
@@ -27,14 +27,14 @@ Page({
       this.updateUserInfo()
     }
   },
-  navigateTo: function (event) {
+  navigateTo(event) {
     if (event.currentTarget.dataset.url) {
       wx.navigateTo({
         url: event.currentTarget.dataset.url
       })
     }
   },
-  updateUserInfo: function () {
+  updateUserInfo() {
     if(app.globalData.userInfo){
       console.log(app.globalData.userInfo)
       this.setData({

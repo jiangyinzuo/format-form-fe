@@ -1,6 +1,6 @@
-# awesome-form-fe
+# format-form-fe
 
-This is a WeChat mini program project developed by individual.
+A WeChat miniprogram project developed by individual.
 
 ## development environment
 
