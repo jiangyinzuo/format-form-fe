@@ -21,6 +21,6 @@
     </radio-group>
   </view>
 
-  <essay-cmp id="questionInfo" wx:if="{{questionInfo.type === 'essay'}}"></essay-cmp>
+  <essay-cmp id="questionInfo" wx:if="{{mode === 'essay'}}"></essay-cmp>
   <select-cmp id="questionInfo" wx:else></select-cmp>
 </view>

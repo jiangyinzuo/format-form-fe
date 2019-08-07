@@ -1,17 +1,18 @@
 <!--miniprogram/pages/edit/edit.wxml-->
-<view class="container" hidden="{{showDashBoard}}">
+<view class="container" wx:if="{{!showDashBoard}}">
+  <button bindtap="onBack">取消编辑</button>
+  <input placeholder="表单标题" bindblur="onEditTitle" />
   <block wx:for="{{questionArr}}" wx:key="{{index+1}}">
     <view>{{item.desc}}</view>
   </block>
-
   <view class="addBoard" bindtap="editQuestion">
     <view class="plus">+</view>
     <view class="word">新增问题</view>
   </view>
-
+  <button bindtap="onSaveTemp">保存</button>
+  <button>保存并分享</button>
+  <view>*保存内容可在“我的模板”重新编辑</view>
 </view>
-
-<view hidden="{{!showDashBoard}}">
+<view wx:else>
   <dash-board-cmp bind:backToPage="backToPage"></dash-board-cmp>
 </view>
-
