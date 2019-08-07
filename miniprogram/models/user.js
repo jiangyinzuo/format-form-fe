@@ -5,17 +5,17 @@ class UserModel {
   constructor() {
     this.http = new HTTP()
   }
-  static openid = null
+  static openId = null
   async login() {
     const loginPromise = await makePromise(wx.login)
-    UserModel.openid = await this.http.request({
+    UserModel.openId = await this.http.request({
       url: '/wx_login',
       data: {
         code: loginPromise.code
       },
       method: 'POST',
     })
-    return UserModel.openid
+    return UserModel.openId
   }
 }
 

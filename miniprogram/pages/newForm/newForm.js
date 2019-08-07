@@ -62,5 +62,11 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  navigateTo() {
+    wx.navigateTo({
+      url: '/pages/edit/edit',
+    })
   }
 })

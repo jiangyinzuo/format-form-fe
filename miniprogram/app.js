@@ -11,7 +11,7 @@ let user = new UserModel()
 App({
   async onLaunch() {
     await user.login()
-    console.log(UserModel.openid)
+    console.log(UserModel.openId)
     wx.getUserInfo({
       success: (res) => {
         this.globalData.userInfo = res.userInfo

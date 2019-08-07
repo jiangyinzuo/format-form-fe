@@ -10,7 +10,7 @@
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "Awesome Form",
+    "navigationBarTitleText": "Format Form",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json"

@@ -1,0 +1,36 @@
+/* components/dashBoard/dashBoard.wxss */
+.container {
+  width: 650rpx;
+  height: 100%;
+}
+
+.item {
+  margin: 20rpx 0 20rpx 0;
+}
+
+.item input {
+  border-bottom: 2rpx solid #234234;
+  padding: 15rpx;
+}
+
+.question-group {
+  display: flex;
+  margin-top: 10rpx;
+}
+
+.question-group radio {
+  display: flex;
+  flex: 1;
+}
+
+.question-group .no {
+  position: relative;
+  right: 109rpx;
+}
+
+.save {
+  z-index: 1;
+  position: absolute;
+  bottom: 10rpx;
+  width: auto;
+}

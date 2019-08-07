@@ -1,1 +1,30 @@
 /* miniprogram/pages/edit/edit.wxss */
+.addBoard {
+  border: 3rpx dashed #a7a1a1;
+  border-radius: 2rpx;
+  width: 600rpx;
+  height: 100rpx;
+  line-height: 75rpx;
+  text-align: center;
+}
+
+.addBoard .plus {
+  display: inline-block;
+  font-size: 80rpx;
+  font-weight: 100;
+  color: #a7a1a1;
+  line-height: 70rpx;
+  vertical-align: middle;
+  text-align: center;
+  width: 80rpx;
+  height: 80rpx;
+  border: 2rpx solid #a7a1a1;
+  border-radius: 50%;
+}
+
+.addBoard .word {
+  display: inline-block;
+  padding: 10rpx;
+  color: #a7a1a1;
+  font-weight: 200;
+}

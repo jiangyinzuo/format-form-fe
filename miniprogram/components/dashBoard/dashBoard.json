@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "essay-cmp": "./essay/essay",
+    "select-cmp": "./select/select"
+  }
+}

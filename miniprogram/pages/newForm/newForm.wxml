@@ -1,9 +1,12 @@
 <!--miniprogram/pages/newForm/newForm.wxml-->
 <view class="global-layout-container">
-  <view class="title">选择表单类型</view>
+  <view class="title">选择表单模板</view>
   <view class="global-layout-row">
-    <view class="global-layout-cell">自定义</view>
-    <view class="global-layout-cell">群投票</view>
+    <view
+      bindtap="navigateTo"
+      class="global-layout-cell"
+    >自定义</view>
+    <view class="global-layout-cell">投票</view>
   </view>
   <view class="global-layout-row">
     <view class="global-layout-cell">问卷调查</view>

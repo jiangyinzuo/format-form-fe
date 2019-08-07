@@ -1,0 +1,23 @@
+<!--components/dashBoard/radio/radio.wxml-->
+<view>
+  <view>选项编辑</view>
+  <block wx:for="{{radioList}}" wx:key="{{index}}">
+    <view class="radio-item">
+      <view class="radio-desc">{{order[index] + item}}</view>
+      <button
+        data-idx="{{index}}"
+        bindtap="delRadio"
+        class="del-btn"
+      >
+        删除
+      </button>
+    </view>
+  </block>
+  <input
+    value="{{itemDesc}}"
+    bindblur="onDescInput"
+    bindconfirm="addRadio"
+    placeholder="输入选项描述"
+    wx:if="{{showAddBtn}}" />
+  <button bindtap="addRadio" wx:if="{{showAddBtn}}">添加选项</button>
+</view>

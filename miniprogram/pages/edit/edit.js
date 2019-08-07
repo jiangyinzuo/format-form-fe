@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    questionArr: [],
+    showDashBoard: false
   },
 
   /**
@@ -62,5 +63,33 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  addQuestion(event) {
+    if (event.detail.type === 'essay') {
+      this.data.questionArr.push(null)
+      this.setData({
+        questionArr: this.data.questionArr
+      })
+    }
+  },
+  delQuestion(event) {
+    console.log(event)
+    this.data.questionArr.splice(event.detail.type-1, 1)
+    this.setData({
+      questionArr: this.data.questionArr
+    })
+  },
+  editQuestion() {
+    this.setData({
+      showDashBoard: true
+    })
+  },
+  backToPage(event) {
+    this.data.questionArr.push(event.detail.questionInfo)
+    this.setData({
+      showDashBoard: false,
+      questionArr: this.data.questionArr
+    })
   }
 })
