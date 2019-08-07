@@ -1,19 +1,30 @@
 /**app.wxss**/
-.container {
+page {
+  background: #f6f6f6;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  font-size: 32rpx;
+  font-family: "PingFangSC-Thin";
+}
+
+/**global flex layout**/
+.global-layout-container {
+  margin: 20rpx 20rpx 20rpx 20rpx;
+  width: 600rpx;
+  height: 800rpx;
+}
+
+.global-layout-container .global-layout-row {
+  display: flex;
+}
+
+.global-layout-row .global-layout-cell {
+  display: flex;
+  flex: 1;
+  border: 1rpx solid #000000;
+  justify-content: center;
   align-items: center;
-  box-sizing: border-box;
-} 
-
-button {
-  background: initial;
-}
-
-button:focus{
-  outline: 0;
-}
-
-button::after{
-  border: none;
+  margin: 20rpx;
+  line-height: 280rpx;
+  border-radius: 20rpx;
 }

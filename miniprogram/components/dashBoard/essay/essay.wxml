@@ -1,0 +1,19 @@
+<!--components/dashBoard/essay/essay.wxml-->
+<view>
+  <view>填空类型</view>
+  <radio-group bindchange="onTypeChange">
+    <radio value="text" checked="true">文本</radio>
+    <radio value="integer">数字（整数）</radio>
+    <radio value="float">数字（小数）</radio>
+    <radio value="identity">身份证</radio>
+    <radio value="email">邮箱</radio>
+    <radio value="customRe">自定义正则表达式</radio>
+  </radio-group>
+  <input
+    hidden="{{showCustomRe}}"
+    placeholder="请输入正则表达式"
+    bindblur="onReInput"
+  />
+
+</view>
+

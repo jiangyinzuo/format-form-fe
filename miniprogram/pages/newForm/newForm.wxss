@@ -1,0 +1,7 @@
+/* miniprogram/pages/newForm/newForm.wxss */
+.title {
+  display: block;
+  text-align: center;
+  line-height: 40rpx;
+  margin-bottom: 20rpx;
+}

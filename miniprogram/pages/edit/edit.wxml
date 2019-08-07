@@ -1,0 +1,17 @@
+<!--miniprogram/pages/edit/edit.wxml-->
+<view class="container" hidden="{{showDashBoard}}">
+  <block wx:for="{{questionArr}}" wx:key="{{index+1}}">
+    <view>{{item.desc}}</view>
+  </block>
+
+  <view class="addBoard" bindtap="editQuestion">
+    <view class="plus">+</view>
+    <view class="word">新增问题</view>
+  </view>
+
+</view>
+
+<view hidden="{{!showDashBoard}}">
+  <dash-board-cmp bind:backToPage="backToPage"></dash-board-cmp>
+</view>
+

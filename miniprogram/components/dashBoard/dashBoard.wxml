@@ -1,0 +1,26 @@
+<!--components/dashBoard/dashBoard.wxml-->
+<view class="container">
+  <button>取消</button>
+  <button class="item" bindtap="onSave">保存</button>
+  <view class="item">
+    <label>问题描述</label>
+    <input bindblur="onQuestionDescInput" />
+  </view>
+  <view class="item">
+    <label>问题类型</label>
+    <radio-group class="question-group" bindchange="onTypeChange">
+      <radio checked="true" value="radio">单选</radio>
+      <radio value="select">多选</radio>
+      <radio value="essay">填空</radio>
+    </radio-group>
+
+    <label>是否必填</label>
+    <radio-group class="question-group" bindchange="onNecessaryChange">
+      <radio  checked="true" value="yes">是</radio>
+      <radio class="no" value="no">否</radio>
+    </radio-group>
+  </view>
+
+  <essay-cmp id="questionInfo" wx:if="{{questionInfo.type === 'essay'}}"></essay-cmp>
+  <select-cmp id="questionInfo" wx:else></select-cmp>
+</view>

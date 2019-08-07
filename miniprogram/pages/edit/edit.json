@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "dash-board-cmp": "/components/dashBoard/dashBoard"
+  }
+}
