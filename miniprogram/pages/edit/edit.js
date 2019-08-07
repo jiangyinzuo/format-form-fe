@@ -1,12 +1,12 @@
 // miniprogram/pages/edit/edit.js
-Page({
+import { deepClone } from '../../utils/deepClone.js'
+import { FormTempModel } from '../../models/formTemp.js'
 
-  /**
-   * 页面的初始数据
-   */
+Page({
   data: {
     questionArr: [],
-    showDashBoard: false
+    showDashBoard: false,
+    title: ''
   },
 
   /**
@@ -73,7 +73,7 @@ Page({
       })
     }
   },
-  delQuestion(event) {
+  delQuestion(event) { //TODO: add del btn in html
     console.log(event)
     this.data.questionArr.splice(event.detail.type-1, 1)
     this.setData({
@@ -86,10 +86,33 @@ Page({
     })
   },
   backToPage(event) {
-    this.data.questionArr.push(event.detail.questionInfo)
+    let questionInfo = deepClone(event.detail.questionInfo)
+    this.data.questionArr.push(questionInfo)
     this.setData({
       showDashBoard: false,
       questionArr: this.data.questionArr
+    })
+    console.log(questionInfo)
+  },
+  async onSaveTemp() {
+    let params = {}  //send to backend
+    //params.open_id = 
+    let formTempModel = new FormTempModel()
+    let res = await formTempModel.sendFormTemp({
+      title: this.data.title,
+      questions: this.data.questionArr
+    })
+    wx.showToast({
+      title: '保存成功',
+    })
+    console.log(res)
+  },
+  onEditTitle(event) {
+    this.data.title = event.detail.value
+  },
+  onBack() {
+    wx.reLaunch({
+      url: '/pages/index/index',
     })
   }
 })

@@ -8,6 +8,7 @@ const ERR_MSG = {
 }
 
 class HTTP {
+  static openId = null
   request({url, data={}, method='GET'}={}) {
     return new Promise((resolve, reject) => {
       this._request(url, resolve, reject, data, method)

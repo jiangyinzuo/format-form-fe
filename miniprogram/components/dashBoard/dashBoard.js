@@ -10,6 +10,7 @@ Component({
    * 组件的初始数据
    */
   data: {
+    mode: 'radio',
     questionInfo: {
       desc: '',
       type: 'radio',
@@ -32,6 +33,7 @@ Component({
       this.setData({
         mode: event.detail.value
       })
+      this.data.questionInfo.type = this.data.mode
     },
     onSave() {
       if (this.data.questionInfo.desc) {
