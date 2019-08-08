@@ -1,18 +1,25 @@
-// miniprogram/pages/newForm/newForm.js
+// miniprogram/pages/newForm/myTemp/myTemp.js
+import { FormTempModel } from '../../../models/formTemp.js'
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    tempArr: [],
+    showDashBoard: true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  async onLoad(options) {
+    let formTempModel = new FormTempModel()
+    let res = await formTempModel.getFormTemp()
+    this.setData({
+      tempArr: res.question_temps
+    })
   },
 
   /**
@@ -63,10 +70,14 @@ Page({
   onShareAppMessage: function () {
 
   },
-
-  navigateTo(event) {
-    wx.navigateTo({
-      url: event.currentTarget.dataset.url,
+  closeDashBoard() {
+    this.setData({
+      showDashBoard: false
+    })
+  },
+  openDashBoard(event) {
+    this.setData({
+      showDashBoard: true
     })
   }
 })
