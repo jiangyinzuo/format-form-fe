@@ -7,13 +7,15 @@ class UserModel {
   }
   async login() {
     const loginPromise = await makePromise(wx.login)
-    HTTP.openId = await this.http.request({
+
+    let res = await this.http.request({
       url: '/wx_login',
       data: {
         code: loginPromise.code
       },
       method: 'POST',
     })
+    HTTP.openId = res.open_id
     return HTTP.openId
   }
 }

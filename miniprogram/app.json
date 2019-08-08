@@ -4,7 +4,8 @@
     "pages/involved/involved",
     "pages/launched/launched",
     "pages/newForm/newForm",
-    "pages/edit/edit"
+    "pages/edit/edit",
+    "pages/newForm/myTemp/myTemp"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

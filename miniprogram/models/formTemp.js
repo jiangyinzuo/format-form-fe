@@ -1,5 +1,4 @@
 import { HTTP } from '../utils/http.js'
-import { makePromise } from '../utils/makePromise.js'
 
 class FormTempModel {
   constructor() {
@@ -23,6 +22,15 @@ class FormTempModel {
         questions: questions
       },
       method: 'POST'
+    })
+  }
+  async getFormTemp() {
+    return await this.http.request({
+      url: '/form_templates',
+      data: {
+        open_id: HTTP.openId
+      },
+      method: 'GET'
     })
   }
 }

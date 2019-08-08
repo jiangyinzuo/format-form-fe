@@ -5,7 +5,10 @@
     <view
       bindtap="navigateTo"
       class="global-layout-cell"
-    >自定义</view>
+      data-url="/pages/edit/edit"
+    >
+      自定义
+    </view>
     <view class="global-layout-cell">投票</view>
   </view>
   <view class="global-layout-row">
@@ -14,6 +17,12 @@
   </view>
   <view class="global-layout-row">
     <view class="global-layout-cell">抽奖</view>
-    <view class="global-layout-cell">我的模板</view>
+    <view
+      bindtap="navigateTo"
+      class="global-layout-cell"
+      data-url="./myTemp/myTemp"
+    >
+      我的模板
+    </view>
   </view>
 </view>
