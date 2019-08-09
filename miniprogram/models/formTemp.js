@@ -44,6 +44,16 @@ class FormTempModel {
       method: 'DELETE'
     })
   }
+  async getQRcode(_id) {
+    return await this.http.request({
+      url: '/wx_get_qr_code',
+      data: {
+        open_id: HTTP.open_id,
+        _id: _id // _id is mongodb's objectId
+      },
+      method: 'POST'
+    })
+  }
 }
 
 export { FormTempModel }

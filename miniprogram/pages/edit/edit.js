@@ -2,6 +2,8 @@
 import { deepClone } from '../../utils/deepClone.js'
 import { FormTempModel } from '../../models/formTemp.js'
 
+let formTempModel = new FormTempModel()
+
 Page({
   data: {
     questionArr: [],
@@ -97,7 +99,6 @@ Page({
   async onSaveTemp() {
     let params = {}  //send to backend
     //params.open_id = 
-    let formTempModel = new FormTempModel()
     let res = await formTempModel.sendFormTemp({
       title: this.data.title,
       questions: this.data.questionArr
@@ -106,6 +107,7 @@ Page({
       title: '保存成功',
     })
     console.log(res)
+    return res.form_temp_id
   },
   onEditTitle(event) {
     this.data.title = event.detail.value
@@ -114,5 +116,10 @@ Page({
     wx.reLaunch({
       url: '/pages/index/index',
     })
+  },
+  async onShareForm() {
+    let _id = await this.onSaveTemp()
+    let res = await formTempModel.getQRcode(_id)
+    console.log(res)
   }
 })
