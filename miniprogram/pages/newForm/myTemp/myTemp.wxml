@@ -2,16 +2,20 @@
 <view>
   <view>我的模板</view>
   <block wx:for="{{tempArr}}" wx:key="{{index}}">
-    <view
-      class="item-container"
-      data-idx="{{index}}"
-      bindtap="openDashBoard"
-    >
+    <view class="item-container">
       {{item.title}}
+      <button
+        bindtap="openDashBoard"
+        data-idx="{{index}}"
+      >
+        编辑
+      </button>
+      <button bindtap="delTemp">删除</button>
     </view>
   </block>
 </view>
 
 <view class="dash-board" wx:if="{{showDashBoard}}">
   <button bindtap="closeDashBoard">返回</button>
+  <view>{{tempArr[curQuestionIdx].title}}</view>
 </view>
