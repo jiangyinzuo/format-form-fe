@@ -1,32 +1,58 @@
 /* miniprogram/pages/edit/edit.wxss */
+page {
+  background: #e0dede;
+  padding-top: 40rpx;
+}
+
+.container {
+  width: 700rpx;
+}
+
+.container .cell {
+  border-radius: 20rpx;
+  width: auto;
+  height: fit-content;
+  background: #eeeeee;
+  padding: 30rpx;
+  margin: 20rpx 0;
+}
+
 .addBoard {
-  border: 3rpx dashed #a7a1a1;
-  border-radius: 2rpx;
-  width: 600rpx;
-  height: 100rpx;
-  line-height: 75rpx;
+  margin: 30rpx auto 0 auto;
+  border-radius: 60rpx;
+  width: 310rpx;
+  height: 80rpx;
+  line-height: 60rpx;
   text-align: center;
+  background: #f0f0f0;
 }
 
 .addBoard .plus {
   display: inline-block;
-  font-size: 80rpx;
-  font-weight: 100;
-  color: #a7a1a1;
-  line-height: 70rpx;
-  vertical-align: middle;
+  font-size: 40rpx;
+  font-weight: 400;
+  color: #f0f0f0;
+  line-height: 35rpx;
+  vertical-align: text-bottom;
   text-align: center;
-  width: 80rpx;
-  height: 80rpx;
-  border: 2rpx solid #a7a1a1;
+  width: 40rpx;
+  height: 40rpx;
+  background: #382bad;
   border-radius: 50%;
 }
 
 .addBoard .word {
   display: inline-block;
   padding: 10rpx;
-  color: #a7a1a1;
+  color: #382bad;
   font-weight: 200;
+}
+
+.dash-board {
+  position: absolute;
+  z-index: 10;
+  background: #e0dede;
+  width: 100%;
 }
 
 .share-page {
@@ -35,4 +61,28 @@
   height: 100%;
   background-color: #a7a1a1;
   z-index: 10;
+}
+
+.tabbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20rpx;
+  background: #f0f0f0;
+}
+
+.tabbar button {
+  display: inline-block;
+  width: 170rpx;
+  position: relative;
+  background: #075b92;
+  color: #ffffff;
+}
+
+.tabbar .tabbar-btn-1 {
+  left: 350rpx;
+}
+
+.tabbar .save-btn {
+  left: 390rpx;
 }

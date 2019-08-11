@@ -5,12 +5,12 @@ page {
   justify-content: center;
   font-size: 32rpx;
   font-family: "PingFangSC-Thin";
+  margin: 0;
 }
 
-/**global flex layout**/
+/* global flex layout */
 .global-layout-container {
-  margin: 20rpx 20rpx 20rpx 20rpx;
-  width: 600rpx;
+  width: 90%;
   height: 800rpx;
 }
 

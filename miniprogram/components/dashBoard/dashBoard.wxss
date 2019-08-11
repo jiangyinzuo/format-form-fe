@@ -1,6 +1,6 @@
 /* components/dashBoard/dashBoard.wxss */
 .container {
-  width: 650rpx;
+  width: 100%;
   height: 100%;
 }
 
