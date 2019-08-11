@@ -1,18 +1,26 @@
 <!--miniprogram/pages/edit/edit.wxml-->
-<view class="container" wx:if="{{!showDashBoard}}">
-  <button bindtap="onBack">取消编辑</button>
-  <input placeholder="表单标题" bindblur="onEditTitle" />
+<view class="container">
+  <input placeholder="请输入表单标题" bindfocus="onEditTitle" class="cell"/>
   <block wx:for="{{questionArr}}" wx:key="{{index+1}}">
-    <view>{{item.desc}}</view>
+    <view class="cell">{{index+1}}. {{item.desc}}</view>
   </block>
   <view class="addBoard" bindtap="editQuestion">
     <view class="plus">+</view>
     <view class="word">新增问题</view>
   </view>
-  <button bindtap="onSaveTemp">保存</button>
 </view>
-<view wx:else>
+
+<view wx:if="{{showDashBoard}}" class="dash-board">
   <dash-board-cmp bind:backToPage="backToPage"></dash-board-cmp>
+</view>
+
+<view class="tabbar" wx:if="{{!showDashBoard}}">
+  <button class="tabbar-btn-1">预览</button>
+  <button bindtap="onSaveTemp" class="save-btn">保存</button>
+</view>
+<view class="tabbar" wx:else>
+  <button class="tabbar-btn-1">取消</button>
+  <button class="save-btn">保存</button>
 </view>
 
 <view class="share-page" hidden="{{!showSharePage}}">

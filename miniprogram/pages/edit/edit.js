@@ -10,7 +10,8 @@ Page({
     showDashBoard: false,
     title: '',
     formTempId: '',
-    showSharePage: false
+    showSharePage: false,
+    showConfirm: false
   },
 
   /**
@@ -38,14 +39,12 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
   },
 
   /**
@@ -118,11 +117,6 @@ Page({
   },
   onEditTitle(event) {
     this.data.title = event.detail.value
-  },
-  onBack() {
-    wx.reLaunch({
-      url: '/pages/index/index',
-    })
   },
   onHiddenSharePage() {
     this.setData({
