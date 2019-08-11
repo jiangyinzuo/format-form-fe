@@ -10,9 +10,13 @@
     <view class="word">新增问题</view>
   </view>
   <button bindtap="onSaveTemp">保存</button>
-  <button bindtap="onShareForm">保存并分享</button>
-  <view>*保存内容可在“我的模板”重新编辑</view>
 </view>
 <view wx:else>
   <dash-board-cmp bind:backToPage="backToPage"></dash-board-cmp>
+</view>
+
+<view class="share-page" hidden="{{!showSharePage}}">
+  <view>保存成功</view>
+  <button bindtap="onHiddenSharePage">返回</button>
+  <button open-type="share">分享</button>
 </view>

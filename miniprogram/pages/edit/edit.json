@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "dash-board-cmp": "/components/dashBoard/dashBoard"
-  }
+  },
+  "navigationBarTitleText": "新建表单"
 }
