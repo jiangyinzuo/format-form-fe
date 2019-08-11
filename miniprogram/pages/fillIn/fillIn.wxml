@@ -1,2 +1,2 @@
 <!--miniprogram/pages/fillIn/fillIn.wxml-->
-<text>miniprogram/pages/fillIn/fillIn.wxml</text>
+<view>{{formTemp.title}}</view>

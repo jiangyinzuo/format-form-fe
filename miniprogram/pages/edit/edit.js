@@ -8,7 +8,9 @@ Page({
   data: {
     questionArr: [],
     showDashBoard: false,
-    title: ''
+    title: '',
+    formTempId: '',
+    showSharePage: false
   },
 
   /**
@@ -63,10 +65,12 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage(res) {
+    return {
+      title: 'hsgwee' + this.data.formTempId,
+      path: `/pages/fillIn/fillIn?id=${this.data.formTempId}`
+    }
   },
-
   addQuestion(event) {
     if (event.detail.type === 'essay') {
       this.data.questionArr.push(null)
@@ -107,7 +111,10 @@ Page({
       title: '保存成功',
     })
     console.log(res)
-    return res.form_temp_id
+    this.data.formTempId = res.form_temp_id
+    this.setData({
+      showSharePage: true
+    })
   },
   onEditTitle(event) {
     this.data.title = event.detail.value
@@ -117,9 +124,9 @@ Page({
       url: '/pages/index/index',
     })
   },
-  async onShareForm() {
-    let _id = await this.onSaveTemp()
-    let res = await formTempModel.getQRcode(_id)
-    console.log(res)
+  onHiddenSharePage() {
+    this.setData({
+      showSharePage: false
+    })
   }
 })

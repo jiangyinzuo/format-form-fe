@@ -42,7 +42,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -62,7 +62,15 @@
 					"id": -1,
 					"name": "pages/newForm/myTemp/myTemp",
 					"pathName": "pages/newForm/myTemp/myTemp",
+					"query": "",
 					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "pages/fillIn/fillIn",
+					"pathName": "pages/fillIn/fillIn",
+					"query": "id=5d4d3c1fe643d27e96ff7b00",
+					"scene": 1007
 				}
 			]
 		}

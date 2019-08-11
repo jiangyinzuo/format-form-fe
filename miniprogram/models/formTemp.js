@@ -54,6 +54,15 @@ class FormTempModel {
       method: 'POST'
     })
   }
+  async getOneFormTempById(_id) {
+    return await this.http.request({
+      url: '/form_templates',
+      method: 'GET',
+      data: {
+        object_id: _id
+      }
+    })
+  }
 }
 
 export { FormTempModel }

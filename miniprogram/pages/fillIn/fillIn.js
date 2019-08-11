@@ -1,18 +1,27 @@
 // miniprogram/pages/fillIn/fillIn.js
+import { FormTempModel } from '../../models/formTemp.js'
+let formTemp = new FormTempModel()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    formTempId: '',
+    formTemp: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  async onLoad(options) {
+    let res = await formTemp.getOneFormTempById(options.id)
+    this.setData({
+      formTempId: options.id,
+      formTemp: res.form_temp
+    })
+    console.log(this.data.formTemp)
   },
 
   /**
@@ -61,6 +70,5 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
   }
 })
