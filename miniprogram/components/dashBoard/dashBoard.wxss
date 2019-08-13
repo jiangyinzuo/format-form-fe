@@ -4,6 +4,7 @@
   width: 700rpx;
   height: 100%;
   margin: 0 auto;
+  padding-bottom: 150rpx;
 }
 
 .item input {
@@ -24,13 +25,6 @@
 .question-group .no {
   position: relative;
   right: 109rpx;
-}
-
-.save {
-  z-index: 1;
-  position: absolute;
-  bottom: 10rpx;
-  width: auto;
 }
 
 .tabbar {
