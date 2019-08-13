@@ -1,6 +1,6 @@
 <!--components/dashBoard/radio/radio.wxml-->
 <view class="generic-cell">
-  <label>选项编辑</label>
+  <label>编辑选项</label>
   <block wx:for="{{radioList}}" wx:key="{{index}}">
     <view class="radio-item">
       <label>{{order[index]}}</label>
@@ -9,13 +9,13 @@
         bindinput="onDescInput"
         data-idx="{{index}}"
         placeholder="选项{{index+1}}"
-        wx:if="{{showAddBtn}}" />
+      />
       <image
         data-idx="{{index}}"
         bindtap="delRadio"
         class="del-btn"
-        src="../../../static/delete.svg"></image>
+        src="../../../static/icon/delete.svg"></image>
     </view>
   </block>
-  <view class="add-option-btn" bindtap="addRadio" wx:if="{{showAddBtn}}">添加选项</view>
+  <view class="add-option-btn" bindtap="addRadio">添加选项</view>
 </view>

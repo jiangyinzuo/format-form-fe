@@ -24,15 +24,28 @@ Component({
    */
   methods: {
     formValidate() {
-      let flag = true
       if (this.data.questionInfo.desc == '') {
-        flag = false
         wx.showToast({
           title: '请输入问题描述',
           icon: 'none'
         })
+        return false
       }
-      return flag
+      if (this.data.questionInfo.type === 'essay') {
+        this.data.questionInfo.detail = this.selectComponent('#questionInfo').properties.validator
+      } else {
+        this.data.questionInfo.detail = this.selectComponent('#questionInfo').properties.radioList
+        for (let idx in this.data.questionInfo.detail) {
+          if (this.data.questionInfo.detail[idx] == '') {
+            wx.showToast({
+              title: '选项不能为空',
+              icon: 'none'
+            })
+            return false
+          }
+        }
+      }
+      return true
     },
     onQuestionDescInput(event) {
       this.data.questionInfo.desc = event.detail.value
@@ -46,18 +59,14 @@ Component({
       })
       this.data.questionInfo.type = this.data.mode
     },
+    onCancel() {
+      this.triggerEvent('backToPage', {}, {})
+    },
     onSave() {
       if (this.formValidate()) {
-        if (this.data.questionInfo.desc) {
-          if (this.data.questionInfo.type === 'essay') {
-            this.data.questionInfo.detail = this.selectComponent('#questionInfo').properties.validator
-          } else {
-            this.data.questionInfo.detail = this.selectComponent('#questionInfo').properties.radioList
-          }
-          this.triggerEvent('backToPage', {
-            questionInfo: this.data.questionInfo
-          }, {})
-        }
+        this.triggerEvent('backToPage', {
+          questionInfo: this.data.questionInfo
+        }, {})
       } 
     }
   }

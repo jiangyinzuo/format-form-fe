@@ -23,6 +23,6 @@
   <select-cmp id="questionInfo" wx:else></select-cmp>
 </view>
 <view class="tabbar">
-  <button class="cancel-btn">取消</button>
+  <button class="cancel-btn" bindtap="onCancel">取消</button>
   <button class="save-btn" bindtap="onSave">保存</button>
 </view>
