@@ -1,4 +1,6 @@
 /* components/dashBoard/radio/radio.wxss */
+@import "../../../static/css/cell.wxss";
+
 .radio-item {
   margin: 20rpx 0 20rpx 0;
   position: relative;
@@ -8,18 +10,32 @@
   line-height: 40rpx;
   font-size: 38rpx;
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: bottom;
   width: 500rpx;
 }
 
 .del-btn {
   display: inline-block;
-  vertical-align: middle;
+  width: 40rpx;
+  height: 40rpx;
+  font-size: 40rpx;
   position: absolute;
   right: 10rpx;
-  line-height: 30rpx;
-  font-size: 25rpx;
-  height: 45rpx;
-  width: fit-content;
-  padding: 10rpx;
+  vertical-align: bottom;
+}
+
+.add-option-btn {
+  margin: 30rpx auto 0 auto;
+  border-radius: 60rpx;
+  width: 210rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border: 3rpx solid #075b92;
+  color: #075b92;
+}
+
+.option-input {
+    border-bottom: 0.5rpx solid rgba(122, 116, 116, 0.8);
+
 }

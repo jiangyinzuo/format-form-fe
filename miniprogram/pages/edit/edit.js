@@ -11,7 +11,7 @@ Page({
     title: '',
     formTempId: '',
     showSharePage: false,
-    showConfirm: false
+    showConfirm: false,
   },
 
   /**
@@ -99,21 +99,34 @@ Page({
     })
     console.log(questionInfo)
   },
+  formValidate() {
+    let flag = true
+    if (this.data.title == '') {
+      flag = false
+      wx.showToast({
+        title: '请输入表单标题',
+        icon: 'none'
+      })
+    }
+    return flag
+  },
   async onSaveTemp() {
-    let params = {}  //send to backend
-    //params.open_id = 
-    let res = await formTempModel.sendFormTemp({
-      title: this.data.title,
-      questions: this.data.questionArr
-    })
-    wx.showToast({
-      title: '保存成功',
-    })
-    console.log(res)
-    this.data.formTempId = res.form_temp_id
-    this.setData({
-      showSharePage: true
-    })
+    if (this.formValidate()) {
+      let params = {}  //send to backend
+      //params.open_id = 
+      let res = await formTempModel.sendFormTemp({
+        title: this.data.title,
+        questions: this.data.questionArr
+      })
+      wx.showToast({
+        title: '保存成功',
+      })
+      console.log(res)
+      this.data.formTempId = res.form_temp_id
+      this.setData({
+        showSharePage: true
+      })
+    }
   },
   onEditTitle(event) {
     this.data.title = event.detail.value

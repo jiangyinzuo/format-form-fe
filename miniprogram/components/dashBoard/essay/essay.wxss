@@ -1,1 +1,19 @@
 /* components/dashBoard/essay/essay.wxss */
+@import "../../../static/css/cell.wxss";
+.generic-cell {
+  border-radius: 20rpx;
+  width: auto;
+  height: fit-content;
+  background: #eeeeee;
+  padding: 30rpx;
+  margin: 20rpx 0;
+}
+
+.generic-cell .radio-row {
+  display: flex;
+  padding: 5rpx 0;
+}
+
+.generic-cell radio-group radio {
+  flex: 1;
+}

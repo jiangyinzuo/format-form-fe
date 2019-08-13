@@ -23,6 +23,17 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    formValidate() {
+      let flag = true
+      if (this.data.questionInfo.desc == '') {
+        flag = false
+        wx.showToast({
+          title: '请输入问题描述',
+          icon: 'none'
+        })
+      }
+      return flag
+    },
     onQuestionDescInput(event) {
       this.data.questionInfo.desc = event.detail.value
     },
@@ -36,17 +47,18 @@ Component({
       this.data.questionInfo.type = this.data.mode
     },
     onSave() {
-      if (this.data.questionInfo.desc) {
-        if (this.data.questionInfo.type === 'essay') {
-          this.data.questionInfo.detail = this.selectComponent('#questionInfo').properties.validator
-        } else {
-          this.data.questionInfo.detail = this.selectComponent('#questionInfo').properties.radioList
+      if (this.formValidate()) {
+        if (this.data.questionInfo.desc) {
+          if (this.data.questionInfo.type === 'essay') {
+            this.data.questionInfo.detail = this.selectComponent('#questionInfo').properties.validator
+          } else {
+            this.data.questionInfo.detail = this.selectComponent('#questionInfo').properties.radioList
+          }
+          this.triggerEvent('backToPage', {
+            questionInfo: this.data.questionInfo
+          }, {})
         }
-
-        this.triggerEvent('backToPage', {
-          questionInfo: this.data.questionInfo
-        }, {})
-      }
+      } 
     }
   }
 })
