@@ -3,7 +3,13 @@
   <label>选项编辑</label>
   <block wx:for="{{radioList}}" wx:key="{{index}}">
     <view class="radio-item">
-      <view class="radio-desc">{{order[index] + item}}</view>
+      <label>{{order[index]}}</label>
+      <input
+        value="{{radioList[index]}}"
+        bindinput="onDescInput"
+        data-idx="{{index}}"
+        placeholder="选项{{index+1}}"
+        wx:if="{{showAddBtn}}" />
       <image
         data-idx="{{index}}"
         bindtap="delRadio"
@@ -11,11 +17,5 @@
         src="../../../static/delete.svg"></image>
     </view>
   </block>
-  <input
-    value="{{itemDesc}}"
-    bindinput="onDescInput"
-    placeholder="输入选项描述"
-    wx:if="{{showAddBtn}}"
-    class="option-input" />
   <view class="add-option-btn" bindtap="addRadio" wx:if="{{showAddBtn}}">添加选项</view>
 </view>

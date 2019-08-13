@@ -6,12 +6,22 @@
   position: relative;
 }
 
-.radio-desc {
+.radio-item label {
   line-height: 40rpx;
-  font-size: 38rpx;
   display: inline-block;
   vertical-align: bottom;
-  width: 500rpx;
+  width: 50rpx;
+  color: #2b2d38dc;
+}
+
+.radio-item input {
+  border-bottom: 0.5rpx solid rgba(122, 116, 116, 0.8);
+  display: inline-block;
+  line-height: 40rpx;
+  vertical-align: bottom;
+  padding-bottom: 10rpx;
+  margin-bottom: 20rpx;
+  width: 530rpx;
 }
 
 .del-btn {
@@ -25,17 +35,12 @@
 }
 
 .add-option-btn {
-  margin: 30rpx auto 0 auto;
+  margin: 20rpx auto 0 auto;
   border-radius: 60rpx;
   width: 210rpx;
-  height: 80rpx;
-  line-height: 80rpx;
+  height: 70rpx;
+  line-height: 70rpx;
   text-align: center;
   border: 3rpx solid #075b92;
   color: #075b92;
-}
-
-.option-input {
-    border-bottom: 0.5rpx solid rgba(122, 116, 116, 0.8);
-
 }

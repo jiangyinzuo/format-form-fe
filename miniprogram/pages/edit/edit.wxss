@@ -3,7 +3,7 @@
 
 page {
   background: #e0dede;
-  padding-top: 40rpx;
+  padding-top: 10rpx;
 }
 
 .container {
