@@ -1,4 +1,6 @@
 /* miniprogram/pages/edit/edit.wxss */
+@import "../../static/css/cell.wxss";
+
 page {
   background: #e0dede;
   padding-top: 40rpx;
@@ -6,15 +8,6 @@ page {
 
 .container {
   width: 700rpx;
-}
-
-.container .cell {
-  border-radius: 20rpx;
-  width: auto;
-  height: fit-content;
-  background: #eeeeee;
-  padding: 30rpx;
-  margin: 20rpx 0;
 }
 
 .addBoard {

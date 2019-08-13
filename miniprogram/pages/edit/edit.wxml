@@ -1,8 +1,8 @@
 <!--miniprogram/pages/edit/edit.wxml-->
 <view class="container">
-  <input placeholder="请输入表单标题" bindfocus="onEditTitle" class="cell"/>
+  <input placeholder="请输入表单标题" bindinput="onEditTitle" class="generic-cell" maxlength="30" />
   <block wx:for="{{questionArr}}" wx:key="{{index+1}}">
-    <view class="cell">{{index+1}}. {{item.desc}}</view>
+    <view class="generic-cell">{{index+1}}. {{item.desc}}</view>
   </block>
   <view class="addBoard" bindtap="editQuestion">
     <view class="plus">+</view>
@@ -17,10 +17,6 @@
 <view class="tabbar" wx:if="{{!showDashBoard}}">
   <button class="tabbar-btn-1">预览</button>
   <button bindtap="onSaveTemp" class="save-btn">保存</button>
-</view>
-<view class="tabbar" wx:else>
-  <button class="tabbar-btn-1">取消</button>
-  <button class="save-btn">保存</button>
 </view>
 
 <view class="share-page" hidden="{{!showSharePage}}">

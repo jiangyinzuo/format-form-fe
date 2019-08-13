@@ -1,19 +1,17 @@
 <!--components/dashBoard/essay/essay.wxml-->
-<view>
-  <view>填空类型</view>
+<view class="generic-cell">
+  <label>填空类型</label>
   <radio-group bindchange="onTypeChange">
-    <radio value="text" checked="true">文本</radio>
-    <radio value="integer">数字（整数）</radio>
-    <radio value="float">数字（小数）</radio>
-    <radio value="identity">身份证</radio>
-    <radio value="email">邮箱</radio>
-    <radio value="customRe">自定义正则表达式</radio>
+    <view class="radio-row">
+      <radio color="#075b92" value="text" checked="true">文本</radio>
+      <radio color="#075b92" value="integer">数字</radio>
+      <radio color="#075b92" value="identity">身份证</radio>
+    </view>
+    <view class="radio-row">
+      <radio color="#075b92" value="date">日期</radio>
+      <radio color="#075b92" value="email">邮箱</radio>
+      <radio color="#075b92" value="customRe">手机号</radio>
+    </view>
   </radio-group>
-  <input
-    hidden="{{showCustomRe}}"
-    placeholder="请输入正则表达式"
-    bindblur="onReInput"
-  />
-
 </view>
 

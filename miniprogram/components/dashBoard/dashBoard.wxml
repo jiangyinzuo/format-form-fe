@@ -1,25 +1,28 @@
 <!--components/dashBoard/dashBoard.wxml-->
 <view class="container">
-  <button class="item" bindtap="onSave">保存</button>
-  <view class="item">
-    <label>问题描述</label>
-    <input bindblur="onQuestionDescInput" />
+  <view class="generic-cell">
+    <input bindinput="onQuestionDescInput" placeholder="输入问题描述" maxlength="140" />
   </view>
-  <view class="item">
+  <view class="generic-cell">
     <label>问题类型</label>
     <radio-group class="question-group" bindchange="onTypeChange">
-      <radio checked="true" value="radio">单选</radio>
-      <radio value="select">多选</radio>
-      <radio value="essay">填空</radio>
+      <radio color="#075b92" checked="true" value="radio">单选</radio>
+      <radio color="#075b92" value="select">多选</radio>
+      <radio color="#075b92" value="essay">填空</radio>
     </radio-group>
-
+  </view>
+  <view class="generic-cell">
     <label>是否必填</label>
     <radio-group class="question-group" bindchange="onNecessaryChange">
-      <radio  checked="true" value="yes">是</radio>
-      <radio class="no" value="no">否</radio>
+      <radio color="#075b92" checked="true" value="yes">是</radio>
+      <radio color="#075b92" class="no" value="no">否</radio>
     </radio-group>
   </view>
 
   <essay-cmp id="questionInfo" wx:if="{{mode === 'essay'}}"></essay-cmp>
   <select-cmp id="questionInfo" wx:else></select-cmp>
+</view>
+<view class="tabbar">
+  <button class="cancel-btn">取消</button>
+  <button class="save-btn" bindtap="onSave">保存</button>
 </view>

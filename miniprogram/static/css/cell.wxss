@@ -1,0 +1,16 @@
+.generic-cell {
+  border-radius: 20rpx;
+  width: auto;
+  height: fit-content;
+  background: #eeeeee;
+  padding: 30rpx;
+  margin: 20rpx 0;
+}
+
+.generic-cell label {
+  color: #201f1f;
+  border-bottom: 0.5rpx solid rgba(122, 116, 116, 0.8);
+  display: block;
+  padding-bottom: 10rpx;
+  margin-bottom: 20rpx;
+}
