@@ -5,6 +5,7 @@
   background: #eeeeee;
   padding: 30rpx;
   margin: 20rpx 0;
+  position: relative;
 }
 
 .generic-cell label {

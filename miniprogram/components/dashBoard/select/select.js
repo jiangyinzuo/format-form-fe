@@ -14,8 +14,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    order: ['A. ', 'B. ', 'C. ', 'D. ', 'E. ', 'F. ', 'G. ', 'H. ', 'I. ', 'J. ', 'K. ', 'L. ', 'M. ', 'N. ', 'O. ', 'P. ', 'Q. ', 'R. ', 'S. ', 'T. '],
-    showAddBtn: true
+    order: ['A. ', 'B. ', 'C. ', 'D. ', 'E. ', 'F. ', 'G. ', 'H. ', 'I. ', 'J. ', 'K. ', 'L. ', 'M. ', 'N. ', 'O. ', 'P. ', 'Q. ', 'R. ', 'S. ', 'T. ']
   },
 
   methods: {
@@ -33,7 +32,6 @@ Component({
       }
     },
     onDescInput(event) {
-      console.log(event)
       let idx = event.target.dataset.idx
       this.properties.radioList[idx] = event.detail.value
     }, 

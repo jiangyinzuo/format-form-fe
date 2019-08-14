@@ -1,17 +1,50 @@
 <!--miniprogram/pages/edit/edit.wxml-->
 <view class="container">
   <input placeholder="请输入表单标题" bindinput="onEditTitle" class="generic-cell" maxlength="30" />
-  <block wx:for="{{questionArr}}" wx:key="{{index+1}}">
-    <view class="generic-cell">{{index+1}}. {{item.desc}}</view>
+  <block wx:for="{{_questionDetail}}" wx:key="{{index+1}}">
+    <view class="generic-cell">
+      <image
+        src="../../static/icon/minus.svg"
+        class="minus"
+        bindtap="delQuestion"
+        data-idx="{{index}}"
+      ></image>
+      <view class="title">{{index+1}}. ({{item.data.type}}) {{item.data.desc}}</view>
+      <image
+        src="../../static/icon/{{_questionDetail[index].showDetail?'up':'down'}}.svg"
+        class="array"
+        bindtap="changeQuestionStatus"
+        data-idx="{{index}}"
+      ></image>
+      <view wx:if="{{_questionDetail[index].showDetail}}" class="detail">
+        <block
+          wx:for="{{_questionDetail[index].data.content}}"
+          wx:key="{{index}}"
+          wx:for-item="detailItem"
+          wx:if="{{item.data.type !== '填空'}}"
+        >
+          <view class="option">{{_ALPHA_BET[index]}}{{detailItem}}</view>
+        </block>
+        <view wx:if="{{item.data.type === '填空'}}" class="properties">{{item.data.content}}</view>
+        <view class="properties">{{item.data.necessary}}</view>
+        <view class="edit-btn" bindtap="editQuestion">
+          编辑
+          <image src="../../static/icon/edit.svg"></image>
+        </view>
+      </view>
+    </view>
   </block>
-  <view class="addBoard" bindtap="editQuestion">
+  <view class="addBoard" bindtap="addQuestion">
     <view class="plus">+</view>
     <view class="word">新增问题</view>
   </view>
 </view>
 
 <view wx:if="{{showDashBoard}}" class="dash-board">
-  <dash-board-cmp bind:backToPage="backToPage"></dash-board-cmp>
+  <dash-board-cmp
+    bind:backToPage="saveQuestion"
+    questionInfo="{{dashBoardProps}}"
+  ></dash-board-cmp>
 </view>
 
 <view class="tabbar" wx:if="{{!showDashBoard}}">

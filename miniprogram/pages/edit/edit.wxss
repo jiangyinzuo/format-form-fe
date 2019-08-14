@@ -10,6 +10,71 @@ page {
   width: 700rpx;
 }
 
+.container input {
+  color: #333333;
+}
+
+.generic-cell .minus {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin-right: 15rpx;
+}
+
+.generic-cell .title {
+  display: inline-block;
+  color: #333333;
+  line-height: 40rpx;
+  vertical-align: middle;
+}
+
+.generic-cell .array {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 20rpx;
+  vertical-align: middle;
+}
+
+.generic-cell .detail {
+  border-top: 0.5rpx solid rgba(122, 116, 116, 0.8);
+  margin-top: 10rpx;
+  padding: 10rpx;
+  width: 91%;
+}
+
+.generic-cell .detail .option {
+  color: #686767;
+  padding-left: 0;
+  position: relative;
+  right: 7rpx;
+}
+
+.generic-cell .detail .properties {
+  color: #686767;
+  position: relative;
+  right: 7rpx;
+  top: 25rpx;
+  font-size: 32rpx;
+}
+
+.generic-cell .detail .edit-btn {
+  color: #1a358d;
+  position: absolute;
+  line-height: 32rpx;
+  font-size: 32rpx;
+  vertical-align: middle;
+  right: 20rpx;
+  bottom: 20rpx;
+}
+
+.generic-cell .detail .edit-btn image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: -1rpx;
+  vertical-align: bottom;
+}
+
 .addBoard {
   margin: 30rpx auto 0 auto;
   border-radius: 60rpx;
@@ -30,14 +95,14 @@ page {
   text-align: center;
   width: 40rpx;
   height: 40rpx;
-  background: #382bad;
+  background: #1a358d;
   border-radius: 50%;
 }
 
 .addBoard .word {
   display: inline-block;
   padding: 10rpx;
-  color: #382bad;
+  color: #1a358d;
   font-weight: 200;
 }
 

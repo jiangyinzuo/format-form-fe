@@ -10,7 +10,7 @@
     <view class="radio-row">
       <radio color="#075b92" value="date">日期</radio>
       <radio color="#075b92" value="email">邮箱</radio>
-      <radio color="#075b92" value="customRe">手机号</radio>
+      <radio color="#075b92" value="phone">手机号</radio>
     </view>
   </radio-group>
 </view>
