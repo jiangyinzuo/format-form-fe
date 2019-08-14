@@ -1,7 +1,11 @@
 <!--components/dashBoard/dashBoard.wxml-->
 <view class="container">
   <view class="generic-cell">
-    <input bindinput="onQuestionDescInput" placeholder="输入问题描述" maxlength="140" />
+    <input
+      bindinput="onQuestionDescInput"
+      placeholder="输入问题描述"
+      maxlength="140"
+      value="{{questionInfo.desc}}" />
   </view>
   <view class="generic-cell">
     <label>问题类型</label>
@@ -14,12 +18,27 @@
   <view class="generic-cell">
     <label>是否必填</label>
     <radio-group class="question-group" bindchange="onNecessaryChange">
-      <radio color="#075b92" checked="true" value="yes">是</radio>
-      <radio color="#075b92" class="no" value="no">否</radio>
+      <radio
+        color="#075b92"
+        checked="{{questionInfo.necessary === 'yes'}}"
+        value="yes"
+      >是
+      </radio>
+      <radio
+        color="#075b92"
+        checked="{{questionInfo.necessary === 'no'}}"
+        value="no"
+        class="no" 
+      >否
+      </radio>
     </radio-group>
   </view>
 
-  <essay-cmp id="questionInfo" wx:if="{{questionInfo.type === 'essay'}}"></essay-cmp>
+  <essay-cmp
+    id="questionInfo"
+    wx:if="{{questionInfo.type === 'essay'}}"
+    validator="{{questionInfo.detail}}"
+  ></essay-cmp>
   <select-cmp id="questionInfo" wx:else></select-cmp>
 </view>
 <view class="tabbar">

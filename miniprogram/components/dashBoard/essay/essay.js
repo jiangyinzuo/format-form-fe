@@ -2,7 +2,7 @@
 Component({
   properties: {
     validator: {
-      type: Object,
+      type: String,
       value: 'text'
     }
   },
