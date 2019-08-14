@@ -22,7 +22,7 @@ Page({
       formTempId: options.id,
       formTemp: res.form_temp
     })
-    console.log(this.data.formTemp)
+    console.log('formTemp', this.data.formTemp)
   },
 
   /**

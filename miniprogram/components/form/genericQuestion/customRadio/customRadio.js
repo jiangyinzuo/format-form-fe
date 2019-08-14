@@ -1,8 +1,8 @@
 // components/genericQuestion/customRadio/customRadio.js
+import { genericQuestionBehavior } from '../behavior.js'
+
 Component({
-  /**
-   * 组件的属性列表
-   */
+  behaviors: [genericQuestionBehavior, ],
   properties: {
 
   },

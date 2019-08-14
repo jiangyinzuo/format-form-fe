@@ -1,0 +1,2 @@
+<!--components/genericQuestion/questionTitle.wxml-->
+<view class="title">{{order}} {{'.' + title}}</view>

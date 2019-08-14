@@ -1,24 +1,5 @@
 <!--miniprogram/pages/fillIn/fillIn.wxml-->
 <view class="container">
-  <view>{{formTemp.title}}</view>
-  <block wx:for="{{formTemp.questions}}" wx:key="{{index}}">
-    <generic-question-cmp
-      info="{{item}}"
-      generic:selectable-question="custom-radio-cmp"
-      wx:if="{{item.type === 'radio'}}"
-    >
-    </generic-question-cmp>
-    <generic-question-cmp
-      info="{{item}}"
-      generic:selectable-question="custom-select-cmp"
-      wx:elif="{{item.type === 'select'}}"
-    >
-    </generic-question-cmp>
-    <generic-question-cmp
-      info="{{item}}"
-      generic:selectable-question="custom-essay-cmp"
-      wx:else
-    >
-    </generic-question-cmp>
-  </block>
+  <form-cmp formTemp="{{formTemp}}"></form-cmp>
+  <view class="submit-btn">提交</view>
 </view>

@@ -1,0 +1,12 @@
+<!--components/genericQuestion/customSelect/customSelect.wxml-->
+<view class="container">
+  <question-title-cmp
+    title="{{info.desc}}"
+    order="{{order}}"
+  />
+  <checkbox-group>
+    <block wx:for="{{info.detail}}" wx:key="{{index}}">
+      <checkbox value="item">{{item}}</checkbox>
+    </block>
+  </checkbox-group>
+</view>

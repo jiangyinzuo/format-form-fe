@@ -1,0 +1,4 @@
+/* components/genericQuestion/customRadio/customRadio.wxss */
+.container radio {
+  display: block;
+}

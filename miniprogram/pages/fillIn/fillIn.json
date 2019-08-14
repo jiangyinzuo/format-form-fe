@@ -1,8 +1,5 @@
 {
   "usingComponents": {
-    "generic-question-cmp": "../../components/genericQuestion/genericQuestion",
-    "custom-radio-cmp": "../../components/genericQuestion/customRadio/customRadio",
-    "custom-select-cmp": "../../components/genericQuestion/customSelect/customSelect",
-    "custom-essay-cmp": "../../components/genericQuestion/customEssay/customEssay"
+    "form-cmp": "../../components/form/form"
   }
 }

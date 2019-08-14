@@ -1,0 +1,24 @@
+<!--components/form/form.wxml-->
+<view class="container">
+  <view class="title">{{formTemp.title}}</view>
+  <block wx:for="{{formTemp.questions}}" wx:key="{{index}}">
+    <custom-radio-cmp
+      info="{{item}}"
+      order="{{index+1}}"
+      wx:if="{{item.type === 'radio'}}"
+    >
+    </custom-radio-cmp>
+    <custom-select-cmp
+      info="{{item}}"
+      order="{{index+1}}"
+      wx:elif="{{item.type === 'select'}}"
+    >
+    </custom-select-cmp>
+    <custom-essay-cmp
+      info="{{item}}"
+      order="{{index+1}}"
+      wx:else
+    >
+    </custom-essay-cmp>
+  </block>
+</view>

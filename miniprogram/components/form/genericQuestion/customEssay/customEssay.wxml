@@ -1,0 +1,8 @@
+<!--components/genericQuestion/customEssay/customEssay.wxml-->
+<view class="container">
+  <question-title-cmp
+    title="{{info.desc}}"
+    order="{{order}}"
+  />
+  <input placeholder="请输入" />
+</view>

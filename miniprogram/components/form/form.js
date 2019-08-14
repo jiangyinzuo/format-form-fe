@@ -1,10 +1,10 @@
-// components/genericQuestion/customSelect/customSelect.js
+// components/form/form.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-
+    formTemp: Object
   },
 
   /**
