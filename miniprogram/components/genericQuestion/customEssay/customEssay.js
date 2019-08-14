@@ -1,17 +1,10 @@
-// components/selectGroup/customRadio/customRadio.js
+// components/genericQuestion/customEssay/customEssay.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    desc: {
-      type: String,
-      value: 'default'
-    },
-    checked: {
-      type: Boolean,
-      value: false
-    }
+
   },
 
   /**
@@ -25,5 +18,6 @@ Component({
    * 组件的方法列表
    */
   methods: {
+
   }
 })

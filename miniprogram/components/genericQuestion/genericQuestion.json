@@ -2,8 +2,6 @@
   "component": true,
   "usingComponents": {},
   "componentGenerics": {
-    "selectable": {
-      "default": "./customRadio/customRadio"
-    }
+    "selectable-question": "./customRadio/customRadio"
   }
 }

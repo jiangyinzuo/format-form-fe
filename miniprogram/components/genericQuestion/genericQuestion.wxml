@@ -1,0 +1,5 @@
+<!--components/genericQuestion/genericQuestion.wxml-->
+<view class="container">
+  <view class="title">{{info.desc}}</view>
+  <selectable-question></selectable-question>
+</view>
