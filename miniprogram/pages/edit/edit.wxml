@@ -41,7 +41,10 @@
 </view>
 
 <view wx:if="{{showDashBoard}}" class="dash-board">
-  <dash-board-cmp bind:backToPage="saveQuestion"></dash-board-cmp>
+  <dash-board-cmp
+    bind:backToPage="saveQuestion"
+    questionInfo="{{dashBoardProps}}"
+  ></dash-board-cmp>
 </view>
 
 <view class="tabbar" wx:if="{{!showDashBoard}}">

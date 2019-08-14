@@ -6,9 +6,9 @@
   <view class="generic-cell">
     <label>问题类型</label>
     <radio-group class="question-group" bindchange="onTypeChange">
-      <radio color="#075b92" checked="true" value="radio">单选</radio>
-      <radio color="#075b92" value="select">多选</radio>
-      <radio color="#075b92" value="essay">填空</radio>
+      <radio color="#075b92" checked="{{questionInfo.type === 'radio'}}" value="radio">单选</radio>
+      <radio color="#075b92" checked="{{questionInfo.type === 'select'}}" value="select">多选</radio>
+      <radio color="#075b92" checked="{{questionInfo.type === 'essay'}}" value="essay">填空</radio>
     </radio-group>
   </view>
   <view class="generic-cell">
@@ -19,7 +19,7 @@
     </radio-group>
   </view>
 
-  <essay-cmp id="questionInfo" wx:if="{{mode === 'essay'}}"></essay-cmp>
+  <essay-cmp id="questionInfo" wx:if="{{questionInfo.type === 'essay'}}"></essay-cmp>
   <select-cmp id="questionInfo" wx:else></select-cmp>
 </view>
 <view class="tabbar">

@@ -19,20 +19,21 @@ const _DETAIL_TYPE = {
   'essay': '填空'
 }
 
-
-
-
 Page({
+  /**
+   * @namespace
+   * 
+   * @property {object} _questionDetail - provide for UI
+   * @property {string} _questionDetail.type - type of question
+   * @property {string} _questionDetail.desc  - desc of question
+   * @property {string} _questionDetail.necessary - necessary of question
+   * @property {string, array} _questionDetail.necessary.content
+   * 
+   * @property {array} questionArr - send to server
+   * 
+   * @property {object} dashBoardProps - pass it to component 'dash-board-cmp'
+   */
   data: {
-    /*
-     @params _questionDetail: provide for UI [{
-       type: String,
-       desc: String,
-       necessary: String,
-       content: String/Array
-     }]
-     @params questionArr: send to server
-     */
     _questionDetail: [],
     questionArr: [],
     showDashBoard: false,
@@ -40,7 +41,13 @@ Page({
     formTempId: '',
     showSharePage: false,
     showConfirm: false,
-    _ALPHA_BET: ['A. ', 'B. ', 'C. ', 'D. ', 'E. ', 'F. ', 'G. ', 'H. ', 'I. ', 'J. ', 'K. ', 'L. ', 'M. ', 'N. ', 'O. ', 'P. ', 'Q. ', 'R. ', 'S. ', 'T. ']
+    _ALPHA_BET: ['A. ', 'B. ', 'C. ', 'D. ', 'E. ', 'F. ', 'G. ', 'H. ', 'I. ', 'J. ', 'K. ', 'L. ', 'M. ', 'N. ', 'O. ', 'P. ', 'Q. ', 'R. ', 'S. ', 'T. '],
+    dashBoardProps: {
+      desc: '',
+      type: 'radio',
+      necessary: 'yes',
+      detail: null
+    }
   },
 
   /**

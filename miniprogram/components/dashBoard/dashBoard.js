@@ -4,19 +4,21 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    questionInfo: {
+      type: Object,
+      value: {
+        desc: '',
+        type: 'radio',
+        necessary: 'yes',
+        detail: null
+      }
+    }
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-    mode: 'radio',
-    questionInfo: {
-      desc: '',
-      type: 'radio',
-      necessary: 'yes',
-      detail: null
-    }
   },
 
   /**
@@ -24,19 +26,19 @@ Component({
    */
   methods: {
     formValidate() {
-      if (this.data.questionInfo.desc == '') {
+      if (this.properties.questionInfo.desc == '') {
         wx.showToast({
           title: '请输入问题描述',
           icon: 'none'
         })
         return false
       }
-      if (this.data.questionInfo.type === 'essay') {
-        this.data.questionInfo.detail = this.selectComponent('#questionInfo').properties.validator
+      if (this.properties.questionInfo.type === 'essay') {
+        this.properties.questionInfo.detail = this.selectComponent('#questionInfo').properties.validator
       } else {
-        this.data.questionInfo.detail = this.selectComponent('#questionInfo').properties.radioList
-        for (let idx in this.data.questionInfo.detail) {
-          if (this.data.questionInfo.detail[idx] == '') {
+        this.properties.questionInfo.detail = this.selectComponent('#questionInfo').properties.radioList
+        for (let idx in this.properties.questionInfo.detail) {
+          if (this.properties.questionInfo.detail[idx] == '') {
             wx.showToast({
               title: '选项不能为空',
               icon: 'none'
@@ -48,16 +50,16 @@ Component({
       return true
     },
     onQuestionDescInput(event) {
-      this.data.questionInfo.desc = event.detail.value
+      this.properties.questionInfo.desc = event.detail.value
     },
     onNecessaryChange(event) {
-      this.data.questionInfo.necessary = event.detail.value
+      this.properties.questionInfo.necessary = event.detail.value
     },
     onTypeChange(event) {
       this.setData({
         mode: event.detail.value
       })
-      this.data.questionInfo.type = this.data.mode
+      this.properties.questionInfo.type = this.properties.mode
     },
     onCancel() {
       this.triggerEvent('backToPage', {}, {})
@@ -65,7 +67,7 @@ Component({
     onSave() {
       if (this.formValidate()) {
         this.triggerEvent('backToPage', {
-          questionInfo: this.data.questionInfo
+          questionInfo: this.properties.questionInfo
         }, {})
       } 
     }
