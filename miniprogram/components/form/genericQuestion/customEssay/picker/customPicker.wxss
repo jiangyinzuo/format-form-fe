@@ -1,7 +1,5 @@
-/* components/genericQuestion/customEssay/customEssay.wxss */
-@import '../genericQuestion.wxss';
-
-.container input {
+/* components/form/genericQuestion/customEssay/picker/datePicker.wxss */
+.picker {
   padding: 5rpx 0 20rpx 0;
   border-bottom: 0.5rpx solid rgba(122, 116, 116, 0.8);
   width: 99%;

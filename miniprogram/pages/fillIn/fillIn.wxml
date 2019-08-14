@@ -1,5 +1,4 @@
 <!--miniprogram/pages/fillIn/fillIn.wxml-->
 <view class="container">
   <form-cmp formTemp="{{formTemp}}"></form-cmp>
-  <view class="submit-btn">提交</view>
 </view>

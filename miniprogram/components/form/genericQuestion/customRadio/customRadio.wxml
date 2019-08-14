@@ -4,9 +4,10 @@
     title="{{info.desc}}"
     order="{{order}}"
   />
-  <radio-group>
+  <!-- TODO: cancel option -->
+  <radio-group bindchange="onChooseOption">
     <block wx:for="{{info.detail}}" wx:key="{{index}}">
-      <radio value="{{item}}">{{item}}</radio>
+      <radio value="{{index}}" color="#075b92">{{item}}</radio>
     </block>
   </radio-group>
 </view>

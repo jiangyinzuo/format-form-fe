@@ -1,4 +1,7 @@
 /* components/genericQuestion/customRadio/customRadio.wxss */
+@import '../genericQuestion.wxss';
+
 .container radio {
   display: block;
+  margin: 10rpx 0;
 }

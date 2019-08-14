@@ -4,6 +4,7 @@
 page {
   background: #e0dede;
   padding-top: 10rpx;
+  padding-bottom: 150rpx;
 }
 
 .container {
