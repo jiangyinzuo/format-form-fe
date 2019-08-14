@@ -3,22 +3,26 @@
   <view class="title">{{formTemp.title}}</view>
   <block wx:for="{{formTemp.questions}}" wx:key="{{index}}">
     <custom-radio-cmp
+      id="question-{{index}}"
       info="{{item}}"
       order="{{index+1}}"
       wx:if="{{item.type === 'radio'}}"
     >
     </custom-radio-cmp>
     <custom-select-cmp
+      id="question-{{index}}"
       info="{{item}}"
       order="{{index+1}}"
       wx:elif="{{item.type === 'select'}}"
     >
     </custom-select-cmp>
     <custom-essay-cmp
+      id="question-{{index}}"
       info="{{item}}"
       order="{{index+1}}"
       wx:else
     >
     </custom-essay-cmp>
   </block>
+  <view class="submit-btn" bindtap="submitForm">提交</view>
 </view>

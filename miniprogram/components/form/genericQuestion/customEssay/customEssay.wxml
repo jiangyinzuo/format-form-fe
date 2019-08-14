@@ -4,5 +4,15 @@
     title="{{info.desc}}"
     order="{{order}}"
   />
-  <input placeholder="请输入" />
+  <input
+    placeholder="请输入"
+    bindinput="onInput"
+    wx:if="{{_inputType !== 'date'}}"
+    type="{{_inputType}}"
+  />
+  <custom-picker-cmp
+    wx:else
+    mode="{{_inputType}}"
+    bindchangeValue="onInput"
+  />
 </view>

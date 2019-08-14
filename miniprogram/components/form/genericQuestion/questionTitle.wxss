@@ -1,1 +1,4 @@
 /* components/genericQuestion/questionTitle.wxss */
+.title {
+  margin: 25rpx 0;
+}

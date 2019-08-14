@@ -6,7 +6,12 @@ Component({
       console.log('info:', this.properties.info)
     }
   },
+  /**
+   * @namespace
+   * @property {array} input - user's input, type of it's element is 'string'
+   */
   properties: {
+    input: Array
   },
 
   /**
@@ -20,6 +25,9 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    onChangeOptions(event) {
+      this.properties.input = event.detail.value
+      console.log(this.properties.input)
+    }
   }
 })

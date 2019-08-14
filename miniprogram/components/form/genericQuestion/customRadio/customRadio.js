@@ -4,7 +4,7 @@ import { genericQuestionBehavior } from '../behavior.js'
 Component({
   behaviors: [genericQuestionBehavior, ],
   properties: {
-
+    input: String
   },
 
   /**
@@ -18,6 +18,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    onChooseOption(event) {
+      this.properties.input = event.detail.value
+    }
   }
 })

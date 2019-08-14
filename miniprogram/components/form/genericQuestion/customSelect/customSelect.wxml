@@ -4,9 +4,9 @@
     title="{{info.desc}}"
     order="{{order}}"
   />
-  <checkbox-group>
+  <checkbox-group bindchange="onChangeOptions">
     <block wx:for="{{info.detail}}" wx:key="{{index}}">
-      <checkbox value="item">{{item}}</checkbox>
+      <checkbox value="{{index}}" color="#075b92">{{item}}</checkbox>
     </block>
   </checkbox-group>
 </view>

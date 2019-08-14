@@ -18,6 +18,12 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    submitForm() {
+      let formData = []
+      for (let i in this.properties.formTemp.questions) {
+        formData.push(this.selectComponent(`#question-${i}`).properties.input)
+      }
+      console.log(formData)
+    }
   }
 })

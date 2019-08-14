@@ -1,7 +1,23 @@
 /* components/form/form.wxss */
+.container {
+  width: 650rpx;
+  padding-bottom: 160rpx;
+}
+
 .container .title {
   text-align: center;
   padding: 30rpx 0 20rpx 0;
   color: #424242;
   font-size: 40rpx;
+}
+
+.container .submit-btn {
+  margin: 40rpx auto 0 auto;
+  border-radius: 10rpx;
+  width: 645rpx;
+  height: 80rpx;
+  background: #075b92;
+  text-align: center;
+  line-height: 80rpx;
+  color: #f0f0f0;
 }

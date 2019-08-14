@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "question-title-cmp": "../questionTitle"
+    "question-title-cmp": "../questionTitle",
+    "custom-picker-cmp": "./picker/customPicker"
   }
 }
