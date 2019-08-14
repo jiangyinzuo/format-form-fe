@@ -32,6 +32,7 @@ Page({
    * @property {array} questionArr - send to server
    * 
    * @property {object} dashBoardProps - pass it to component 'dash-board-cmp'
+   * @property {number} openWith - index of questions to edit, -1 means add new questions.
    */
   data: {
     _questionDetail: [],
@@ -46,8 +47,9 @@ Page({
       desc: '',
       type: 'radio',
       necessary: 'yes',
-      detail: null
-    }
+      detail: ['', '']
+    },
+    openWith: -1
   },
 
   /**
@@ -126,19 +128,27 @@ Page({
   },
   addQuestion() {
     this.setData({
-      showDashBoard: true
+      openWith: -1,
+      showDashBoard: true,
+      dashBoardProps: {
+        desc: '',
+        type: 'radio',
+        necessary: 'yes',
+        detail: ['', '']
+      }
     })
   },
-  editQuestion() {
-    
+  editQuestion(event) {
+    const _openWith = event.target.dataset.idx
     this.setData({
-      showDashBoard: true
+      openWith: _openWith,
+      showDashBoard: true,
+      dashBoardProps: this.data.questionArr[_openWith]
     })
   },
   saveQuestion(event) {
     if (event.detail.questionInfo) {
-      let questionInfo = deepClone(event.detail.questionInfo)
-      this.data.questionArr.push(questionInfo)
+      const questionInfo = deepClone(event.detail.questionInfo)
       let _detailInfo = {
         type: _DETAIL_TYPE[questionInfo.type],
         desc: questionInfo.desc,
@@ -151,18 +161,27 @@ Page({
       } else {
         _detailInfo.content = questionInfo.detail
       }
-      this.data._questionDetail.push({
-        showDetail: false,
-        data: _detailInfo
-      })
-
+      if (event.detail.openWith === -1) {
+        this.data.questionArr.push(questionInfo)
+        this.data._questionDetail.push({
+          showDetail: false,
+          data: _detailInfo
+        })
+      } else {
+        this.data.questionArr[event.detail.openWith] = questionInfo
+        this.data._questionDetail[event.detail.openWith] = {
+          showDetail: false,
+          data: _detailInfo
+        }
+      }
       this.setData({
         showDashBoard: false,
-        _questionDetail: this.data._questionDetail
+        _questionDetail: this.data._questionDetail,
+        questionArr: this.data.questionArr
       })
-      console.log(this.data.questionArr)
-      console.log(this.data._questionDetail)
-    }else {
+      console.log('questionArr:', this.data.questionArr)
+      console.log('_questionDetail:', this.data._questionDetail)
+    } else {
       this.setData({
         showDashBoard: false
       })

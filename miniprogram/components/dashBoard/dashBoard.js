@@ -10,8 +10,12 @@ Component({
         desc: '',
         type: 'radio',
         necessary: 'yes',
-        detail: null
+        detail: ['', '']
       }
+    },
+    openWith: {
+      type: Number,
+      value: -1
     }
   },
 
@@ -56,10 +60,10 @@ Component({
       this.properties.questionInfo.necessary = event.detail.value
     },
     onTypeChange(event) {
+      this.properties.questionInfo.type = event.detail.value
       this.setData({
-        mode: event.detail.value
+        questionInfo: this.properties.questionInfo
       })
-      this.properties.questionInfo.type = this.properties.mode
     },
     onCancel() {
       this.triggerEvent('backToPage', {}, {})
@@ -67,7 +71,8 @@ Component({
     onSave() {
       if (this.formValidate()) {
         this.triggerEvent('backToPage', {
-          questionInfo: this.properties.questionInfo
+          questionInfo: this.properties.questionInfo,
+          openWith: this.properties.openWith
         }, {})
       } 
     }

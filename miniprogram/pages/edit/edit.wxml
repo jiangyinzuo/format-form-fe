@@ -27,7 +27,11 @@
         </block>
         <view wx:if="{{item.data.type === '填空'}}" class="properties">{{item.data.content}}</view>
         <view class="properties">{{item.data.necessary}}</view>
-        <view class="edit-btn" bindtap="editQuestion">
+        <view
+          class="edit-btn"
+          bindtap="editQuestion"
+          data-idx="{{index}}"
+        >
           编辑
           <image src="../../static/icon/edit.svg"></image>
         </view>
@@ -44,6 +48,7 @@
   <dash-board-cmp
     bind:backToPage="saveQuestion"
     questionInfo="{{dashBoardProps}}"
+    openWith="{{openWith}}"
   ></dash-board-cmp>
 </view>
 

@@ -3,14 +3,44 @@
   <label>填空类型</label>
   <radio-group bindchange="onTypeChange">
     <view class="radio-row">
-      <radio color="#075b92" value="text" checked="true">文本</radio>
-      <radio color="#075b92" value="integer">数字</radio>
-      <radio color="#075b92" value="identity">身份证</radio>
+      <radio
+        color="#075b92"
+        value="text"
+        checked="{{validator === 'text'}}"
+      >文本
+      </radio>
+      <radio
+        color="#075b92"
+        value="integer"
+        checked="{{validator === 'integer'}}"
+      >数字
+      </radio>
+      <radio
+        color="#075b92"
+        value="identity"
+        checked="{{validator === 'identity'}}"
+      >身份证
+      </radio>
     </view>
     <view class="radio-row">
-      <radio color="#075b92" value="date">日期</radio>
-      <radio color="#075b92" value="email">邮箱</radio>
-      <radio color="#075b92" value="phone">手机号</radio>
+      <radio
+        color="#075b92"
+        value="date"
+        checked="{{validator === 'date'}}"
+      >日期
+      </radio>
+      <radio
+        color="#075b92"
+        value="email"
+        checked="{{validator === 'email'}}"
+      >邮箱
+      </radio>
+      <radio 
+        color="#075b92"
+        value="phone"
+        checked="{{validator === 'phone'}}"
+      >手机号
+      </radio>
     </view>
   </radio-group>
 </view>
