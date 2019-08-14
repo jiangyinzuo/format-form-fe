@@ -47,7 +47,7 @@ Page({
       desc: '',
       type: 'radio',
       necessary: 'yes',
-      detail: null
+      detail: ['', '']
     },
     openWith: -1
   },
@@ -128,14 +128,22 @@ Page({
   },
   addQuestion() {
     this.setData({
-      showDashBoard: true
+      openWith: -1,
+      showDashBoard: true,
+      dashBoardProps: {
+        desc: '',
+        type: 'radio',
+        necessary: 'yes',
+        detail: ['', '']
+      }
     })
   },
   editQuestion(event) {
-    this.openWith = event.target.dataset.idx
+    const _openWith = event.target.dataset.idx
     this.setData({
+      openWith: _openWith,
       showDashBoard: true,
-      dashBoardProps: this.data.questionArr[event.target.dataset.idx]
+      dashBoardProps: this.data.questionArr[_openWith]
     })
   },
   saveQuestion(event) {
@@ -168,11 +176,12 @@ Page({
       }
       this.setData({
         showDashBoard: false,
-        _questionDetail: this.data._questionDetail
+        _questionDetail: this.data._questionDetail,
+        questionArr: this.data.questionArr
       })
-      console.log(this.data.questionArr)
-      console.log(this.data._questionDetail)
-    }else {
+      console.log('questionArr:', this.data.questionArr)
+      console.log('_questionDetail:', this.data._questionDetail)
+    } else {
       this.setData({
         showDashBoard: false
       })

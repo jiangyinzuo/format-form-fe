@@ -39,7 +39,11 @@
     wx:if="{{questionInfo.type === 'essay'}}"
     validator="{{questionInfo.detail}}"
   ></essay-cmp>
-  <select-cmp id="questionInfo" wx:else></select-cmp>
+  <select-cmp
+    id="questionInfo"
+    wx:else
+    radioList="{{questionInfo.detail}}"
+  ></select-cmp>
 </view>
 <view class="tabbar">
   <button class="cancel-btn" bindtap="onCancel">取消</button>

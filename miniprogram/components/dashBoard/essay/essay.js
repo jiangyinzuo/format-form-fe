@@ -1,5 +1,15 @@
 // components/dashBoard/essay/essay.js
 Component({
+  lifetimes: {
+    attached() {
+      // String(['', '']) returns ',' 
+      if (this.properties.validator === ',') {
+        this.setData({
+          validator: 'text'
+        })
+      }
+    }
+  },
   properties: {
     validator: {
       type: String,

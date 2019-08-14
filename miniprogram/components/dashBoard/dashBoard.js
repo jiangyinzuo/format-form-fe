@@ -10,7 +10,7 @@ Component({
         desc: '',
         type: 'radio',
         necessary: 'yes',
-        detail: null
+        detail: ['', '']
       }
     },
     openWith: {
