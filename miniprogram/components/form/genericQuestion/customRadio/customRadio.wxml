@@ -1,0 +1,12 @@
+<!--components/genericQuestion/customRadio/customRadio.wxml-->
+<view class="container">
+  <question-title-cmp
+    title="{{info.desc}}"
+    order="{{order}}"
+  />
+  <radio-group>
+    <block wx:for="{{info.detail}}" wx:key="{{index}}">
+      <radio value="{{item}}">{{item}}</radio>
+    </block>
+  </radio-group>
+</view>

@@ -1,0 +1,4 @@
+/* components/genericQuestion/customSelect/customSelect.wxss */
+.container checkbox {
+  display: block;
+}

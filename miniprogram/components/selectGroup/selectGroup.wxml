@@ -1,4 +1,0 @@
-<!--components/selectGroup/selectGroup.wxml-->
-<block wx:for="{{items}}" wx:key="{{index}}">
-  <selectable desc="{{item.desc}}" checked="{{item.checked}}" bindtap="chooseItem" data-idx="{{index}}"></selectable>
-</block>

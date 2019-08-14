@@ -17,11 +17,12 @@ Page({
    */
   async onLoad(options) {
     let res = await formTemp.getOneFormTempById(options.id)
+
     this.setData({
       formTempId: options.id,
       formTemp: res.form_temp
     })
-    console.log(this.data.formTemp)
+    console.log('formTemp', this.data.formTemp)
   },
 
   /**

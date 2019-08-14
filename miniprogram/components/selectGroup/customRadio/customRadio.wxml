@@ -1,2 +1,0 @@
-<!--components/selectGroup/customRadio/customRadio.wxml-->
-<radio checked="{{checked}}">{{desc}}</radio>

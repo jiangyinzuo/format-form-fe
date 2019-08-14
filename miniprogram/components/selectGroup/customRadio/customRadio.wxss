@@ -1,5 +1,0 @@
-/* components/selectGroup/customRadio/customRadio.wxss */
-
-radio {
-  display: block;
-}
