@@ -1,4 +1,10 @@
 /* components/genericQuestion/questionTitle.wxss */
 .title {
-  margin: 25rpx 0;
+  margin: 25rpx 0 25rpx 0;
+}
+
+.title text {
+  color: #ff0000;
+  margin-left: -18rpx;
+  padding-right: 3rpx;
 }

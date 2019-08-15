@@ -20,6 +20,19 @@ Component({
   methods: {
     onChooseOption(event) {
       this.properties.input = event.detail.value
+    },
+    _validate() {
+      if (this.properties.info.necessary === 'yes' &&
+        this.properties.input.length === 0) {
+        this.setData({
+          _validate: false,
+        })
+        return false
+      }
+      this.setData({
+        _validate: true
+      })
+      return true
     }
   }
 })

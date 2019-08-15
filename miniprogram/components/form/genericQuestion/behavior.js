@@ -10,7 +10,8 @@ let genericQuestionBehavior = Behavior({
     order: Number
   },
   data: {
-    
+    _validate: true,
+    _errMsg: '此题不能为空, 请输入',
   },
 
   methods: {

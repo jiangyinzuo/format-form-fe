@@ -22,7 +22,7 @@
 	},
 	"appid": "wx03b0546fd1d06878",
 	"projectname": "format-form",
-	"libVersion": "2.7.7",
+	"libVersion": "2.8.0",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {

@@ -3,7 +3,18 @@
 
 .container input {
   padding: 5rpx 0 20rpx 0;
-  border-bottom: 0.5rpx solid rgba(122, 116, 116, 0.8);
   width: 99%;
   color: rgb(92, 88, 88);
+}
+
+.container .regular {
+  border-bottom: 0.5rpx solid rgba(122, 116, 116, 0.8);
+}
+
+.container .inputting {
+  border-bottom: 0.5rpx solid #075b92;
+}
+
+.container .error {
+  border-bottom: 0.5rpx solid #ff0000;
 }

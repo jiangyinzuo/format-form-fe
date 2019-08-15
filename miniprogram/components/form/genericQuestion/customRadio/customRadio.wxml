@@ -3,6 +3,7 @@
   <question-title-cmp
     title="{{info.desc}}"
     order="{{order}}"
+    necessary="{{info.necessary}}"
   />
   <!-- TODO: cancel option -->
   <radio-group bindchange="onChooseOption">
@@ -10,4 +11,5 @@
       <radio value="{{index}}" color="#075b92">{{item}}</radio>
     </block>
   </radio-group>
+  <text wx:if="{{!_validate}}" class="err-msg">{{_errMsg}}</text>
 </view>

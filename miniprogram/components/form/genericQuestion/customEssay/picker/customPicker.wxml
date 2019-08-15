@@ -1,5 +1,10 @@
 <!--components/form/genericQuestion/customEssay/picker/datePicker.wxml-->
-<picker mode="{{mode}}" bindchange="onPick" class="picker">
+<picker
+  mode="{{mode}}"
+  bindchange="onPick"
+  class="{{dynamicStyle}}"
+  bindcancel="onCancel"
+>
   <view wx:if="{{!input}}">请选择日期</view>
   <view wx:else>{{input}}</view>
 </picker>

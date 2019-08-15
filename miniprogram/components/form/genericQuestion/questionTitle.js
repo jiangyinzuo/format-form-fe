@@ -3,11 +3,13 @@ Component({
   lifetimes: {
     attached() {
       console.log('order', this.properties.order)
+      console.log('necessary', this.properties.necessary)
     }
   },
   properties: {
     title: String,
-    order: Number
+    order: Number,
+    necessary: String
   },
 
   /**
