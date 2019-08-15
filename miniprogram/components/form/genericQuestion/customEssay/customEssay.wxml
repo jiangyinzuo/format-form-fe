@@ -3,16 +3,23 @@
   <question-title-cmp
     title="{{info.desc}}"
     order="{{order}}"
+    necessary="{{info.necessary}}"
   />
   <input
     placeholder="请输入"
     bindinput="onInput"
+    bindblur="_validate"
+    bindfocus="onFocus"
     wx:if="{{_inputType !== 'date'}}"
     type="{{_inputType}}"
+    class="{{_inputStyle}}"
   />
   <custom-picker-cmp
     wx:else
     mode="{{_inputType}}"
     bindchangeValue="onInput"
+    bindnoData="_pickerNoData"
+    dynamicStyle="{{_inputStyle}}"
   />
+  <text wx:if="{{!_validate}}" class="err-msg">{{_errMsg}}</text>
 </view>

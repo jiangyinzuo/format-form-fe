@@ -5,7 +5,8 @@ Component({
    */
   properties: {
     mode: String,
-    input: String
+    input: String,
+    dynamicStyle: String
   },
 
   /**
@@ -26,6 +27,11 @@ Component({
       this.triggerEvent(
         'changeValue', {value: this.properties.input}, {}
       )
+    },
+    onCancel(event) {
+      if (this.properties.input === '') {
+        this.triggerEvent('noData', {}, {})
+      }
     }
   }
 })

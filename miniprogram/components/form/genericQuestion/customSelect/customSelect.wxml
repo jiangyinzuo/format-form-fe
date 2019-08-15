@@ -3,10 +3,12 @@
   <question-title-cmp
     title="{{info.desc}}"
     order="{{order}}"
+    necessary="{{info.necessary}}"
   />
   <checkbox-group bindchange="onChangeOptions">
     <block wx:for="{{info.detail}}" wx:key="{{index}}">
       <checkbox value="{{index}}" color="#075b92">{{item}}</checkbox>
     </block>
   </checkbox-group>
+  <text wx:if="{{!_validate}}" class="err-msg">{{_errMsg}}</text>
 </view>
