@@ -18,6 +18,10 @@ class UserModel {
     HTTP.openId = res.open_id
     return HTTP.openId
   }
+  async getUserInfo() {
+    const _promise = await makePromise(wx.getUserInfo)
+    
+  }
 }
 
 export {UserModel}

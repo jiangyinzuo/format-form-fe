@@ -1,18 +1,22 @@
 // pages/launched/launched.js
+import { FormTempModel } from '../../models/formTemp.js'
+
+let formTempModel = new FormTempModel()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    formTempArr: [],
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  async onLoad(options) {
+    let res = await formTempModel.getFormTemp()
+    this.setData({
+      formTempArr: res.question_temps
+    })
+    console.log(this.data.formTempArr)
   },
 
   /**

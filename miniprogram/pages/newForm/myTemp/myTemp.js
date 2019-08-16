@@ -1,27 +1,14 @@
 // miniprogram/pages/newForm/myTemp/myTemp.js
-import { FormTempModel } from '../../../models/formTemp.js'
 
-let formTempModel = new FormTempModel()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    tempArr: [],
     showDashBoard: false,
     curQuestionIdx: -1
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  async onLoad(options) {
-    let res = await formTempModel.getFormTemp()
-    this.setData({
-      tempArr: res.question_temps
-    })
-    console.log(this.data.tempArr)
   },
 
   /**

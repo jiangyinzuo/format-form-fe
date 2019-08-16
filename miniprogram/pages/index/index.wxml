@@ -1,16 +1,8 @@
 <!--index.wxml-->
-<view class="global-layout-container">
-  <view class="header">
-    <button
-      class="img-btn"
-      open-type="getUserInfo"
-      bindgetuserinfo="getUserInfo"
-    >
-      <image src="{{avatarUrl}}" class="avatar" mode="aspectFill"></image>
-    </button>
-    <view class="intro">{{intro}}</view>
-  </view>
-  <view class="global-layout-row">
+<header-cmp />
+
+
+  <!-- <view class="global-layout-row">
     <button
       class="global-layout-cell"
       data-url="../launched/launched"
@@ -37,5 +29,5 @@
     >
       新建表单
     </button>
-  </view>
-</view>
+  </view> -->
+

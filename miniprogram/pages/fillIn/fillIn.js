@@ -10,7 +10,7 @@ Page({
   data: {
     formTempId: '',
     formTemp: {},
-    _filled: true
+    _filled: false
   },
 
   /**

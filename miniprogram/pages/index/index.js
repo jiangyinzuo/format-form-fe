@@ -6,8 +6,7 @@ Page({
     this.getUserInfo()
   },
   data: {
-    intro: '点击头像授权登录',
-    avatarUrl: '../../static/icon/avatar.svg'
+
   },
   getUserInfo(event) {
     if (app.globalData.userInfo === null) {

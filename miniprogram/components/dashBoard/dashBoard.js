@@ -60,10 +60,13 @@ Component({
       this.properties.questionInfo.necessary = event.detail.value
     },
     onTypeChange(event) {
+      const _lastType = this.properties.questionInfo.type
       this.properties.questionInfo.type = event.detail.value
-      this.setData({
-        questionInfo: this.properties.questionInfo
-      })
+      if (_lastType === 'essay' || this.properties.questionInfo.type === 'essay') {
+        this.setData({
+          questionInfo: this.properties.questionInfo
+        })
+      }
     },
     onCancel() {
       this.triggerEvent('backToPage', {}, {})
