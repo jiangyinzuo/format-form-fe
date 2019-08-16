@@ -4,7 +4,7 @@
   width: 700rpx;
   height: 100%;
   margin: 0 auto;
-  padding-bottom: 150rpx;
+  padding-bottom: 236rpx;
 }
 
 .item input {

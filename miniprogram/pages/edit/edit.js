@@ -49,7 +49,9 @@ Page({
       necessary: 'yes',
       detail: ['', '']
     },
-    openWith: -1
+    openWith: -1,
+    _formTemp: {},
+    _showPreview: false
   },
 
   /**
@@ -197,6 +199,22 @@ Page({
       })
     }
     return flag
+  },
+  preview() {
+    this.setData({
+      _formTemp: {
+        questions: this.data.questionArr,
+        title: this.data.title,
+        type: 'custom',
+        _id: 'PREVIEW',
+      },
+      _showPreview: true
+    })
+  },
+  hidePreview() {
+    this.setData({
+      _showPreview: false
+    })
   },
   async onSaveTemp() {
     if (this.formValidate()) {

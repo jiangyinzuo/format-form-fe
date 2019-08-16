@@ -28,6 +28,9 @@ Component({
     onChangeOptions(event) {
       this.properties.input = event.detail.value
       console.log(this.properties.input)
+      this.setData({
+        _validate: true
+      })
     },
     _validate() {
       if (this.properties.info.necessary === 'yes' &&

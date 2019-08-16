@@ -9,7 +9,8 @@ Page({
    */
   data: {
     formTempId: '',
-    formTemp: {}
+    formTemp: {},
+    _filled: true
   },
 
   /**
@@ -71,5 +72,21 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+  },
+
+  _onFilled() {
+    this.setData({
+      _filled: true
+    })
+  },
+  fillInOneMore(){
+    this.setData({
+      _filled: false
+    })
+  },
+  redirectToIndex() {
+    wx.redirectTo({
+      url: '../index/index'
+    })
   }
 })
