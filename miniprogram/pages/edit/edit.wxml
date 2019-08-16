@@ -53,7 +53,7 @@
 </view>
 
 <view class="tabbar" wx:if="{{!showDashBoard}}">
-  <button class="tabbar-btn-1">预览</button>
+  <button bindtap="preview" class="tabbar-btn-1">预览</button>
   <button bindtap="onSaveTemp" class="save-btn">保存</button>
 </view>
 
@@ -61,4 +61,11 @@
   <view>保存成功</view>
   <button bindtap="onHiddenSharePage">返回</button>
   <button open-type="share">分享</button>
+</view>
+
+<view class="preview" wx:if="{{_showPreview}}">
+  <view class="back-btn" bindtap="hidePreview">
+    返回编辑
+  </view>
+  <form-cmp formTemp="{{_formTemp}}" enabled="{{false}}"></form-cmp>
 </view>

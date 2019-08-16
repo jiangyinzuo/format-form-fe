@@ -7,7 +7,8 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    formTemp: Object
+    formTemp: Object,
+    enabled: Boolean
   },
 
   /**
@@ -49,17 +50,21 @@ Component({
       }
       console.log(formData)
 
-      wx.showNavigationBarLoading()
-      let res = await formDataModel.postFormData({
-        object_id: this.properties.formTemp._id,
-        form_data: formData
-      }).finally(
-        wx.hideNavigationBarLoading()
-      )
-      console.log(res)
-      if (res.err_code === 0) {
+      if (this.properties.enabled) {
+        wx.showNavigationBarLoading()
+        let res = await formDataModel.postFormData({
+          object_id: this.properties.formTemp._id,
+          form_data: formData
+        }).finally(
+          wx.hideNavigationBarLoading()
+        )
+        console.log(res)
+        if (res.err_code === 0) {
+          this.triggerEvent('filled', {}, {})
+        }
+      } else {
         wx.showToast({
-          title: '提交成功'
+          title: '数据验证成功'
         })
       }
       

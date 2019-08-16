@@ -1,4 +1,25 @@
 <!--miniprogram/pages/fillIn/fillIn.wxml-->
 <view class="container">
-  <form-cmp formTemp="{{formTemp}}"></form-cmp>
+  <form-cmp
+    formTemp="{{formTemp}}"
+    wx:if="{{!_filled}}"
+    bindfilled="_onFilled"
+    enabled="true"
+  ></form-cmp>
+  <view class="success-page" wx:else>
+    <image src="../../static/icon/success.svg" class="success-icon" />
+    <view class="tip">提交成功</view>
+    <view class="btn">
+      <!-- TODO: check detail -->
+      <view class="detail">填写详情</view>
+      <view class="one-more" bindtap="fillInOneMore">再填一份</view>
+    </view>
+    <view
+      class="entrance"
+      bindtap="redirectToIndex"
+    >
+      <image class="entrance-icon" src="../../static/icon/mini_program.svg" />
+      进入小程序
+    </view>
+  </view>
 </view>

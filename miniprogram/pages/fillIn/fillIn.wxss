@@ -1,1 +1,47 @@
 /* miniprogram/pages/fillIn/fillIn.wxss */
+.container .success-page .success-icon {
+  width: 150rpx;
+  height: 150rpx;
+  display: block;
+  margin: 130rpx auto 35rpx auto;
+}
+
+.container .success-page .tip {
+  font-size: 40rpx;
+  position: relative;
+  text-align: center;
+  margin-bottom: 20rpx;
+  color: #504e4e;
+}
+
+.container .success-page .btn {
+  color: #13227a
+}
+
+.container .success-page .btn .detail {
+  display: inline;
+  padding-right: 37rpx;
+  border-right: 0.5rpx solid rgba(122, 116, 116, 0.4);
+}
+
+.container .success-page .btn .one-more {
+  display: inline;
+  padding-left: 37rpx;
+  border-left: 0.5rpx solid rgba(122, 116, 116, 0.4);
+}
+
+.container .success-page .entrance {
+  vertical-align: middle;
+  line-height: 60rpx;
+  font-size: 35rpx;
+  position: relative;
+  bottom: -150rpx;
+  left: 30rpx;
+  color: #13227a;
+}
+
+.container .success-page .entrance .entrance-icon {
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align: middle;
+}

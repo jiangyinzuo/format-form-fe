@@ -2,6 +2,7 @@
 .container {
   width: 650rpx;
   padding-bottom: 160rpx;
+  margin: 0 auto;
 }
 
 .container .title {
@@ -20,4 +21,16 @@
   text-align: center;
   line-height: 80rpx;
   color: #f0f0f0;
+}
+
+.container .submit-btn-disabled {
+  margin: 40rpx auto 0 auto;
+  border-radius: 10rpx;
+  width: 645rpx;
+  height: 80rpx;
+  background: #075b92;
+  text-align: center;
+  line-height: 80rpx;
+  color: #f0f0f0;
+  opacity: 0.5
 }
