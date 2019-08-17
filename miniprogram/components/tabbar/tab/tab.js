@@ -7,7 +7,8 @@ Component({
     imgSrcSelected: String,
     imgSrcUnselected: String,
     text: String,
-    selected: Boolean
+    selected: Boolean,
+    textStyle: String
   },
 
   /**

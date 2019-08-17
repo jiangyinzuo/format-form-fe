@@ -3,6 +3,10 @@ page {
   background: #e0dede;
 }
 
+.container {
+  padding-bottom: 200rpx;
+}
+
 .header {
   flex: 1;
   display: flex;

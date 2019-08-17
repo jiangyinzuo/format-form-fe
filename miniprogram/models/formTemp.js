@@ -1,6 +1,7 @@
 import { HTTP } from '../utils/http.js'
 
 class FormTempModel {
+  static formTempData = {}
   constructor() {
     this.http = new HTTP()
   }
@@ -62,6 +63,12 @@ class FormTempModel {
         object_id: _id
       }
     })
+  }
+  saveFormTempDataFromIndex(formData) {
+    FormTempModel.formTempData = formData
+  }
+  getFormTempDataFromDetail() {
+    return FormTempModel.formTempData
   }
 }
 

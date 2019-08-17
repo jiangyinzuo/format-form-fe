@@ -24,7 +24,7 @@ class UserModel {
       const _promise = await makePromise(wx.getUserInfo)
       UserModel.userInfo = _promise.userInfo
     }
-    console.log(UserModel.userInfo)
+    console.log('userInfo', UserModel.userInfo)
     return UserModel.userInfo
   }
 }

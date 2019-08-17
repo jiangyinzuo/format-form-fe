@@ -1,0 +1,24 @@
+<!--components/formBoard/formBoard.wxml-->
+<view class="form-board">
+  <view class="title">{{form.title}}</view>
+  <view class="text">
+    <view class="tip">已有{{form.form_data.length}}人填写</view>
+    <navigator
+      url="/pages/detail/detail"
+      class="detail-btn"
+      bindtap="showDetail"
+      hover-class="none"
+    >查看详情
+    </navigator>
+  </view>
+
+  <button
+    open-type="share"
+    class="share"
+    hover-class="none"
+    data-_id="{{form._id}}"
+    data-title="{{form.title}}"
+  >
+    分享
+  </button>
+</view>

@@ -2,10 +2,12 @@
 <view class="container">
   <form-cmp
     formTemp="{{formTemp}}"
+    openId="{{openId}}"
     wx:if="{{!_filled}}"
     bindfilled="_onFilled"
     enabled="true"
-  ></form-cmp>
+  >
+  </form-cmp>
   <view class="success-page" wx:else>
     <image src="../../static/icon/success.svg" class="success-icon" />
     <view class="tip">提交成功</view>

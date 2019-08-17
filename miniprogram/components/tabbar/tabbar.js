@@ -11,7 +11,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    chooseLaunched: true
   },
 
   /**
@@ -20,6 +20,9 @@ Component({
   methods: {
     onSelectTab(event) {
       this.triggerEvent('selectTab', {tab: event.target.dataset.tab}, {})
+      this.setData({
+        chooseLaunched: event.target.dataset.tab === 'launched'
+      })
     }
   }
 })

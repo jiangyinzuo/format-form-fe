@@ -1,6 +1,6 @@
 <!--components/tabbar/tabbar.wxml-->
 <view class="container">
-  <tab-cmp text="创建表单" bindtap="onSelectTab" data-tab="create" />
-  <tab-cmp text="我发起的" bindtap="onSelectTab" data-tab="launched" />
-  <tab-cmp text="我参与的" bindtap="onSelectTab" data-tab="involved" />
+  <tab-cmp class="tab" text="我发起的" bindtap="onSelectTab" data-tab="launched" textStyle="{{chooseLaunched ? 'text-active' : 'text'}}" />
+  <add-cmp />
+  <tab-cmp class="tab" text="我参与的" bindtap="onSelectTab"  data-tab="involved" textStyle="{{!chooseLaunched ? 'text-active' : 'text'}}" />
 </view>

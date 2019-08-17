@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "tab-cmp": "./tab/tab"
+    "tab-cmp": "./tab/tab",
+    "add-cmp": "./add/add"
   }
 }

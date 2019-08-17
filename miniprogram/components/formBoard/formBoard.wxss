@@ -1,0 +1,40 @@
+/* components/formBoard/formBoard.wxss */
+.form-board {
+  background: #eeeeee;
+  height: 130rpx;
+  padding: 20rpx;
+  margin: 20rpx 0;
+  position: relative;
+}
+
+.form-board .title {
+  font-size: 40rpx;
+  color: #555555;
+}
+
+.form-board .text {
+  position: absolute;
+  bottom: 20rpx;
+  left: 20rpx;
+}
+
+.form-board .text .tip {
+  display: inline;
+  color: #656566;
+  padding-right: 25rpx;
+}
+
+.form-board .text .detail-btn {
+  display: inline;
+  color: #5555c2;
+}
+
+.form-board .share {
+  position: absolute;
+  bottom: 20rpx;
+  right: 20rpx;
+}
+
+.form-board .share::after {
+  border: none;
+}

@@ -31,6 +31,7 @@ Page({
    * 
    * @property {array} questionArr - send to server
    * 
+   * @property {string} title - title of the form template
    * @property {object} dashBoardProps - pass it to component 'dash-board-cmp'
    * @property {number} openWith - index of questions to edit, -1 means add new questions.
    */
@@ -106,7 +107,7 @@ Page({
    */
   onShareAppMessage(res) {
     return {
-      title: 'hsgwee' + this.data.formTempId,
+      title: this.data.title,
       path: `/pages/fillIn/fillIn?id=${this.data.formTempId}`
     }
   },
@@ -219,7 +220,7 @@ Page({
   async onSaveTemp() {
     if (this.formValidate()) {
       let params = {}  //send to backend
-      //params.open_id = 
+
       let res = await formTempModel.sendFormTemp({
         title: this.data.title,
         questions: this.data.questionArr

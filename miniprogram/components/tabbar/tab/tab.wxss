@@ -3,3 +3,11 @@
   width: 30rpx;
   height: 30rpx;
 }
+
+.text-active {
+  color: #333333;
+}
+
+.text {
+  color: #8a8a8a;
+}
