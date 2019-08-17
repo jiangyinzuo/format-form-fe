@@ -1,6 +1,6 @@
 // miniprogram/pages/fillIn/fillIn.js
 import { FormTempModel } from '../../models/formTemp.js'
-let formTemp = new FormTempModel()
+import { UserModel } from '../../models/user.js'
 
 Page({
 
@@ -10,6 +10,7 @@ Page({
   data: {
     formTempId: '',
     formTemp: {},
+    openId: '',
     _filled: false
   },
 
@@ -17,11 +18,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   async onLoad(options) {
-    let res = await formTemp.getOneFormTempById(options.id)
-
+    const formTemp = new FormTempModel()
+    const userModel = new UserModel()
+    const res = await formTemp.getOneFormTempById(options.id)
+    const openId = await userModel.login()
     this.setData({
       formTempId: options.id,
-      formTemp: res.form_temp
+      formTemp: res.form_temp,
+      openId: openId
     })
     console.log('formTemp', this.data.formTemp)
   },

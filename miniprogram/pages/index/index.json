@@ -2,7 +2,6 @@
   "usingComponents": {
     "header-cmp": "../../components/header/header",
     "tabbar-cmp": "../../components/tabbar/tabbar",
-    "create-cmp": "../../components/index/create/create",
     "involved-cmp": "../../components/index/involved/involved",
     "launched-cmp": "../../components/index/launched/launched"
   }

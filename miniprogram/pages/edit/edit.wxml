@@ -65,7 +65,8 @@
 
 <view class="preview" wx:if="{{_showPreview}}">
   <view class="back-btn" bindtap="hidePreview">
-    返回编辑
+    <view>返回</view>
+    <view>编辑</view>
   </view>
   <form-cmp formTemp="{{_formTemp}}" enabled="{{false}}"></form-cmp>
 </view>

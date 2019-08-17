@@ -49,6 +49,7 @@ Component({
           intro: userInfo.nickName
         }
       })
+      this.triggerEvent('userInfoGot', {}, {})
     }
   }
 })

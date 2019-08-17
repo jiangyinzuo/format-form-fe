@@ -1,5 +1,7 @@
-// miniprogram/pages/newForm/myTemp/myTemp.js
+// miniprogram/pages/detail/detail.js
+import {FormTempModel} from '../../models/formTemp.js'
 
+const formTempModel = new FormTempModel()
 
 Page({
 
@@ -7,8 +9,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    showDashBoard: false,
-    curQuestionIdx: -1
+    formDetail: {}
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.setData({
+      formDetail: formTempModel.getFormTempDataFromDetail()
+    })
+    console.log(this.data.formDetail)
   },
 
   /**
@@ -58,27 +69,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  closeDashBoard() {
-    this.setData({
-      showDashBoard: false
-    })
-  },
-  openDashBoard(event) {
-    this.setData({
-      showDashBoard: true,
-      curQuestionIdx: event.currentTarget.dataset.idx
-    })
-  },
-  async delTemp() {
-    let res = await formTempModel.delFormTemp(this.data.tempArr[this.data.curQuestionIdx]._id)
-    this.data.tempArr.splice(this.data.curQuestionIdx, 1)
-    this.setData({
-      showDashBoard: false,
-      tempArr: this.data.tempArr
-    })
-    wx.showToast({
-      title: '删除成功',
-    })
   }
 })

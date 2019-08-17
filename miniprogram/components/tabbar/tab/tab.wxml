@@ -3,4 +3,4 @@
   src="{{Selected ? imgSrcSelected : imgSrcUnselected}}"
   class="icon"
 />
-<view>{{text}}</view>
+<view class="{{textStyle}}">{{text}}</view>

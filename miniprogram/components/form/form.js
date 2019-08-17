@@ -8,7 +8,8 @@ Component({
    */
   properties: {
     formTemp: Object,
-    enabled: Boolean
+    enabled: Boolean,
+    openId: String
   },
 
   /**
@@ -49,10 +50,11 @@ Component({
         return;
       }
       console.log(formData)
-
+      
       if (this.properties.enabled) {
         wx.showNavigationBarLoading()
         let res = await formDataModel.postFormData({
+          open_id: this.properties.openId,
           object_id: this.properties.formTemp._id,
           form_data: formData
         }).finally(

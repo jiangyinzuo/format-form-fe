@@ -1,9 +1,8 @@
 <!--index.wxml-->
-<view>
-  <header-cmp />
-  <create-cmp class="create" wx:if="{{tab === 'create'}}" />
-  <launched-cmp class="launched" wx:elif="{{tab === 'launched'}}" />
-  <involved-cmp class="involved" wx:else />
+<view class="container">
+  <header-cmp binduserInfoGot="showLaunchedForm" />
+  <launched-cmp id="launched" wx:if="{{tab === 'launched'}}" />
+  <involved-cmp id="involved" wx:else />
 </view>
 
 <tabbar-cmp class="tabbar" bind:selectTab="changePage" />

@@ -1,4 +1,4 @@
-// components/index/create/create.js
+// components/tabbar/add/add.js
 Component({
   /**
    * 组件的属性列表
@@ -18,6 +18,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    createForm() {
+      wx.navigateTo({
+        url: '/pages/edit/edit',
+      })
+    }
   }
 })

@@ -1,4 +1,6 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "form-board-cmp": "../../formBoard/formBoard"
+  }
 }
