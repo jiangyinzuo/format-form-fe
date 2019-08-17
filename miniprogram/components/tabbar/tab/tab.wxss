@@ -1,0 +1,5 @@
+/* components/tabbar/tab/tab.wxss */
+.icon {
+  width: 30rpx;
+  height: 30rpx;
+}

@@ -14,8 +14,5 @@ App({
         this.globalData.userInfo = res.userInfo
       }
     })
-  },
-  globalData: {
-    userInfo: null
   }
 })

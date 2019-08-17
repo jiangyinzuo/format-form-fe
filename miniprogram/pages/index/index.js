@@ -1,31 +1,7 @@
-//index.js
-let app = getApp()
-
+//index.js 
 Page({
-  onShow() {
-    this.getUserInfo()
-  },
   data: {
-    intro: '点击头像授权登录',
-    avatarUrl: '../../static/icon/avatar.svg'
-  },
-  getUserInfo(event) {
-    if (app.globalData.userInfo === null) {
-      wx.getUserInfo({
-        success: (res) => {
-          app.globalData.userInfo = res.userInfo
-          if (event !== undefined) {
-            this.navigateTo(event)
-          }
-          this.updateUserInfo()
-        }
-      })
-    } else {
-      if (event!==undefined) {
-        this.navigateTo(event)
-      }
-      this.updateUserInfo()
-    }
+    tab: 'create'
   },
   navigateTo(event) {
     if (event.currentTarget.dataset.url) {
@@ -34,13 +10,9 @@ Page({
       })
     }
   },
-  updateUserInfo() {
-    if(app.globalData.userInfo){
-      console.log(app.globalData.userInfo)
-      this.setData({
-        intro: app.globalData.userInfo.nickName,
-        avatarUrl: app.globalData.userInfo.avatarUrl
-      })
-    }
+  changePage(event) {
+    this.setData({
+      tab: event.detail.tab
+    })
   }
 })

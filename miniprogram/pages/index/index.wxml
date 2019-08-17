@@ -1,41 +1,10 @@
 <!--index.wxml-->
-<view class="global-layout-container">
-  <view class="header">
-    <button
-      class="img-btn"
-      open-type="getUserInfo"
-      bindgetuserinfo="getUserInfo"
-    >
-      <image src="{{avatarUrl}}" class="avatar" mode="aspectFill"></image>
-    </button>
-    <view class="intro">{{intro}}</view>
-  </view>
-  <view class="global-layout-row">
-    <button
-      class="global-layout-cell"
-      data-url="../launched/launched"
-      open-type="getUserInfo"
-      bindgetuserinfo="getUserInfo"
-    >
-      我发起的
-    </button>
-    <button
-      class="global-layout-cell"
-      data-url="../involved/involved"
-      open-type="getUserInfo"
-      bindgetuserinfo="getUserInfo"
-    >
-      我参与的
-    </button>
-  </view>
-  <view class="global-layout-row">
-    <button
-      class="global-layout-cell"
-      data-url="../newForm/newForm"
-      open-type="getUserInfo"
-      bindgetuserinfo="getUserInfo"
-    >
-      新建表单
-    </button>
-  </view>
+<view>
+  <header-cmp />
+  <create-cmp class="create" wx:if="{{tab === 'create'}}" />
+  <launched-cmp class="launched" wx:elif="{{tab === 'launched'}}" />
+  <involved-cmp class="involved" wx:else />
 </view>
+
+<tabbar-cmp class="tabbar" bind:selectTab="changePage" />
+
