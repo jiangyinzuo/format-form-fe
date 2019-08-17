@@ -2,3 +2,13 @@
 page {
   background: #e0dede;
 }
+
+.header {
+  flex: 1;
+  display: flex;
+}
+
+.tabbar {
+  flex: 0;
+  display: flex;
+}

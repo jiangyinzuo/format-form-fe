@@ -2,6 +2,7 @@ import { HTTP } from '../utils/http.js'
 import { makePromise } from '../utils/makePromise.js'
 
 class UserModel {
+  static userInfo
   constructor() {
     this.http = new HTTP()
   }
@@ -19,8 +20,12 @@ class UserModel {
     return HTTP.openId
   }
   async getUserInfo() {
-    const _promise = await makePromise(wx.getUserInfo)
-    
+    if (UserModel.userInfo === undefined) {
+      const _promise = await makePromise(wx.getUserInfo)
+      UserModel.userInfo = _promise.userInfo
+    }
+    console.log(UserModel.userInfo)
+    return UserModel.userInfo
   }
 }
 

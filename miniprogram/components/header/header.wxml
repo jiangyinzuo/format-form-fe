@@ -2,9 +2,9 @@
 <button
   class="header"
   open-type="getUserInfo"
-  bindgetuserinfo="getUserInfo"
+  bindgetuserinfo="_getUserInfo"
   hover-class="none"
 >
-  <image src="{{avatarUrl}}" class="avatar" mode="aspectFill"></image>
-  <view class="intro">{{intro}}</view>
+  <image src="{{userInfo.avatarUrl}}" class="avatar" mode="aspectFill"></image>
+  <view class="intro">{{userInfo.intro}}</view>
 </button>
