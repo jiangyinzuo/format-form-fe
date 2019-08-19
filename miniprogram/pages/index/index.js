@@ -1,6 +1,13 @@
 //index.js 
+import {UserModel} from '../../models/user.js'
 
 Page({
+  onPullDownRefresh: function () {
+    wx.stopPullDownRefresh()
+    if (UserModel.userInfo !== undefined) {
+      this.showLaunchedForm()
+    }
+  },
   onShareAppMessage(res) {
     return {
       title: res.target.dataset.title,

@@ -92,7 +92,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    
   },
 
   /**
@@ -225,9 +225,7 @@ Page({
         title: this.data.title,
         questions: this.data.questionArr
       })
-      wx.showToast({
-        title: '保存成功',
-      })
+
       console.log(res)
       this.data.formTempId = res.form_temp_id
       this.setData({
@@ -237,11 +235,6 @@ Page({
   },
   onEditTitle(event) {
     this.data.title = event.detail.value
-  },
-  onHiddenSharePage() {
-    this.setData({
-      showSharePage: false
-    })
   },
   changeQuestionStatus(event) {
     /* change icon */

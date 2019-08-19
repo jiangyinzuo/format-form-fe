@@ -1,11 +1,8 @@
 /**index.wxss**/
-page {
-  background: #e0dede;
-}
+@import "../../static/css/page.wxss";
 
 .container {
   padding-bottom: 200rpx;
-  width: 700rpx;
 }
 
 .tabbar {

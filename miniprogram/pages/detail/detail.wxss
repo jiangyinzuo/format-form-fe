@@ -1,1 +1,29 @@
 /* miniprogram/pages/detail/detail.wxss */
+@import "../../static/css/page.wxss";
+@import "../../static/css/decorator.wxss";
+
+.container {
+  width: 700rpx;
+  margin: 30rpx 0;
+}
+
+.main-info-board {
+  background: #eeeeee;
+  padding: 20rpx;
+}
+
+.main-info-board .title {
+  font-size: 38rpx;
+  color: #444444;
+  padding-bottom: 15rpx;
+}
+
+.main-info-board .created-at {
+  color: #777777;
+  padding-top: 5rpx;
+}
+
+.del-btn {
+  position: absolute;
+  bottom: 20rpx;
+}

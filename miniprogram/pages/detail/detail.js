@@ -1,5 +1,6 @@
 // miniprogram/pages/detail/detail.js
 import {FormTempModel} from '../../models/formTemp.js'
+import {makePromise} from '../../utils/makePromise.js'
 
 const formTempModel = new FormTempModel()
 
@@ -9,15 +10,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-    formDetail: {}
+    formDetail: {},
+    createdAt: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const detail = formTempModel.getFormTempDataFromDetail()
+    const createdAt = new Date(detail.created_at)
+
     this.setData({
-      formDetail: formTempModel.getFormTempDataFromDetail()
+      formDetail: detail,
+      createdAt: createdAt.toLocaleString()
     })
     console.log(this.data.formDetail)
   },
@@ -69,5 +75,37 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  async delForm() {
+    const _modalPromise = await makePromise(wx.showModal, {
+      title: '温馨提示',
+      content: '是否删除？',
+      confirmText: '删除',
+      confirmColor: '#ff0000'
+    })
+
+    if (_modalPromise.confirm) {
+      wx.showNavigationBarLoading()
+      const res = await formTempModel.delFormTemp(this.data.formDetail._id)
+      wx.hideNavigationBarLoading()
+      console.log(res)
+      if (res.error_code === 0) {
+        await makePromise(wx.showToast, {
+          title: '删除成功',
+          icon: 'none',
+        })
+        setTimeout(()=>{
+          wx.reLaunch({
+            url: '/pages/index/index',
+          })
+        }, 1500)
+
+      } else {
+        wx.showToast({
+          title: '删除失败',
+          icon: 'none'
+        })
+      }
+    }
   }
 })
