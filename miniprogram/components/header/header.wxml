@@ -10,9 +10,13 @@
     <view class="intro">{{userInfo.intro}}</view>
   </button>
 
-  <view wx:if="{{logged}}" class="filter">
-    进行中
-  </view>
+  <drop-down-list-cmp
+    wx:if="{{logged}}"
+    class="filter"
+    items="{{['全部', '进行中', '已截止', '草稿']}}"
+    selected="{{selected}}"
+   />
+
 </view>
 
 

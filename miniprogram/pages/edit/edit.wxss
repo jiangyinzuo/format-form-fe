@@ -141,7 +141,7 @@ page {
   bottom: 13rpx;
 }
 
-.tabbar .save-btn {
+.tabbar .done-btn {
   display: inline-block;
   width: 170rpx;
   position: relative;

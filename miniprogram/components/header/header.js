@@ -22,6 +22,10 @@ Component({
         avatarUrl: '../../static/icon/avatar.svg',
         intro: '点击授权登录'
       }
+    },
+    selected: {
+      type: Number,
+      value: 0
     }
   },
 

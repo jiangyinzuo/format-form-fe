@@ -217,13 +217,14 @@ Page({
       _showPreview: false
     })
   },
-  async onSaveTemp() {
+  async postFormTemp(event) {
     if (this.formValidate()) {
       let params = {}  //send to backend
 
       let res = await formTempModel.sendFormTemp({
         title: this.data.title,
-        questions: this.data.questionArr
+        questions: this.data.questionArr,
+        type: event.target.dataset.formtype,
       })
 
       console.log(res)

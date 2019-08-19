@@ -54,8 +54,18 @@
 
 <view class="tabbar" wx:if="{{!showDashBoard}}">
   <view bindtap="preview" class="text-btn">预览</view>
-  <view class="text-btn">保存为草稿</view>
-  <button bindtap="onSaveTemp" class="save-btn">完成</button>
+  <view
+    class="text-btn"
+    bindtap="postFormTemp"
+    data-formtype="draft"
+  >保存为草稿
+  </view>
+  <button
+    class="done-btn"
+    bindtap="postFormTemp"
+    data-formtype="underway"
+  >完成
+  </button>
 </view>
 
 <compeleted-cmp class="share-page" wx:if="{{showSharePage}}" />

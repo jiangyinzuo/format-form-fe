@@ -1,6 +1,6 @@
 <!--components/tabbar/tab/tab.wxml-->
 <image
-  src="{{Selected ? imgSrcSelected : imgSrcUnselected}}"
+  src="{{selected ? imgSrcSelected : imgSrcUnselected}}"
   class="icon"
 />
 <view class="{{textStyle}}">{{text}}</view>

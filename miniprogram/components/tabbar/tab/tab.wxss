@@ -1,7 +1,7 @@
 /* components/tabbar/tab/tab.wxss */
 .icon {
-  width: 30rpx;
-  height: 30rpx;
+  width: 50rpx;
+  height: 50rpx;
 }
 
 .text-active {

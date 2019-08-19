@@ -1,4 +1,6 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "drop-down-list-cmp": "../dropDownList/dropDownList"
+  }
 }

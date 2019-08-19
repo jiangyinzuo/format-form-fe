@@ -19,6 +19,6 @@
     data-_id="{{form._id}}"
     data-title="{{form.title}}"
   >
-    分享
+    <image class="share-icon" src="../../static/icon/share.svg" />分享
   </button>
 </view>

@@ -1,6 +1,10 @@
 //index.js 
 import {UserModel} from '../../models/user.js'
 
+const FORM_TYPE = [
+  'all', 'underway', 'ended', 'draft'
+]
+
 Page({
   onPullDownRefresh: function () {
     wx.stopPullDownRefresh()
@@ -15,7 +19,8 @@ Page({
     }
   },
   data: {
-    tab: 'launched'
+    tab: 'launched',
+    formType: 'all'
   },
   navigateTo(event) {
     if (event.currentTarget.dataset.url) {
@@ -36,5 +41,12 @@ Page({
   },
   showLaunchedForm() {
     this.selectComponent('#launched').getFormArr()
+  },
+  changeFormFilter(event) {
+    console.log(event)
+    this.setData({
+      formType: FORM_TYPE[event.detail.value]
+    })
+    this.selectComponent(`#${this.data.tab}`).filtFormType(null)
   }
 })

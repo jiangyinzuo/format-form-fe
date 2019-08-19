@@ -6,7 +6,6 @@
 }
 
 .header {
- 
   background: #eeeeee;
   height: 100rpx;
   align-items: center;
@@ -33,12 +32,12 @@
 
 .filter {
   padding-left: 30rpx;
-  line-height: 100rpx;
-  height: 100rpx;
   width: 150rpx;
   background: #eeeeee;
   z-index: 10;
   position: relative;
+  color: #707070;
+  margin: auto 0;
 }
 
 .filter::after {

@@ -7,13 +7,16 @@ class FormTempModel {
   }
   async sendFormTemp({
     title,
-    type='custom',
+    type,
     score,
     time_limit,
     start_time,
     end_time,
     questions
   }) {
+    /**
+     * @params {string} type - type of form temp, values in {'underway', 'ended', 'draft'}
+     */
     return await this.http.request({
       url: '/form_templates',
       data: {
