@@ -26,9 +26,11 @@ Page({
     })
     const res = await formTemp.getOneFormTempById(options.id)
     if (res.err_code === 5101) {
+      wx.hideLoading()
       this.setData({
         noForm: true
       })
+      return
     }
     const openId = await userModel.login()
     this.setData({
