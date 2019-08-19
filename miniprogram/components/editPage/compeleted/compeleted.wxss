@@ -1,0 +1,50 @@
+/* components/editPage/compeleted/compeleted.wxss */
+.container {
+  background: #f0f0f0;
+  width: 100%;
+  height: calc(100% - 150rpx);
+  padding-top: 150rpx;
+}
+
+.success-icon {
+  width: 150rpx;
+  height: 150rpx;
+  display: block;
+  margin: 0 auto 35rpx auto;
+}
+
+.text {
+  text-align: center;
+  color: #555555;
+}
+
+.share-btn {
+  margin-top: 50rpx;
+  padding: 25rpx;
+  border: 2rpx solid #13227a;
+  width: 350rpx;
+  color: #13227a;
+  font-size: 40rpx;
+  vertical-align: bottom;
+  line-height: 40rpx;
+}
+
+.share-btn::after {
+  border: none;
+  background: none;
+  color: #13227a;
+}
+
+.share-btn .wechat-icon {
+  height: 40rpx;
+  width: 40rpx;
+  vertical-align: bottom;
+}
+
+.navigator {
+  text-align: center;
+  width: fit-content;
+  padding: 20rpx;
+  margin: 15rpx auto;
+  color: #13227a;
+}

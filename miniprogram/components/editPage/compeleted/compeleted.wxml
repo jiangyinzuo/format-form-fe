@@ -1,0 +1,16 @@
+<!--components/editPage/compeleted/compeleted.wxml-->
+<view class="container">
+  <image src="../../../static/icon/success.svg" class="success-icon" />
+  <view class="text">制作成功</view>
+  <button class="share-btn" open-type="share" hover-class="none" >
+    <image class="wechat-icon" src="../../../static/icon/wechat.svg" />
+    分享到微信
+  </button>
+  <navigator
+    open-type="reLaunch"
+    url="/pages/index/index"
+    hover-class="none"
+    class="navigator"
+  >返回首页
+  </navigator>
+</view>

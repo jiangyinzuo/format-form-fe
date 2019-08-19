@@ -40,8 +40,23 @@
   color: #13227a;
 }
 
-.container .success-page .entrance .entrance-icon {
+.entrance-icon {
   width: 60rpx;
   height: 60rpx;
   vertical-align: middle;
+}
+
+.not-found-page .not-found-tip {
+  text-align: center;
+  color: #504e4e;
+  font-size: 40rpx;
+  margin-top: 150rpx;
+}
+
+.not-found-page .entrance {
+  margin-top: 140rpx;
+  vertical-align: middle;
+  line-height: 60rpx;
+  font-size: 35rpx;
+  color: #13227a;
 }

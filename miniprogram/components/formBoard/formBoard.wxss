@@ -10,6 +10,10 @@
 .form-board .title {
   font-size: 40rpx;
   color: #555555;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  width: 420rpx;
+  white-space: nowrap;
 }
 
 .form-board .text {
@@ -32,9 +36,20 @@
 .form-board .share {
   position: absolute;
   bottom: 20rpx;
-  right: 20rpx;
+  right: 0;
+  vertical-align: bottom;
+  background: #eeeeee;
+  line-height: 40rpx;
+  color: #494949;
 }
 
 .form-board .share::after {
   border: none;
+}
+
+.form-board .share .share-icon {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: bottom;
+  padding-right: 3rpx;
 }

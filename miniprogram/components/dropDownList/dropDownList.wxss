@@ -1,0 +1,38 @@
+/* components/dropDownList/dropDownList.wxss */
+@import "../../static/css/decorator.wxss";
+.container {
+  vertical-align: middle;
+  height: 100rpx;
+  line-height: 100rpx;
+  position: relative;
+}
+
+.container .selected-item {
+  display: inline-block;
+}
+
+.filter-icon {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: bottom;
+  position: absolute;
+  bottom: 28rpx;
+  right: 15rpx;
+  display: inline-block;
+}
+
+.drop-down-list {
+  width: 128rpx;
+  height: fit-content;
+  background: #f0f0f0;
+  color: #333333;
+  padding: 0 22rpx;
+  position: absolute;
+  top: 80rpx;
+  left: -22rpx;
+  box-shadow: -15rpx 15rpx 13rpx -5rpx #777777;
+}
+
+.drop-down-list .item {
+  line-height: 90rpx;
+}

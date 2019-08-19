@@ -1,0 +1,20 @@
+<!--components/dropDownList/dropDownList.wxml-->
+<view class="container">
+  <view bindtap="selectItem">
+    <view class="selected-item">{{items[selected]}}</view>
+    <image src="../../static/icon/down.svg" class="filter-icon" />
+  </view>
+
+  <view class="drop-down-list" wx:if="{{showList}}">
+    <block wx:for="{{items}}" wx:key="{{index}}">
+      <view
+        class="item -d-over-line"
+        data-idx="{{index}}"
+        style="{{selected === index ? 'color: #5555c2' : 'color: #333333'}}"
+        bindtap="changeSelection"
+      >{{item}}
+      </view>
+    </block>
+  </view>
+</view>
+

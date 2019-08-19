@@ -1,0 +1,7 @@
+page {
+  background: #e0dede;
+}
+
+.container {
+  width: 700rpx;
+}

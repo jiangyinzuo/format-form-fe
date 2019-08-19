@@ -11,7 +11,8 @@ Page({
     formTempId: '',
     formTemp: {},
     openId: '',
-    _filled: false
+    _filled: false,
+    noForm: true
   },
 
   /**
@@ -20,13 +21,22 @@ Page({
   async onLoad(options) {
     const formTemp = new FormTempModel()
     const userModel = new UserModel()
+    wx.showLoading({
+      title: '加载中',
+    })
     const res = await formTemp.getOneFormTempById(options.id)
+    if (res.err_code === 5101) {
+      this.setData({
+        noForm: true
+      })
+    }
     const openId = await userModel.login()
     this.setData({
       formTempId: options.id,
       formTemp: res.form_temp,
       openId: openId
     })
+    wx.hideLoading()
     console.log('formTemp', this.data.formTemp)
   },
 

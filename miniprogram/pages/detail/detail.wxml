@@ -1,2 +1,10 @@
 <!--miniprogram/pages/detail/detail.wxml-->
-<view class="title">{{formDetail.title}}</view>
+<view class="container">
+  <view class="main-info-board">
+    <view class="title -d-under-line">{{formDetail.title}}</view>
+    <view class="created-at">创建日期: {{createdAt}}</view>
+  </view>
+
+  <button type="warn" class="del-btn" bindtap="delForm">删除</button>
+</view>
+

@@ -8,14 +8,20 @@ Component({
 
   },
   properties: {
-
+    formType: String
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-    formArr: []
+    formArr: [],
+    formFilter: {
+      'all': [],
+      'underway': [],
+      'ended': [],
+      'draft': []
+    }
   },
 
   /**
@@ -29,11 +35,20 @@ Component({
         await userModel.login()
       }
       const res = await formTempModel.getFormTemp()
-      this.setData({
-        formArr: res.form_temps
-      })
+      this.data.formFilter['all'] = res.form_temps
+      this.filtFormType(res.form_temps)
       wx.hideNavigationBarLoading()
       console.log(res)
+    },
+    filtFormType(formTemps) {
+      if (formTemps !== null) {
+        for (let i in formTemps) {
+          this.data.formFilter[formTemps[i].type].push(formTemps[i])
+        }
+      }
+      this.setData({
+        formArr: this.data.formFilter[this.properties.formType]
+      })
     }
   }
 })

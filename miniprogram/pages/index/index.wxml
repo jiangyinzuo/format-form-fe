@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
-  <header-cmp binduserInfoGot="showLaunchedForm" />
-  <launched-cmp id="launched" wx:if="{{tab === 'launched'}}" />
+  <header-cmp binduserInfoGot="showLaunchedForm" binddropListChange="changeFormFilter" />
+  <launched-cmp id="launched" wx:if="{{tab === 'launched'}}" formType="{{formType}}"/>
   <involved-cmp id="involved" wx:else />
 </view>
 

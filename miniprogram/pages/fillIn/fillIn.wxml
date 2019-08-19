@@ -1,5 +1,5 @@
 <!--miniprogram/pages/fillIn/fillIn.wxml-->
-<view class="container">
+<view class="container" wx:if="{{!noForm}}">
   <form-cmp
     formTemp="{{formTemp}}"
     openId="{{openId}}"
@@ -23,5 +23,15 @@
       <image class="entrance-icon" src="../../static/icon/mini_program.svg" />
       进入小程序
     </view>
+  </view>
+</view>
+<view class="not-found-page" wx:else>
+  <view class="not-found-tip">表单不存在</view>
+  <view
+    class="entrance"
+    bindtap="redirectToIndex"
+  >
+    <image class="entrance-icon" src="../../static/icon/mini_program.svg" />
+    进入小程序
   </view>
 </view>

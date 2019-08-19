@@ -92,7 +92,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    
   },
 
   /**
@@ -217,17 +217,16 @@ Page({
       _showPreview: false
     })
   },
-  async onSaveTemp() {
+  async postFormTemp(event) {
     if (this.formValidate()) {
       let params = {}  //send to backend
 
       let res = await formTempModel.sendFormTemp({
         title: this.data.title,
-        questions: this.data.questionArr
+        questions: this.data.questionArr,
+        type: event.target.dataset.formtype,
       })
-      wx.showToast({
-        title: '保存成功',
-      })
+
       console.log(res)
       this.data.formTempId = res.form_temp_id
       this.setData({
@@ -237,11 +236,6 @@ Page({
   },
   onEditTitle(event) {
     this.data.title = event.detail.value
-  },
-  onHiddenSharePage() {
-    this.setData({
-      showSharePage: false
-    })
   },
   changeQuestionStatus(event) {
     /* change icon */
