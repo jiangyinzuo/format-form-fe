@@ -1,11 +1,17 @@
 /* components/header/header.wxss */
+.container {
+  display: flex;
+  flex: 1;
+  margin: 20rpx 0;
+}
+
 .header {
-  width: 700rpx;
+ 
   background: #eeeeee;
   height: 100rpx;
   align-items: center;
   display: flex;
-  margin: 20rpx 0;
+  flex: 1;
   border-radius: 0;
 }
 
@@ -20,7 +26,30 @@
 }
 
 .header .intro {
-  flex: 1;
+  flex: 1 0 200rpx;
   justify-content: center;
   overflow: hidden;
+}
+
+.filter {
+  padding-left: 30rpx;
+  line-height: 100rpx;
+  height: 100rpx;
+  width: 150rpx;
+  background: #eeeeee;
+  z-index: 10;
+  position: relative;
+}
+
+.filter::after {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 15rpx;
+  z-index: 10;
+  content: '';
+  height: 70rpx;
+  width: 3rpx;
+  border-radius: 5rpx;
+  background: linear-gradient(to top,#eeeeee ,#dddddd 10%, #cccccc 25%, #cccccc 75%,#dddddd 85%,#eeeeee);
 }

@@ -128,22 +128,26 @@ page {
   width: 100%;
   padding: 20rpx;
   background: #f0f0f0;
+  height: 100rpx;
+  display: block;
 }
 
-.tabbar button {
+.tabbar .text-btn {
+  display: inline-block;
+  font-size: 35rpx;
+  margin-left: 30rpx;
+  margin-bottom: 130rpx;
+  position: relative;
+  bottom: 13rpx;
+}
+
+.tabbar .save-btn {
   display: inline-block;
   width: 170rpx;
   position: relative;
   background: #075b92;
   color: #ffffff;
-}
-
-.tabbar .tabbar-btn-1 {
-  left: 350rpx;
-}
-
-.tabbar .save-btn {
-  left: 390rpx;
+  left: 260rpx;
 }
 
 .preview {

@@ -53,8 +53,9 @@
 </view>
 
 <view class="tabbar" wx:if="{{!showDashBoard}}">
-  <button bindtap="preview" class="tabbar-btn-1">预览</button>
-  <button bindtap="onSaveTemp" class="save-btn">保存</button>
+  <view bindtap="preview" class="text-btn">预览</view>
+  <view class="text-btn">保存为草稿</view>
+  <button bindtap="onSaveTemp" class="save-btn">完成</button>
 </view>
 
 <view class="share-page" hidden="{{!showSharePage}}">

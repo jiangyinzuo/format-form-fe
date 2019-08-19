@@ -29,7 +29,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    logged: false
   },
 
   /**
@@ -37,6 +37,7 @@ Component({
    */
   methods: {
     async _getUserInfo() {
+      console.log('_getUserInfo')
       if (UserModel.userInfo === undefined) {
         await userModel.getUserInfo()
         this.showUserInfo(UserModel.userInfo)
@@ -47,7 +48,8 @@ Component({
         userInfo: {
           avatarUrl: userInfo.avatarUrl,
           intro: userInfo.nickName
-        }
+        },
+        logged: true
       })
       this.triggerEvent('userInfoGot', {}, {})
     }

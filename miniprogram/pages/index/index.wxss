@@ -5,11 +5,7 @@ page {
 
 .container {
   padding-bottom: 200rpx;
-}
-
-.header {
-  flex: 1;
-  display: flex;
+  width: 700rpx;
 }
 
 .tabbar {
