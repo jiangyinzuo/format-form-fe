@@ -27,7 +27,9 @@ Component({
       let formData = []
       let _flag = true
       let _errIdx
+      let formTypes = []
       for (let i in this.properties.formTemp.questions) {
+        formTypes.push(this.properties.formTemp.questions[i].type)
         const _cmp = this.selectComponent(`#question-${i}`)
         const _input = _cmp.properties.input
         if (!_cmp._validate()) {
@@ -49,14 +51,15 @@ Component({
         })
         return;
       }
-      console.log(formData)
+      
       
       if (this.properties.enabled) {
         wx.showNavigationBarLoading()
         let res = await formDataModel.postFormData({
           open_id: this.properties.openId,
           object_id: this.properties.formTemp._id,
-          form_data: formData
+          form_data: formData,
+          form_types: formTypes
         }).finally(
           wx.hideNavigationBarLoading()
         )

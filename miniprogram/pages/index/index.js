@@ -33,11 +33,7 @@ Page({
     this.setData({
       tab: event.detail.tab
     })
-    if (this.data.tab === 'launched') {
-      this.selectComponent('#launched').getFormArr()
-    } else {
-      // TODO: get my involved form
-    }
+    this.selectComponent(`#${this.data.tab}`).getFormArr()
   },
   showLaunchedForm() {
     this.selectComponent('#launched').getFormArr()

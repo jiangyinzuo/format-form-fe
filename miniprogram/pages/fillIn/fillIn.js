@@ -12,7 +12,7 @@ Page({
     formTemp: {},
     openId: '',
     _filled: false,
-    noForm: true
+    noForm: false
   },
 
   /**

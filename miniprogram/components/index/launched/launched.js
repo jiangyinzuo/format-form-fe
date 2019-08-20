@@ -35,6 +35,12 @@ Component({
         await userModel.login()
       }
       const res = await formTempModel.getFormTemp()
+      this.data.formFilter = {
+        'all': [],
+        'underway': [],
+        'ended': [],
+        'draft': []
+      }
       this.data.formFilter['all'] = res.form_temps
       this.filtFormType(res.form_temps)
       wx.hideNavigationBarLoading()
@@ -42,6 +48,7 @@ Component({
     },
     filtFormType(formTemps) {
       if (formTemps !== null) {
+       
         for (let i in formTemps) {
           this.data.formFilter[formTemps[i].type].push(formTemps[i])
         }
