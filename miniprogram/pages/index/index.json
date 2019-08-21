@@ -4,7 +4,6 @@
   "usingComponents": {
     "header-cmp": "../../components/header/header",
     "tabbar-cmp": "../../components/tabbar/tabbar",
-    "involved-cmp": "../../components/index/involved/involved",
-    "launched-cmp": "../../components/index/launched/launched"
+    "body-cmp": "../../components/index/body/body"
   }
 }

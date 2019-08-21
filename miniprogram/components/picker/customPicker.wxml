@@ -2,6 +2,7 @@
 <picker
   mode="{{mode}}"
   bindchange="onPick"
+  class="generic"
   class="{{dynamicStyle}}"
   bindcancel="onCancel"
 >

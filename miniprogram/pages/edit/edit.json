@@ -2,7 +2,8 @@
   "usingComponents": {
     "dash-board-cmp": "/components/dashBoard/dashBoard",
     "form-cmp": "/components/form/form",
-    "compeleted-cmp": "/components/editPage/compeleted/compeleted"
+    "compeleted-cmp": "/components/editPage/compeleted/compeleted",
+    "settings-page-cmp": "/components/editPage/settings/settings"
   },
   "navigationBarTitleText": "新建表单"
 }

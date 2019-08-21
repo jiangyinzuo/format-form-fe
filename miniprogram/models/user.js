@@ -6,18 +6,21 @@ class UserModel {
   constructor() {
     this.http = new HTTP()
   }
-  async login() {
+  async getLoginCode() {
     const loginPromise = await makePromise(wx.login)
-
+    return loginPromise.code
+  }
+  async loginAndGetLaunchedForm() {
+    const _code = await this.getLoginCode()
     let res = await this.http.request({
       url: '/wx_login',
       data: {
-        code: loginPromise.code
+        code: _code
       },
       method: 'POST',
     })
     HTTP.openId = res.open_id
-    return HTTP.openId
+    return res
   }
   async getUserInfo() {
     if (UserModel.userInfo === undefined) {

@@ -1,14 +1,14 @@
 /* components/form/genericQuestion/customEssay/picker/datePicker.wxss */
-.regular {
+.generic {
   padding: 5rpx 0 20rpx 0;
   width: 99%;
   color: rgb(92, 88, 88);
+}
+
+.regular {
   border-bottom: 0.5rpx solid rgba(122, 116, 116, 0.8);
 }
 
 .error {
-  padding: 5rpx 0 20rpx 0;
-  width: 99%;
-  color: rgb(92, 88, 88);
   border-bottom: 0.5rpx solid #ff0000;
 }

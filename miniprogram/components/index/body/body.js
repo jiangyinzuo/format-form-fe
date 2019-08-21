@@ -1,8 +1,11 @@
 // components/index/launched/launched.js
 import {FormTempModel} from '../../../models/formTemp.js'
 import {UserModel} from '../../../models/user.js'
+import { InvolvedFormsModel } from '../../../models/involvedForms.js'
+import {HTTP} from '../../../utils/http.js'
 
 const formTempModel = new FormTempModel()
+const involvedFormsModel = new InvolvedFormsModel()
 Component({
   lifetimes: {
 
@@ -28,21 +31,31 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    async getFormArr() {
+    async getFormArr(type) {
+      /**
+       * @params {string} type - type of form array, values
+       *                         'launched' or 'involved'
+       */
       wx.showNavigationBarLoading()
-      if (!UserModel.openId) {
+
+      let res
+      console.log(HTTP.openId)
+      if (!HTTP.openId) {
         const userModel = new UserModel()
-        await userModel.login()
+        res = await userModel.loginAndGetLaunchedForm()
+      } else if (type === 'launched'){
+        res = await formTempModel.getFormTemp()
+      } else {
+        res = await involvedFormsModel.getInvolvedForms()
       }
-      const res = await formTempModel.getFormTemp()
       this.data.formFilter = {
         'all': [],
         'underway': [],
         'ended': [],
         'draft': []
       }
-      this.data.formFilter['all'] = res.form_temps
-      this.filtFormType(res.form_temps)
+      this.data.formFilter['all'] = res.forms
+      this.filtFormType(res.forms)
       wx.hideNavigationBarLoading()
       console.log(res)
     },

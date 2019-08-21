@@ -60,6 +60,12 @@
     data-formtype="draft"
   >保存为草稿
   </view>
+  <view class="text-btn" bindtap="showSettingsPage">
+    <image
+      class="setting-icon"
+      src="../../static/icon/settings.svg" />
+    设置
+  </view>
   <button
     class="done-btn"
     bindtap="postFormTemp"
@@ -69,6 +75,15 @@
 </view>
 
 <compeleted-cmp class="share-page" wx:if="{{showSharePage}}" />
+
+<settings-page-cmp
+  startTime="{{startTime}}"
+  endTime="{{endTime}}"
+  showSelectRes="{{showSelectRes}}"
+  repeatFilling="{{repeatFilling}}"
+  class="settings-page"
+  bindsettingChanged="onSettingChanged"
+  wx:if="{{showSettings}}" />
 
 <view class="preview" wx:if="{{_showPreview}}">
   <view class="back-btn" bindtap="hidePreview">

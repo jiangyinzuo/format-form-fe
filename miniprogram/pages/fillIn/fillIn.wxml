@@ -14,7 +14,7 @@
     <view class="btn">
       <!-- TODO: check detail -->
       <view class="detail">填写详情</view>
-      <view class="one-more" bindtap="fillInOneMore">再填一份</view>
+      <view wx:if="{{formTemp.repeat_filling}}" class="one-more" bindtap="fillInOneMore">再填一份</view>
     </view>
     <view
       class="entrance"
@@ -25,8 +25,8 @@
     </view>
   </view>
 </view>
-<view class="not-found-page" wx:else>
-  <view class="not-found-tip">表单不存在</view>
+<view class="err-page" wx:else>
+  <view class="err-tip">{{errTip}}</view>
   <view
     class="entrance"
     bindtap="redirectToIndex"

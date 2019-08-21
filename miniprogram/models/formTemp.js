@@ -8,8 +8,8 @@ class FormTempModel {
   async sendFormTemp({
     title,
     type,
-    score,
-    time_limit,
+    show_select_res,
+    repeat_filling,
     start_time,
     end_time,
     questions
@@ -23,7 +23,11 @@ class FormTempModel {
         open_id: HTTP.openId,
         title: title,
         type: type,
-        questions: questions
+        questions: questions,
+        show_select_res: show_select_res,
+        repeat_filling: repeat_filling,
+        start_time: start_time,
+        end_time: end_time
       },
       method: 'POST'
     })
@@ -56,15 +60,6 @@ class FormTempModel {
         _id: _id // _id is mongodb's objectId
       },
       method: 'POST'
-    })
-  }
-  async getOneFormTempById(_id) {
-    return await this.http.request({
-      url: '/form_templates',
-      method: 'GET',
-      data: {
-        object_id: _id
-      }
     })
   }
   saveFormTempDataFromIndex(formData) {

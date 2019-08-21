@@ -1,0 +1,39 @@
+<!--components/editPage/settings/settings.wxml-->
+<view class="container">
+  <view class="header">设置</view>
+  <view class="setting-item -d-under-line">
+    <text>填写人员可见选项统计</text>
+    <switch checked="{{showSelectRes}}" bindchange="onChangeShowSelectRes" />
+  </view>
+    
+  <view class="setting-item -d-under-line">
+    <text>允许重复提交表单</text>
+    <switch checked="{{repeatFilling}}" bindchange="onChangeRepeatFilling" />
+  </view>
+  
+  <view class="setting-item -d-under-line">
+    <text>设定开始时间</text>
+    <switch checked="{{setStartTime}}" bindchange="onChangeSetStartTime" />
+    <custom-picker-cmp
+      wx:if="{{setStartTime}}"
+      mode="date"
+      input="{{startTime}}"
+      class="picker"
+      bindchangeValue="onChangeStartTime"
+    />
+  </view>
+
+  <view class="setting-item -d-under-line">
+    <text>设定截止时间</text>
+    <switch checked="{{setEndTime}}" bindchange="onChangeSetEndTime" />
+    <custom-picker-cmp
+      wx:if="{{setEndTime}}"
+      mode="date"
+      input="{{endTime}}"
+      bindchangeValue="onChangeEndTime"
+      class="picker"
+    />
+  </view>
+  
+  <view class="done-btn" bindtap="done">保存</view>
+</view>

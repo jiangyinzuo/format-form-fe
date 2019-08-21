@@ -33,10 +33,10 @@ Page({
     this.setData({
       tab: event.detail.tab
     })
-    this.selectComponent(`#${this.data.tab}`).getFormArr()
+    this.selectComponent('#body').getFormArr(this.data.tab)
   },
   showLaunchedForm() {
-    this.selectComponent('#launched').getFormArr()
+    this.selectComponent('#body').getFormArr(this.data.tab)
   },
   changeFormFilter(event) {
     console.log(event)

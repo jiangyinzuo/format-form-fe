@@ -1,6 +1,0 @@
-<!--components/index/involved/involved.wxml-->
-<view class="cell">
-  <block wx:for="{{formArr}}" wx:key="{{index}}">
-    <form-board-cmp form="{{item}}" />
-  </block>
-</view>

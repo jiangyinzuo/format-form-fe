@@ -1,4 +1,5 @@
 /* miniprogram/pages/fillIn/fillIn.wxss */
+
 .container .success-page .success-icon {
   width: 150rpx;
   height: 150rpx;
@@ -15,28 +16,27 @@
 }
 
 .container .success-page .btn {
-  color: #13227a
+  color: #13227a;
+  display: flex;
+  justify-content: center;
 }
 
 .container .success-page .btn .detail {
   display: inline;
-  padding-right: 37rpx;
-  border-right: 0.5rpx solid rgba(122, 116, 116, 0.4);
+  margin: 20rpx;
 }
 
 .container .success-page .btn .one-more {
   display: inline;
-  padding-left: 37rpx;
-  border-left: 0.5rpx solid rgba(122, 116, 116, 0.4);
+  margin: 20rpx;
 }
 
 .container .success-page .entrance {
   vertical-align: middle;
   line-height: 60rpx;
   font-size: 35rpx;
-  position: relative;
-  bottom: -150rpx;
-  left: 30rpx;
+  width: fit-content;
+  margin: 60rpx auto;
   color: #13227a;
 }
 
@@ -46,14 +46,14 @@
   vertical-align: middle;
 }
 
-.not-found-page .not-found-tip {
+.err-page .err-tip {
   text-align: center;
   color: #504e4e;
   font-size: 40rpx;
   margin-top: 150rpx;
 }
 
-.not-found-page .entrance {
+.err-page .entrance {
   margin-top: 140rpx;
   vertical-align: middle;
   line-height: 60rpx;

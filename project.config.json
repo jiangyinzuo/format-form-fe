@@ -42,15 +42,8 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 1,
 			"list": [
-				{
-					"id": -1,
-					"name": "pages/newForm/newForm",
-					"pathName": "pages/newForm/newForm",
-					"query": "",
-					"scene": null
-				},
 				{
 					"id": -1,
 					"name": "pages/edit/edit",
@@ -59,25 +52,11 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/newForm/myTemp/myTemp",
-					"pathName": "pages/newForm/myTemp/myTemp",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 3,
+					"id": 1,
 					"name": "pages/fillIn/fillIn",
 					"pathName": "pages/fillIn/fillIn",
-					"query": "id=5d5bfac2d6090f0d8f0f53c6",
+					"query": "id=5d5d439948072b8ba63ed330",
 					"scene": 1007
-				},
-				{
-					"id": -1,
-					"name": "pages/launched/launched",
-					"pathName": "pages/launched/launched",
-					"query": "",
-					"scene": null
 				}
 			]
 		}

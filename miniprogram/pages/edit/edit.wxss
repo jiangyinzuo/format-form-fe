@@ -114,7 +114,7 @@ page {
   width: 100%;
 }
 
-.share-page {
+.share-page, .settings-page {
   top: 0;
   position: absolute;
   width: 100%;
@@ -141,13 +141,19 @@ page {
   bottom: 13rpx;
 }
 
+.tabbar .text-btn .setting-icon {
+  width: 38rpx;
+  height: 38rpx;
+  vertical-align: bottom;
+}
+
 .tabbar .done-btn {
   display: inline-block;
   width: 170rpx;
   position: relative;
   background: #075b92;
   color: #ffffff;
-  left: 260rpx;
+  left: 115rpx;
 }
 
 .preview {

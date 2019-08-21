@@ -52,7 +52,14 @@ Page({
     },
     openWith: -1,
     _formTemp: {},
-    _showPreview: false
+    _showPreview: false,
+
+    // params pass to settings-page-cmp
+    showSettings: false,
+    repeatFilling: false,
+    showSelectRes: true,
+    startTime: '',
+    endTime: ''
   },
 
   /**
@@ -225,6 +232,10 @@ Page({
         title: this.data.title,
         questions: this.data.questionArr,
         type: event.target.dataset.formtype,
+        show_select_res: this.data.showSelectRes,
+        repeat_filling: this.data.repeatFilling,
+        start_time: this.data.startTime,
+        end_time: this.data.endTime
       })
 
       console.log(res)
@@ -244,5 +255,20 @@ Page({
     this.setData({
       _questionDetail: this.data._questionDetail
     })
+  },
+  showSettingsPage() {
+    this.setData({
+      showSettings: true
+    })
+  },
+  onSettingChanged(event) {
+    console.log(event)
+    this.setData({
+      showSettings: false
+    })
+    this.data.repeatFilling = event.detail.repeatFilling
+    this.data.showSelectRes = event.detail.showSelectRes
+    this.data.startTime = event.detail.startTime
+    this.data.endTime = event.detail.endTime
   }
 })
