@@ -33,7 +33,7 @@
   color: #5555c2;
 }
 
-.form-board .share {
+.form-board .mutiable-btn {
   position: absolute;
   bottom: 20rpx;
   right: 0;
@@ -43,11 +43,11 @@
   color: #494949;
 }
 
-.form-board .share::after {
+.form-board .mutiable-btn::after {
   border: none;
 }
 
-.form-board .share .share-icon {
+.form-board .mutiable-btn .icon {
   width: 40rpx;
   height: 40rpx;
   vertical-align: bottom;

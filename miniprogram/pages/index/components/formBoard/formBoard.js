@@ -1,5 +1,7 @@
 // components/formBoard/formBoard.js
-import {FormTempModel} from '../../models/formTemp.js'
+import { IndexToDetailStore } from '../../../../dataStore/indexToDetail.js'
+
+import {IndexStore} from '../../dataStore.js'
 
 Component({
   /**
@@ -19,10 +21,9 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    
     showDetail() {
-      const formTempModel = new FormTempModel()
-      formTempModel.saveFormTempDataFromIndex(this.properties.form)
+      let store = new IndexToDetailStore()
+      store.setFormData(this.properties.form)
     }
   }
 })

@@ -4,7 +4,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    items: Array,
+    items: {
+      type: Array,
+      value: ['全部', '进行中', '已截止', '草稿']
+    },
     selected: Number
   },
 
@@ -33,9 +36,21 @@ Component({
     },
     selectItem() {
       this.setData({
-        showList: !this.data.showList
+        showList: !this.data.showList,
+        items: this.properties.items
       })
-      
+    },
+    refreshItems(items, selected=0) {
+      this.setData({
+        items,
+        selected
+      })
+      this.triggerEvent('dropListChange', {
+        value: this.properties.selected
+      }, {
+        bubbles: true,
+        composed: true
+      })
     }
   }
 })

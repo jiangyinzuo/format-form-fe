@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
-  <header-cmp binduserInfoGot="showLaunchedForm" binddropListChange="changeFormFilter" />
+  <header-cmp binduserInfoGot="showLaunchedForm" binddropListChange="changeFormFilter" id="header" />
   <body-cmp id="body" formType="{{formType}}" />
 </view>
 
-<tabbar-cmp class="tabbar" bind:selectTab="changePage" />
+<tabbar-cmp class="tabbar" bind:selectTab="onSelectTab" />

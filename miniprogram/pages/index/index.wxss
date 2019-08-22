@@ -1,5 +1,5 @@
 /**index.wxss**/
-@import "../../static/css/page.wxss";
+@import "/static/css/page.wxss";
 
 .container {
   padding-bottom: 200rpx;

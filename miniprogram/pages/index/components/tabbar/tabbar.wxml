@@ -1,0 +1,8 @@
+<!--components/tabbar/tabbar.wxml-->
+<view class="container">
+  <tab-cmp class="tab" text="我发起的" bindtap="onSelectTab" data-tab="launched" textStyle="{{chooseLaunched ? 'text-active' : 'text'}}" imgSrcSelected="/static/icon/tabbar_cmp/launched-selected.svg" imgSrcUnselected="/static/icon/tabbar_cmp/launched.svg"
+selected="{{chooseLaunched}}" />
+  <add-cmp />
+  <tab-cmp class="tab" text="我参与的" bindtap="onSelectTab"  data-tab="involved" textStyle="{{!chooseLaunched ? 'text-active' : 'text'}}" 
+imgSrcSelected="/static/icon/tabbar_cmp/involved-selected.svg" imgSrcUnselected="/static/icon/tabbar_cmp/involved.svg" selected="{{!chooseLaunched}}" />
+</view>

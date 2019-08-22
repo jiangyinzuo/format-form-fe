@@ -41,7 +41,14 @@ Page({
     showDashBoard: false,
     title: '',
     formTempId: '',
-    showSharePage: false,
+
+    /**
+     * params passed to compeleted cmp
+     */
+    showCompeletedPage: false,
+    showShareIcon: true,
+    compeletedPageTitle: '',
+
     showConfirm: false,
     _ALPHA_BET: ['A. ', 'B. ', 'C. ', 'D. ', 'E. ', 'F. ', 'G. ', 'H. ', 'I. ', 'J. ', 'K. ', 'L. ', 'M. ', 'N. ', 'O. ', 'P. ', 'Q. ', 'R. ', 'S. ', 'T. '],
     dashBoardProps: {
@@ -241,7 +248,9 @@ Page({
       console.log(res)
       this.data.formTempId = res.form_temp_id
       this.setData({
-        showSharePage: true
+        showCompeletedPage: true,
+        showShareIcon: event.target.dataset.formtype === 'underway',
+        compeletedPageTitle: event.target.dataset.formtype === 'underway' ? '制作成功' : '保存成功'
       })
     }
   },

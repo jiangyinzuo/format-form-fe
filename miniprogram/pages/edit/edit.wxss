@@ -1,5 +1,5 @@
 /* miniprogram/pages/edit/edit.wxss */
-@import "../../static/css/cell.wxss";
+@import "/static/css/cell.wxss";
 
 page {
   background: #e0dede;

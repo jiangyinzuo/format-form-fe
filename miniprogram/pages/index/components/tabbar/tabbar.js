@@ -1,4 +1,6 @@
 // components/tabbar/tabbar.js
+import {IndexStore} from '../../dataStore.js'
+
 Component({
   /**
    * 组件的属性列表
@@ -23,6 +25,8 @@ Component({
       this.setData({
         chooseLaunched: event.target.dataset.tab === 'launched'
       })
+      let store = new IndexStore()
+      store.setTab(event.target.dataset.tab)
     }
   }
 })

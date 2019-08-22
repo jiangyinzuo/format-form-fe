@@ -29,11 +29,16 @@ Page({
       })
     }
   },
-  changePage(event) {
+  async onSelectTab(event) {
     this.setData({
       tab: event.detail.tab
     })
-    this.selectComponent('#body').getFormArr(this.data.tab)
+    await this.selectComponent('#body').getFormArr(this.data.tab)
+    if (this.data.tab === 'launched') {
+      this.selectComponent('#header').selectComponent('#dropDonwList').refreshItems(['全部', '进行中', '已截止', '草稿'])
+    } else {
+      this.selectComponent('#header').selectComponent('#dropDonwList').refreshItems(['全部', '进行中', '已截止'])
+    }
   },
   showLaunchedForm() {
     this.selectComponent('#body').getFormArr(this.data.tab)
@@ -43,6 +48,6 @@ Page({
     this.setData({
       formType: FORM_TYPE[event.detail.value]
     })
-    this.selectComponent(`#${this.data.tab}`).filtFormType(null)
+    this.selectComponent('#body').filtFormType(null)
   }
 })

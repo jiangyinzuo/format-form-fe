@@ -1,5 +1,5 @@
 /* components/editPage/settings/settings.wxss */
-@import "../../../static/css/decorator.wxss";
+@import "/static/css/decorator.wxss";
 .container {
   background: #f0f0f0;
   width: 100%;

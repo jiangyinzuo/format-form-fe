@@ -1,5 +1,5 @@
 // components/header/header.js
-import {UserModel} from '../../models/user.js'
+import {UserModel} from '../../../../models/user.js'
 
 const userModel = new UserModel()
 
@@ -19,7 +19,7 @@ Component({
     userInfo: {
       type: Object,
       value: {
-        avatarUrl: '../../static/icon/avatar.svg',
+        avatarUrl: '/static/icon/avatar.svg',
         intro: '点击授权登录'
       }
     },

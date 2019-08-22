@@ -74,7 +74,9 @@
   </button>
 </view>
 
-<compeleted-cmp class="share-page" wx:if="{{showSharePage}}" />
+<compeleted-cmp class="share-page" wx:if="{{showCompeletedPage}}"
+showShareIcon="{{showShareIcon}}"
+title="{{compeletedPageTitle}}" />
 
 <settings-page-cmp
   startTime="{{startTime}}"

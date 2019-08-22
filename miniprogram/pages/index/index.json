@@ -2,8 +2,8 @@
   "enablePullDownRefresh": true,
   "backgroundTextStyle": "dark",
   "usingComponents": {
-    "header-cmp": "../../components/header/header",
-    "tabbar-cmp": "../../components/tabbar/tabbar",
-    "body-cmp": "../../components/index/body/body"
+    "header-cmp": "./components/header/header",
+    "tabbar-cmp": "./components/tabbar/tabbar",
+    "body-cmp": "./components/body/body"
   }
 }

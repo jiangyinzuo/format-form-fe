@@ -13,12 +13,21 @@
   </view>
 
   <button
+    wx:if="{{form.type==='underway' || form.type==='notstart'}}"
     open-type="share"
-    class="share"
+    class="mutiable-btn"
     hover-class="none"
     data-_id="{{form._id}}"
     data-title="{{form.title}}"
   >
-    <image class="share-icon" src="../../static/icon/share.svg" />分享
+    <image class="icon" src="/static/icon/share.svg" />分享
+  </button>
+  <button
+    wx:elif="{{form.type==='draft'}}"
+    class="mutiable-btn"
+    hover-class="none"
+    data-form="form"
+  >
+    <image class="icon" src="/static/icon/edit-black.svg" />编辑
   </button>
 </view>

@@ -1,8 +1,8 @@
 <!--components/editPage/compeleted/compeleted.wxml-->
 <view class="container">
   <image src="../../../static/icon/success.svg" class="success-icon" />
-  <view class="text">制作成功</view>
-  <button class="share-btn" open-type="share" hover-class="none" >
+  <view class="text">{{title}}</view>
+  <button class="share-btn" open-type="share" hover-class="none" wx:if="{{showShareIcon}}" >
     <image class="wechat-icon" src="../../../static/icon/wechat.svg" />
     分享到微信
   </button>

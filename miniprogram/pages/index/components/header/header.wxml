@@ -13,8 +13,8 @@
   <drop-down-list-cmp
     wx:if="{{logged}}"
     class="filter"
-    items="{{['全部', '进行中', '已截止', '草稿']}}"
     selected="{{selected}}"
+    id="dropDonwList"
    />
 
 </view>

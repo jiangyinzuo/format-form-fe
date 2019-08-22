@@ -6,5 +6,8 @@
   </view>
 
   <button type="warn" class="del-btn" bindtap="delForm">删除</button>
+  <view class="btn" bindtap="endCollectingData">停止收集</view>
 </view>
+
+<dash-board-cmp />
 

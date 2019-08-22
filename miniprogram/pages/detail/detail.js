@@ -1,8 +1,9 @@
 // miniprogram/pages/detail/detail.js
-import {FormTempModel} from '../../models/formTemp.js'
+import { IndexToDetailStore } from '../../dataStore/indexToDetail.js'
+import {IndexStore} from '../index/dataStore.js'
 import {makePromise} from '../../utils/makePromise.js'
 
-const formTempModel = new FormTempModel()
+const store = new IndexToDetailStore()
 
 Page({
 
@@ -11,19 +12,22 @@ Page({
    */
   data: {
     formDetail: {},
-    createdAt: ''
+    createdAt: '',
+    tab: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const detail = formTempModel.getFormTempDataFromDetail()
+    const detail = store.getFormData()
     const createdAt = new Date(detail.created_at)
+    const indexStore = new IndexStore()
 
     this.setData({
       formDetail: detail,
-      createdAt: createdAt.toLocaleString()
+      createdAt: createdAt.toLocaleString(),
+      tab: indexStore.getTab()
     })
     console.log(this.data.formDetail)
   },
