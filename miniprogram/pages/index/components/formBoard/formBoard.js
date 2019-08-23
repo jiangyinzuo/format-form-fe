@@ -15,6 +15,11 @@ Component({
    * 组件的初始数据
    */
   data: {
+    tips: {
+      'ended': '已结束',
+      'underway': '',
+      'draft': '草稿'
+    }
   },
 
   /**

@@ -4,10 +4,10 @@
     <view class="title -d-under-line">{{formDetail.title}}</view>
     <view class="created-at">创建日期: {{createdAt}}</view>
   </view>
-
-  <button type="warn" class="del-btn" bindtap="delForm">删除</button>
-  <view class="btn" bindtap="endCollectingData">停止收集</view>
 </view>
 
-<dash-board-cmp />
+<view class="dashboard">
+  <image src="/static/icon/option.svg" class="dashboard-icon" bindtap="showDashBoard" wx:if="{{!showDashBoard}}" />
+  <dash-board-cmp bindtapBtn="onTapBtn" state="{{formDetail.type}}" wx:else />
+</view>
 

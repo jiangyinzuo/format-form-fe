@@ -1,5 +1,5 @@
 const config = {
-  API_BASE_URL: 'http://192.168.43.254:8000/api',
+  API_BASE_URL: 'http://form.jiangyinzuo.cn/api',
   APP_KEY: ''
 }
 

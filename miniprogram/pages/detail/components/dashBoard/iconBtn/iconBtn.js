@@ -1,10 +1,11 @@
-// pages/detail/components/dashBoard/dashBoard.js
+// pages/detail/components/dashBoard/iconBtn/iconBtn.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    state: String
+    text: String,
+    iconSrc: String
   },
 
   /**
@@ -18,8 +19,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    onTapBtn(event) {
-      this.triggerEvent('tapBtn', {btn: event.target.dataset.btn}, {})
+    onTap() {
+      this.triggerEvent('tapIconBtn', {}, {})
     }
   }
 })

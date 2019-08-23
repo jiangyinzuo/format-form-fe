@@ -1,10 +1,11 @@
 // miniprogram/pages/detail/detail.js
 import { IndexToDetailStore } from '../../dataStore/indexToDetail.js'
 import {IndexStore} from '../index/dataStore.js'
+import {LaunchedFormsModel} from '../../models/launchedForms.js'
 import {makePromise} from '../../utils/makePromise.js'
 
 const store = new IndexToDetailStore()
-
+const launchedFormsModel = new LaunchedFormsModel()
 Page({
 
   /**
@@ -13,7 +14,8 @@ Page({
   data: {
     formDetail: {},
     createdAt: '',
-    tab: ''
+    tab: '',
+    showDashBoard: false
   },
 
   /**
@@ -80,6 +82,19 @@ Page({
   onShareAppMessage: function () {
 
   },
+  onTapBtn(event) {
+    let that = this
+    const _FUNC = {
+      'close': ()=>{
+        that.setData({
+          showDashBoard: false
+        })
+      },
+      'del': that.delForm,
+      'ended': that.ended
+    }
+   _FUNC[event.detail.btn]()
+  },
   async delForm() {
     const _modalPromise = await makePromise(wx.showModal, {
       title: '温馨提示',
@@ -90,7 +105,7 @@ Page({
 
     if (_modalPromise.confirm) {
       wx.showNavigationBarLoading()
-      const res = await formTempModel.delFormTemp(this.data.formDetail._id)
+      const res = await launchedFormsModel.delLaunchedForm(this.data.formDetail._id)
       wx.hideNavigationBarLoading()
       console.log(res)
       if (res.error_code === 0) {
@@ -111,5 +126,16 @@ Page({
         })
       }
     }
+  },
+  async ended() {
+    launchedFormsModel.putLaunchedForms({
+      form_temp_id: this.data.formDetail._id,
+      dateTime: 'now'
+    })
+  },
+  showDashBoard() {
+    this.setData({
+      showDashBoard: true
+    })
   }
 })

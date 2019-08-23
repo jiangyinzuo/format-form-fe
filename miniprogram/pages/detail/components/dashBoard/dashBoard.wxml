@@ -1,2 +1,20 @@
 <!--pages/detail/components/dashBoard/dashBoard.wxml-->
-<view>dashboard</view>
+<view class="container">
+  <view class="btn" bindtap="onTapBtn">
+    <image src="/static/icon/close.svg" class="icon" bindtap="onTapBtn" data-btn="close" />
+  </view>
+  <icon-btn-cmp
+    wx:if="{{state==='underway'}}"
+    class="btn"
+    bindtapIconBtn="onTapBtn"
+    data-btn="ended"
+    iconSrc="/static/icon/done.svg"
+    text="停止收集" />
+  <icon-btn-cmp
+    class="btn"
+    bindtapIconBtn="onTapBtn"
+    data-btn="del"
+    iconSrc="/static/icon/delete.svg"
+    text="删除"
+  />
+</view>

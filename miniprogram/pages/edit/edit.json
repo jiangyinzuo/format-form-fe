@@ -1,7 +1,7 @@
 {
   "usingComponents": {
     "dash-board-cmp": "./components/dashBoard/dashBoard",
-    "form-cmp": "./components/form/form",
+    "form-cmp": "/components/form/form",
     "compeleted-cmp": "./components/compeleted/compeleted",
     "settings-page-cmp": "./components/settings/settings"
   },

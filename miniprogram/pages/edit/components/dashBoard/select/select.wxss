@@ -1,5 +1,5 @@
 /* components/dashBoard/radio/radio.wxss */
-@import "../../../static/css/cell.wxss";
+@import "/static/css/cell.wxss";
 
 .radio-item {
   margin: 20rpx 0 20rpx 0;

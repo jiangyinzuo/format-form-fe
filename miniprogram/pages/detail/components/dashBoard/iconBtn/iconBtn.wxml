@@ -1,0 +1,5 @@
+<!--pages/detail/components/dashBoard/iconBtn/iconBtn.wxml-->
+<view class="container" bindtap="onTap">
+  <image src="{{iconSrc}}" class="icon" />
+  <view class="text">{{text}}</view>
+</view>

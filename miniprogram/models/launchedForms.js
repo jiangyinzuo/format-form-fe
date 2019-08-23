@@ -1,10 +1,10 @@
 import { HTTP } from '../utils/http.js'
 
-class LaunchedForms{
+class LaunchedFormsModel{
   constructor() {
     this.http = new HTTP()
   }
-  async patchLaunchedForms({
+  async putLaunchedForms({
     form_temp_id,
     dateTime
   }) {
@@ -13,12 +13,25 @@ class LaunchedForms{
      */
     return await this.http.request({
       url: '/launched_forms',
-      method: 'PATCH',
+      method: 'PUT',
       data: {
         open_id: HTTP.openId,
         form_temp_id,
-        date_time
+        date_time: dateTime
       }
     })
   }
+  async delLaunchedForm(_id) {
+    console.log(_id)
+    return await this.http.request({
+      url: '/form_templates',
+      data: {
+        open_id: HTTP.openId,
+        _id: _id,  // _id is mongodb's objectId
+      },
+      method: 'DELETE'
+    })
+  }
 }
+
+export { LaunchedFormsModel }

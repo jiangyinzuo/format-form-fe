@@ -1,5 +1,5 @@
 /* components/dashBoard/essay/essay.wxss */
-@import "../../../static/css/cell.wxss";
+@import "/static/css/cell.wxss";
 .generic-cell {
   border-radius: 20rpx;
   width: auto;

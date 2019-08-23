@@ -1,6 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "custom-picker-cmp": "../../picker/customPicker"
+    "custom-picker-cmp": "/components/picker/customPicker"
   }
 }

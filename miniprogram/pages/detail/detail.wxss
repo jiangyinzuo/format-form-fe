@@ -23,7 +23,19 @@
   padding-top: 5rpx;
 }
 
-.del-btn {
+
+.dashboard {
+  z-index: 20;
   position: absolute;
   bottom: 20rpx;
+}
+
+.dashboard .dashboard-icon {
+  width: 70rpx;
+  height: 70rpx;
+  padding: 10rpx;
+  background: #e0dede;
+  position: fixed;
+  bottom: 30rpx;
+  right: 30rpx;
 }

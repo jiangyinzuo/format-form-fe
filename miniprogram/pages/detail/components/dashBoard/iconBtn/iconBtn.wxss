@@ -1,0 +1,15 @@
+/* pages/detail/components/dashBoard/iconBtn/iconBtn.wxss */
+.container {
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+}
+
+.container .icon {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.container .text {
+  font-size: 25rpx;
+}

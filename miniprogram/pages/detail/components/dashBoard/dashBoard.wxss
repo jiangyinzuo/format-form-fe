@@ -1,1 +1,22 @@
 /* pages/detail/components/dashBoard/dashBoard.wxss */
+.container {
+  width: 700rpx;
+  height: 300rpx;
+  background: #f0f0f0;
+  box-shadow: 0 0 15rpx #444444;
+  border-radius: 10rpx;
+  display: flex;
+}
+
+.container .icon {
+  width: 45rpx;
+  height: 45rpx;
+  position: absolute;
+  right: 15rpx;
+  top: 15rpx;
+}
+
+.container .btn {
+  margin: 15rpx;
+}
+

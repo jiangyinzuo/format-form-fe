@@ -14,7 +14,7 @@
         data-idx="{{index}}"
         bindtap="delRadio"
         class="del-btn"
-        src="../../../static/icon/delete.svg"></image>
+        src="/static/icon/delete.svg"></image>
     </view>
   </block>
   <view class="add-option-btn" bindtap="addRadio">添加选项</view>

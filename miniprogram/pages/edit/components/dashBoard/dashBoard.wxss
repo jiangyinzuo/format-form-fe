@@ -1,5 +1,5 @@
 /* components/dashBoard/dashBoard.wxss */
-@import "../../static/css/cell.wxss";
+@import "/static/css/cell.wxss";
 .container {
   width: 700rpx;
   height: 100%;
