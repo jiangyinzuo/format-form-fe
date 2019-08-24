@@ -1,0 +1,42 @@
+/* pages/detail/components/bargraph/bargraph.wxss */
+.title {
+  text-align: center;
+  padding: 20rpx;
+}
+
+.bar {
+  display: flex;
+  width: 620rpx;
+  margin: 10rpx 0;
+  height: 50rpx;
+  vertical-align: center;
+  border: 0.5rpx solid rgba(95, 95, 202, 0.527);
+  position: relative;
+}
+
+.bar .desc {
+  white-space: nowrap;
+  position: absolute;
+  left: 15rpx;
+  display: inline-block;
+  max-width: 320rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+
+.bar .result {
+  position: absolute;
+  right: 200rpx;
+  text-align: right;
+  display: inline-block;
+}
+
+.bar .rate {
+  position: absolute;
+  right: 20rpx;
+  display: inline-block;
+}
+
+.bar .filled {
+  background: rgba(95, 95, 202, 0.527);
+}

@@ -5,11 +5,13 @@
 .container {
   width: 700rpx;
   margin: 30rpx 0;
+  padding-bottom: 100rpx;
 }
 
-.main-info-board {
-  background: #eeeeee;
+.main-info-board, .statistics-board {
+  background: #f0f0f0;
   padding: 20rpx;
+  margin-bottom: 20rpx;
 }
 
 .main-info-board .title {
@@ -18,11 +20,18 @@
   padding-bottom: 15rpx;
 }
 
+.statistics-board .title {
+  padding-bottom: 10rpx;
+}
+
 .main-info-board .created-at {
   color: #777777;
   padding-top: 5rpx;
 }
 
+.statistics-board {
+  color: #444444;
+}
 
 .dashboard {
   z-index: 20;
@@ -31,10 +40,12 @@
 }
 
 .dashboard .dashboard-icon {
-  width: 70rpx;
-  height: 70rpx;
-  padding: 10rpx;
-  background: #e0dede;
+  width: 60rpx;
+  height: 60rpx;
+  padding: 20rpx;
+  border-radius: 100%;
+  box-shadow: 0 0 20rpx #333333;
+  background: #f0f0f0;
   position: fixed;
   bottom: 30rpx;
   right: 30rpx;

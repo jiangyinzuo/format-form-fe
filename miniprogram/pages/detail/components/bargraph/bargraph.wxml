@@ -1,0 +1,13 @@
+<!--pages/detail/components/bargraph/bargraph.wxml-->
+<view class="container">
+  <view class="title">{{question.desc}}</view>
+  <block wx:for="{{statisticalRes.res}}" wx:key="{{index}}">
+    <view class="bar">
+      <view class="desc">{{question.detail[index]}}</view>
+      <view class="result">{{item}}</view>
+      <view class="rate">({{rate[index]}})</view>
+      <view class="filled" style="flex: {{item}}"></view>
+      <view class="blank" style="flex: {{total - item}}"></view>
+    </view>
+  </block>
+</view>

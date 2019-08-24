@@ -6,11 +6,8 @@ import {makePromise} from '../../utils/makePromise.js'
 
 const store = new IndexToDetailStore()
 const launchedFormsModel = new LaunchedFormsModel()
-Page({
 
-  /**
-   * 页面的初始数据
-   */
+Page({
   data: {
     formDetail: {},
     createdAt: '',
