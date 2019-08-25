@@ -18,8 +18,8 @@
 </view>
 
 
-<view class="dashboard">
+<view class="dashboard" wx:if="{{tab=='launched'}}">
   <image src="/static/icon/option.svg" class="dashboard-icon" bindtap="showDashBoard" wx:if="{{!showDashBoard}}" />
-  <dash-board-cmp bindtapBtn="onTapBtn" state="{{formDetail.type}}" wx:else />
+  <dash-board-cmp bindtapBtn="onTapBtn" formType="{{formDetail.type}}" wx:else />
 </view>
 

@@ -1,10 +1,10 @@
 // pages/detail/components/dashBoard/dashBoard.js
 Component({
   /**
-   * 组件的属性列表
+   * @property {string} formType - denote type of the form, values 'underway', 'ended', 'notstart'
    */
   properties: {
-    state: String
+    formType: String
   },
 
   /**

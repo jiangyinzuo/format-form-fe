@@ -1,4 +1,6 @@
 import { HTTP } from '../utils/http.js'
+import {makePromise} from '../utils/makePromise.js'
+import {config} from '../config.js'
 
 class LaunchedFormsModel{
   constructor() {
@@ -31,6 +33,18 @@ class LaunchedFormsModel{
       },
       method: 'DELETE'
     })
+  }
+  async exportExcel(form_id) {
+    const res = await makePromise(wx.downloadFile, {
+      url: `${config.API_BASE_URL}/launched_forms/excel?open_id=${HTTP.openId}&form_id=${form_id}`,
+      statusCode: 200
+    })
+    
+    const f = await makePromise(wx.openDocument, {
+      filePath: res.tempFilePath,
+      fileType: 'xlsx'
+    })
+
   }
 }
 

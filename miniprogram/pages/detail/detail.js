@@ -12,7 +12,7 @@ Page({
     formDetail: {},
     createdAt: '',
     tab: '',
-    showDashBoard: false
+    showDashBoard: false,
   },
 
   /**
@@ -28,7 +28,7 @@ Page({
       createdAt: createdAt.toLocaleString(),
       tab: indexStore.getTab()
     })
-    console.log(this.data.formDetail)
+    console.log('formDetail',this.data.formDetail)
   },
 
   /**
@@ -88,7 +88,8 @@ Page({
         })
       },
       'del': that.delForm,
-      'ended': that.ended
+      'ended': that.ended,
+      'export': that.exportExcel
     }
    _FUNC[event.detail.btn]()
   },
@@ -129,6 +130,13 @@ Page({
       form_temp_id: this.data.formDetail._id,
       dateTime: 'now'
     })
+  },
+  async exportExcel() {
+    wx.showLoading({
+      title: '加载中',
+    })
+    await launchedFormsModel.exportExcel(this.data.formDetail._id)
+    wx.hideLoading()
   },
   showDashBoard() {
     this.setData({

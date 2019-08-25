@@ -1,9 +1,14 @@
 import { HTTP } from '../utils/http.js'
 
 class FormTempModel {
-  
+  static FORM_TYPE_ENUM = {
+    UNDERWAY: 'underway',
+    DRAFT: 'draft',
+    ENDED: 'ended'
+  }
   constructor() {
     this.http = new HTTP()
+    Object.freeze(FormTempModel.FORM_TYPE_ENUM)
   }
   async sendFormTemp({
     title,
