@@ -13,6 +13,7 @@ Page({
     createdAt: '',
     tab: '',
     showDashBoard: false,
+    showPreview: false
   },
 
   /**
@@ -89,7 +90,8 @@ Page({
       },
       'del': that.delForm,
       'ended': that.ended,
-      'export': that.exportExcel
+      'export': that.exportExcel,
+      'form': that.showFormTemp
     }
    _FUNC[event.detail.btn]()
   },
@@ -141,6 +143,16 @@ Page({
   showDashBoard() {
     this.setData({
       showDashBoard: true
+    })
+  },
+  showFormTemp() {
+    this.setData({
+      showPreview: true
+    })
+  },
+  hidePreview() {
+    this.setData({
+      showPreview: false
     })
   }
 })

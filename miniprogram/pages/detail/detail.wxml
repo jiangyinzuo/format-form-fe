@@ -23,3 +23,14 @@
   <dash-board-cmp bindtapBtn="onTapBtn" formType="{{formDetail.type}}" wx:else />
 </view>
 
+<view class="preview" wx:if="{{showPreview}}">
+  <view class="back-btn" bindtap="hidePreview">
+    <view>返回</view>
+    <view>页面</view>
+  </view>
+<form-preview-cmp
+  enabled="{{false}}"
+  formTemp="{{formDetail}}"
+  openId="preview"
+/>
+</view>

@@ -4,7 +4,7 @@ import { FormDataModel } from '../../models/formData.js'
 let formDataModel = new FormDataModel()
 Component({
   /**
-   * 组件的属性列表
+   * @param {string} openId - openid of user, values 'preview' for preview scene. 
    */
   properties: {
     formTemp: Object,

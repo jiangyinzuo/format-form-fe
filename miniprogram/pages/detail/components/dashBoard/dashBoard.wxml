@@ -13,6 +13,12 @@
   <icon-btn-cmp
     class="btn"
     bindtapIconBtn="onTapBtn"
+    data-btn="form"
+    iconSrc="/static/icon/form-2.svg"
+    text="查看表单问题" />
+  <icon-btn-cmp
+    class="btn"
+    bindtapIconBtn="onTapBtn"
     data-btn="export"
     iconSrc="/static/icon/form.svg"
     text="导出电子表格" />
