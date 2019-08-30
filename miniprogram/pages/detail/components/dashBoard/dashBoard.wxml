@@ -4,7 +4,7 @@
     <image src="/static/icon/close.svg" class="icon" bindtap="onTapBtn" data-btn="close" />
   </view>
   <icon-btn-cmp
-    wx:if="{{formType==='underway'}}"
+    wx:if="{{scene==='launched' && formType==='underway'}}"
     class="btn"
     bindtapIconBtn="onTapBtn"
     data-btn="ended"
@@ -17,12 +17,14 @@
     iconSrc="/static/icon/form-2.svg"
     text="查看表单问题" />
   <icon-btn-cmp
+    wx:if="{{scene === 'launched'}}"
     class="btn"
     bindtapIconBtn="onTapBtn"
     data-btn="export"
     iconSrc="/static/icon/form.svg"
     text="导出电子表格" />
   <icon-btn-cmp
+    wx:if="{{scene === 'launched'}}"
     class="btn"
     bindtapIconBtn="onTapBtn"
     data-btn="del"

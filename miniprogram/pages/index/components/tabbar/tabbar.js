@@ -21,12 +21,14 @@ Component({
    */
   methods: {
     onSelectTab(event) {
+      let store = new IndexStore()
+      store.setTab(event.target.dataset.tab)
+      
       this.triggerEvent('selectTab', {tab: event.target.dataset.tab}, {})
       this.setData({
         chooseLaunched: event.target.dataset.tab === 'launched'
       })
-      let store = new IndexStore()
-      store.setTab(event.target.dataset.tab)
+
     }
   }
 })

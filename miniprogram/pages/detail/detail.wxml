@@ -19,25 +19,18 @@
   <view class="my-answer-board" wx:if="{{tab === 'involved'}}">
     <view class="title -d-under-line">我提交的表单</view>
     <view class="content">
-      
+      <answer-sheet-cmp answers="{{formDetail.form_data[ansIdx].answer}}" questions="{{formDetail.questions}}" />
+      <view class="icon">
+        <image src="/static/icon/left-arrow.svg" bindtap="onSelectAnswer" data-operation="left" />
+        <text>{{ansIdx+1}} of {{formDetail.form_data.length}}</text>
+        <image src="/static/icon/right-arrow.svg" bindtap="onSelectAnswer" data-operation="right" />
+      </view>
+
     </view>
   </view>
 </view>
 
-
-<view class="dashboard" wx:if="{{tab=='launched'}}">
+<view class="dashboard">
   <image src="/static/icon/option.svg" class="dashboard-icon" bindtap="showDashBoard" wx:if="{{!showDashBoard}}" />
-  <dash-board-cmp bindtapBtn="onTapBtn" formType="{{formDetail.type}}" wx:else />
-</view>
-
-<view class="preview" wx:if="{{showPreview}}">
-  <view class="back-btn" bindtap="hidePreview">
-    <view>返回</view>
-    <view>页面</view>
-  </view>
-<form-preview-cmp
-  enabled="{{false}}"
-  formTemp="{{formDetail}}"
-  openId="preview"
-/>
+  <dash-board-cmp bindtapBtn="onTapBtn" formType="{{formDetail.type}}" scene="{{tab}}" wx:else />
 </view>

@@ -1,6 +1,7 @@
 // miniprogram/pages/edit/edit.js
 import { deepClone } from '../../utils/deepClone.js'
 import { LaunchedFormsModel } from '../../models/launchedForms.js'
+import { FillInStore } from '../fillIn/dataStore.js'
 
 let launchedFormsModel = new LaunchedFormsModel()
 
@@ -58,8 +59,6 @@ Page({
       detail: ['', '']
     },
     openWith: -1,
-    _formTemp: {},
-    _showPreview: false,
 
     // params pass to settings-page-cmp
     showSettings: false,
@@ -215,22 +214,17 @@ Page({
     }
     return flag
   },
-  preview() {
-    this.setData({
-      _formTemp: {
-        questions: this.data.questionArr,
-        title: this.data.title,
-        type: 'custom',
-        _id: 'PREVIEW',
-      },
-      _showPreview: true
+  showPreview() {
+    FillInStore.setFormTemp({
+      questions: this.data.questionArr,
+      title: this.data.title
+    })
+
+    wx.navigateTo({
+      url: '/pages/fillIn/fillIn?id=preview',
     })
   },
-  hidePreview() {
-    this.setData({
-      _showPreview: false
-    })
-  },
+
   async postFormTemp(event) {
     if (this.formValidate()) {
       let params = {}  //send to backend

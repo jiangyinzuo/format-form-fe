@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "form-cmp": "../../components/form/form"
-  }
+  },
+  "navigationBarTitleText": "填写表单"
 }

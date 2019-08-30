@@ -44,7 +44,6 @@ Page({
     this.selectComponent('#body').getFormArr(this.data.tab)
   },
   changeFormFilter(event) {
-    console.log(event)
     this.setData({
       formType: FORM_TYPE[event.detail.value]
     })
