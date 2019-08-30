@@ -155,31 +155,3 @@ page {
   color: #ffffff;
   left: 115rpx;
 }
-
-.preview {
-  margin: -10rpx auto;
-  padding: 0 auto;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 100;
-  background: #f6f6f6;
-}
-
-.preview .back-btn {
-  position: fixed;
-  top: 38rpx;
-  right: 40rpx;
-  width: 80rpx;
-  height: 80rpx;
-  padding: 26rpx;
-  border: 2rpx solid #075b92;
-  border-radius: 50%;
-  z-index: 101;
-  text-align: center;
-  line-height: 40rpx;
-  font-size: 37rpx;
-  background: #075b92;
-  color: #f6f6f6;
-  box-shadow: 0 0 15rpx #808080;
-}
