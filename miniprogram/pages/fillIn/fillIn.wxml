@@ -5,16 +5,14 @@
     openId="{{openId}}"
     wx:if="{{!_filled}}"
     bindfilled="_onFilled"
-    enabled="true"
   >
   </form-cmp>
   <view class="success-page" wx:else>
     <image src="../../static/icon/success.svg" class="success-icon" />
-    <view class="tip">提交成功</view>
+    <view class="success-tip">提交成功</view>
+    <view class="enter-tip">填写详情可进入小程序查看</view>
     <view class="btn">
-      <!-- TODO: check detail -->
-      <view class="detail">填写详情</view>
-      <view wx:if="{{formTemp.repeat_filling}}" class="one-more" bindtap="fillInOneMore">再填一份</view>
+    <view wx:if="{{formTemp.repeat_filling}}" class="one-more" bindtap="fillInOneMore">再填一份</view>
     </view>
     <view
       class="entrance"

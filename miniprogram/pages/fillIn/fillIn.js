@@ -1,6 +1,7 @@
 // miniprogram/pages/fillIn/fillIn.js
 import { BlankFormModel } from '../../models/blankForm.js'
 import { UserModel } from '../../models/user.js'
+import { FillInStore } from './dataStore.js'
 
 Page({
 
@@ -20,6 +21,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   async onLoad(options) {
+    console.log("onLoad: ", options.id)
+    if (options.id === 'preview') {
+      this.setData({
+        formTemp: FillInStore.getFormTemp(),
+        openId: 'preview'
+      })
+      return
+    }
+
     const blankForm = new BlankFormModel()
 
     wx.showLoading({

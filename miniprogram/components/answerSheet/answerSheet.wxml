@@ -1,0 +1,28 @@
+<!--components/answerSheet/answerSheet.wxml-->
+<view class="container">
+  <block wx:for="{{questions}}" wx:key="{{index}}">
+    <view class="question">
+      {{index+1}}. {{item.desc}}
+    </view>
+    <view class="answer">
+      <view wx:if="{{item.type==='essay'}}">
+        {{answers[index]}}
+      </view>
+      <view wx:elif="{{item.type==='select'}}">
+        <block
+          wx:for="{{answers[index]}}"
+          wx:for-item="option"
+          wx:for-index="idx"
+          wx:key="{{idx}}"
+        >
+          <view>
+            {{item.detail[answers[index][option]]}}
+          </view>
+        </block>
+      </view>
+      <view wx:elif="{{item.type==='radio'}}">
+        {{item.detail[answers[index]]}}
+      </view>
+    </view>
+  </block>
+</view>

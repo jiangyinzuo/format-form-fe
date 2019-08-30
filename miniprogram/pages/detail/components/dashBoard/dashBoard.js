@@ -4,7 +4,8 @@ Component({
    * @property {string} formType - denote type of the form, values 'underway', 'ended', 'notstart'
    */
   properties: {
-    formType: String
+    formType: String,
+    scene: String
   },
 
   /**

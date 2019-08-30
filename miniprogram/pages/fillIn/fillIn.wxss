@@ -7,12 +7,18 @@
   margin: 130rpx auto 35rpx auto;
 }
 
-.container .success-page .tip {
+.container .success-page .success-tip {
   font-size: 40rpx;
   position: relative;
   text-align: center;
   margin-bottom: 20rpx;
   color: #504e4e;
+}
+
+.container .success-page .enter-tip {
+  text-align: center;
+  margin-bottom: 20rpx;
+  color: #666666;
 }
 
 .container .success-page .btn {

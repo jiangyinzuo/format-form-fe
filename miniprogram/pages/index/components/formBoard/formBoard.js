@@ -1,14 +1,16 @@
 // components/formBoard/formBoard.js
 import { IndexToDetailStore } from '../../../../dataStore/indexToDetail.js'
 
-import {IndexStore} from '../../dataStore.js'
-
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    form: Object
+    form: Object,
+    scene: {
+      type: String,
+      value: 'launched'
+    }
   },
 
   /**

@@ -1,0 +1,14 @@
+/* components/answerSheet/answerSheet.wxss */
+.container {
+  padding-bottom: 70rpx;
+}
+
+.question {
+  padding: 15rpx 0;
+  color: #444444;
+}
+
+.answer {
+  padding-left: 10rpx;
+  color: #444444;
+}

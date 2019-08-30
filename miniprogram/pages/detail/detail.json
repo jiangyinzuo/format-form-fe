@@ -2,6 +2,7 @@
   "usingComponents": {
     "dash-board-cmp": "./components/dashBoard/dashBoard",
     "bargraph-cmp": "./components/bargraph/bargraph",
-    "form-preview-cmp": "/components/form/form"
+    "form-preview-cmp": "/components/form/form",
+    "answer-sheet-cmp": "/components/answerSheet/answerSheet"
   }
 }

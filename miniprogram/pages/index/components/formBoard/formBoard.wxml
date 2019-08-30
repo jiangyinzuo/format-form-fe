@@ -3,7 +3,7 @@
   <view class="title">{{form.title}}</view>
   <view class="state">{{tips[form.type]}}</view>
   <view class="text">
-    <view class="tip">{{form.form_data.length}}人填写</view>
+    <view class="tip" wx:if="{{scene === 'launched'}}">{{form.form_data.length}}人填写</view>
     <navigator
       url="/pages/detail/detail"
       class="detail-btn"

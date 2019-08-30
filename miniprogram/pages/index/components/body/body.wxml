@@ -1,6 +1,6 @@
 <!--components/index/launched/launched.wxml-->
 <view class="cell">
   <block wx:for="{{formArr}}" wx:key="{{index}}">
-    <form-board-cmp form="{{item}}" />
+    <form-board-cmp form="{{item}}" scene="{{scene}}" />
   </block>
 </view>

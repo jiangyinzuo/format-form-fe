@@ -4,11 +4,15 @@ import { FormDataModel } from '../../models/formData.js'
 let formDataModel = new FormDataModel()
 Component({
   /**
+   * @param {object} formTemp - form template for preview                                   or fill in
    * @param {string} openId - openid of user, values 'preview' for preview scene. 
    */
   properties: {
+    /**
+     * @param {array} questions - questions of the form
+     * @param {string} title - title of the form
+     */
     formTemp: Object,
-    enabled: Boolean,
     openId: String
   },
 
@@ -52,27 +56,26 @@ Component({
         return;
       }
       
-      
-      if (this.properties.enabled) {
-        wx.showNavigationBarLoading()
-        let res = await formDataModel.postFormData({
-          open_id: this.properties.openId,
-          object_id: this.properties.formTemp._id,
-          form_data: formData,
-          form_types: formTypes
-        }).finally(
-          wx.hideNavigationBarLoading()
-        )
-        console.log(res)
-        if (res.err_code === 0) {
-          this.triggerEvent('filled', {}, {})
-        }
-      } else {
+      if (this.properties.openId === 'preview') {
         wx.showToast({
           title: '数据验证成功'
         })
+        return
       }
-      
+
+      wx.showNavigationBarLoading()
+      let res = await formDataModel.postFormData({
+        open_id: this.properties.openId,
+        object_id: this.properties.formTemp._id,
+        form_data: formData,
+        form_types: formTypes
+      }).finally(
+        wx.hideNavigationBarLoading()
+      )
+      console.log(res)
+      if (res.err_code === 0) {
+        this.triggerEvent('filled', {}, {})
+      }
     }
   }
 })

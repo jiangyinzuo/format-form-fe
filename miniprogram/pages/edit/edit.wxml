@@ -53,7 +53,7 @@
 </view>
 
 <view class="tabbar" wx:if="{{!showDashBoard}}">
-  <view bindtap="preview" class="text-btn">预览</view>
+  <view bindtap="showPreview" class="text-btn">预览</view>
   <view
     class="text-btn"
     bindtap="postFormTemp"
@@ -86,11 +86,3 @@ title="{{compeletedPageTitle}}" />
   class="settings-page"
   bindsettingChanged="onSettingChanged"
   wx:if="{{showSettings}}" />
-
-<view class="preview" wx:if="{{_showPreview}}">
-  <view class="back-btn" bindtap="hidePreview">
-    <view>返回</view>
-    <view>编辑</view>
-  </view>
-  <form-cmp formTemp="{{_formTemp}}" enabled="{{false}}" openId="preview"></form-cmp>
-</view>

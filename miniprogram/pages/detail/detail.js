@@ -1,6 +1,7 @@
 // miniprogram/pages/detail/detail.js
 import { IndexToDetailStore } from '../../dataStore/indexToDetail.js'
 import {IndexStore} from '../index/dataStore.js'
+import {FillInStore} from '../fillIn/dataStore.js'
 import {LaunchedFormsModel} from '../../models/launchedForms.js'
 import {makePromise} from '../../utils/makePromise.js'
 
@@ -13,7 +14,7 @@ Page({
     createdAt: '',
     tab: '',
     showDashBoard: false,
-    showPreview: false
+    ansIdx: 0
   },
 
   /**
@@ -91,7 +92,7 @@ Page({
       'del': that.delForm,
       'ended': that.ended,
       'export': that.exportExcel,
-      'form': that.showFormTemp
+      'form': that.showPreview
     }
    _FUNC[event.detail.btn]()
   },
@@ -145,14 +146,21 @@ Page({
       showDashBoard: true
     })
   },
-  showFormTemp() {
-    this.setData({
-      showPreview: true
+  showPreview() {
+    FillInStore.setFormTemp(this.data.formDetail)
+    wx.navigateTo({
+      url: '/pages/fillIn/fillIn?id=preview',
     })
   },
-  hidePreview() {
-    this.setData({
-      showPreview: false
-    })
+  onSelectAnswer(event) {
+    if (event.target.dataset.operation === 'left' && this.data.ansIdx > 0) {
+      this.setData({
+        ansIdx: this.data.ansIdx - 1 
+      })
+    } else if (event.target.dataset.operation === 'right' && this.data.ansIdx < this.data.formDetail.form_data.length - 1) {
+      this.setData({
+        ansIdx: this.data.ansIdx + 1
+      })
+    }
   }
 })

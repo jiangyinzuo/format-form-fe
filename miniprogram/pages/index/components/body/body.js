@@ -7,9 +7,6 @@ import {HTTP} from '../../../../utils/http.js'
 const launchedFormsModel = new LaunchedFormsModel()
 const involvedFormsModel = new InvolvedFormsModel()
 Component({
-  lifetimes: {
-
-  },
   properties: {
     formType: String
   },
@@ -24,6 +21,10 @@ Component({
       'underway': [],
       'ended': [],
       'draft': []
+    },
+    scene: {
+      type: String,
+      value: 'launched'
     }
   },
 
@@ -37,6 +38,7 @@ Component({
        *                         'launched' or 'involved'
        */
       wx.showNavigationBarLoading()
+      this.data.scene = type
 
       let res
       console.log(HTTP.openId)
@@ -66,7 +68,8 @@ Component({
         }
       }
       this.setData({
-        formArr: this.data.formFilter[this.properties.formType]
+        formArr: this.data.formFilter[this.properties.formType],
+        scene: this.data.scene
       })
     }
   }
