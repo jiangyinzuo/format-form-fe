@@ -1,8 +1,8 @@
 // miniprogram/pages/edit/edit.js
 import { deepClone } from '../../utils/deepClone.js'
-import { FormTempModel } from '../../models/formTemp.js'
+import { LaunchedFormsModel } from '../../models/launchedForms.js'
 
-let formTempModel = new FormTempModel()
+let launchedFormsModel = new LaunchedFormsModel()
 
 const _ESSAY_TYPE = {
   'text': '文本',
@@ -235,7 +235,7 @@ Page({
     if (this.formValidate()) {
       let params = {}  //send to backend
 
-      let res = await formTempModel.sendFormTemp({
+      let res = await launchedFormsModel.sendFormTemp({
         title: this.data.title,
         questions: this.data.questionArr,
         type: event.target.dataset.formtype,

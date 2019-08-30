@@ -15,6 +15,13 @@
       </block>
     </view>
   </view>
+
+  <view class="my-answer-board" wx:if="{{tab === 'involved'}}">
+    <view class="title -d-under-line">我提交的表单</view>
+    <view class="content">
+      
+    </view>
+  </view>
 </view>
 
 

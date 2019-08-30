@@ -1,10 +1,10 @@
 // components/index/launched/launched.js
-import {FormTempModel} from '../../../../models/formTemp.js'
+import { LaunchedFormsModel } from '../../../../models/launchedForms.js'
 import {UserModel} from '../../../../models/user.js'
 import { InvolvedFormsModel } from '../../../../models/involvedForms.js'
 import {HTTP} from '../../../../utils/http.js'
 
-const formTempModel = new FormTempModel()
+const launchedFormsModel = new LaunchedFormsModel()
 const involvedFormsModel = new InvolvedFormsModel()
 Component({
   lifetimes: {
@@ -43,8 +43,8 @@ Component({
       if (!HTTP.openId) {
         const userModel = new UserModel()
         res = await userModel.loginAndGetLaunchedForm()
-      } else if (type === 'launched'){
-        res = await formTempModel.getFormTemp()
+      } else if (type === 'launched') {
+        res = await launchedFormsModel.getFormTemp()
       } else {
         res = await involvedFormsModel.getInvolvedForms()
       }
@@ -61,7 +61,6 @@ Component({
     },
     filtFormType(formTemps) {
       if (formTemps !== null) {
-       
         for (let i in formTemps) {
           this.data.formFilter[formTemps[i].type].push(formTemps[i])
         }
