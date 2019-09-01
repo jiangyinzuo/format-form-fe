@@ -25,6 +25,10 @@ Page({
   /**
    * @namespace
    * 
+   * @property {string} scece - scene of edit page, values
+   * 'create' for creating a new form or 'draft' for editing
+   * a launched form
+   * 
    * @property {object} _questionDetail - provide for UI
    * @property {string} _questionDetail.type - type of question
    * @property {string} _questionDetail.desc  - desc of question
@@ -74,9 +78,8 @@ Page({
 
   onLoad(options) {
     if (options.scene === 'draft') {
-      console.log(EditStore.form)
       this.data.scene = 'draft'
-
+      console.log('scene: ', this.data.scene)
       this.data.questionArr = EditStore.form.questions
       this.data.repeatFilling = EditStore.form.repeat_filling
       this.data.showSelectRes = EditStore.form.show_select_res
@@ -259,23 +262,40 @@ Page({
     if (this.formValidate()) {
       let params = {}  //send to backend
 
-      let res = await launchedFormsModel.sendFormTemp({
-        title: this.data.title,
-        questions: this.data.questionArr,
-        type: event.target.dataset.formtype,
-        show_select_res: this.data.showSelectRes,
-        repeat_filling: this.data.repeatFilling,
-        start_time: this.data.startTime,
-        end_time: this.data.endTime
-      })
+      let res
+      // create or edit the form
+      if (this.data.scene === 'create') {
+        res = await launchedFormsModel.sendFormTemp({
+          title: this.data.title,
+          questions: this.data.questionArr,
+          type: event.target.dataset.formtype,
+          show_select_res: this.data.showSelectRes,
+          repeat_filling: this.data.repeatFilling,
+          start_time: this.data.startTime,
+          end_time: this.data.endTime
+        })
+      } else if (this.data.scene === 'draft') {
+        res = await launchedFormsModel.putLaunchedForm({
+          form_temp_id: this.data.formTempId,
+          title: this.data.title,
+          questions: this.data.questionArr,
+          type: event.target.dataset.formtype,
+          show_select_res: this.data.showSelectRes,
+          repeat_filling: this.data.repeatFilling,
+          start_time: this.data.startTime,
+          end_time: this.data.endTime
+        })
+      }
 
       console.log(res)
-      this.data.formTempId = res.form_temp_id
-      this.setData({
-        showCompeletedPage: true,
-        showShareIcon: event.target.dataset.formtype === 'underway',
-        compeletedPageTitle: event.target.dataset.formtype === 'underway' ? '制作成功' : '保存成功'
-      })
+      if (res.err_code === 0) {
+        this.data.formTempId = res.form_temp_id
+        this.setData({
+          showCompeletedPage: true,
+          showShareIcon: event.target.dataset.formtype === 'underway',
+          compeletedPageTitle: event.target.dataset.formtype === 'underway' ? '制作成功' : '保存成功'
+        })
+      }
     }
   },
   onEditTitle(event) {

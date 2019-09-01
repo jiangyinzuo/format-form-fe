@@ -6,20 +6,48 @@ class LaunchedFormsModel{
   constructor() {
     this.http = new HTTP()
   }
-  async putLaunchedForms({
+  async putLaunchedForm({
     form_temp_id,
-    dateTime
+    title,
+    type,
+    show_select_res,
+    repeat_filling,
+    start_time,
+    end_time,
+    questions
+  }) {
+    return await this.http.request({
+      url: '/launched_forms',
+      data: {
+        form_temp_id,
+        open_id: HTTP.openId,
+        title: title,
+        type: type,
+        questions: questions,
+        show_select_res: show_select_res,
+        repeat_filling: repeat_filling,
+        start_time: start_time,
+        end_time: end_time
+      },
+      method: 'PUT'
+    })
+  }
+  async putLaunchedFormsStatus({
+    form_temp_id,
+    end_time,
+    type
   }) {
     /**
      * delay the end time of the form. If param `dateTime` equals to 'now', type of the form will become 'ended'.
      */
     return await this.http.request({
-      url: '/launched_forms',
+      url: '/launched_forms/status',
       method: 'PUT',
       data: {
         open_id: HTTP.openId,
         form_temp_id,
-        date_time: dateTime
+        end_time,
+        type
       }
     })
   }
