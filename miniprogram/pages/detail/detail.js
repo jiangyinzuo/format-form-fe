@@ -20,7 +20,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad(options) {
     const detail = store.getFormData()
     const createdAt = new Date(detail.created_at)
     const indexStore = new IndexStore()
@@ -81,6 +81,25 @@ Page({
   onShareAppMessage: function () {
 
   },
+  async navigateToIndex(errCode, successInfo, errInfo) {
+    if (errCode === 0) {
+      await makePromise(wx.showToast, {
+        title: successInfo,
+        icon: 'none',
+      })
+      setTimeout(() => {
+        wx.reLaunch({
+          url: '/pages/index/index',
+        })
+      }, 1500)
+    } else {
+      wx.showToast({
+        title: errInfo,
+        icon: 'none'
+      })
+    }
+  },
+
   onTapBtn(event) {
     let that = this
     const _FUNC = {
@@ -91,6 +110,7 @@ Page({
       },
       'del': that.delForm,
       'ended': that.ended,
+      'relaunch': that.relaunch,
       'export': that.exportExcel,
       'form': that.showPreview
     }
@@ -109,30 +129,24 @@ Page({
       const res = await launchedFormsModel.delLaunchedForm(this.data.formDetail._id)
       wx.hideNavigationBarLoading()
       console.log(res)
-      if (res.error_code === 0) {
-        await makePromise(wx.showToast, {
-          title: '删除成功',
-          icon: 'none',
-        })
-        setTimeout(()=>{
-          wx.reLaunch({
-            url: '/pages/index/index',
-          })
-        }, 1500)
-
-      } else {
-        wx.showToast({
-          title: '删除失败',
-          icon: 'none'
-        })
-      }
+      this.navigateToIndex(res.err_code, '删除成功', '删除失败')
     }
   },
   async ended() {
-    launchedFormsModel.putLaunchedForms({
+    let res = await launchedFormsModel.putLaunchedFormsStatus({
       form_temp_id: this.data.formDetail._id,
-      dateTime: 'now'
+      end_time: this.data.formDetail.end_time,
+      type: 'ended'
     })
+    this.navigateToIndex(res.err_code, '结束成功', '结束失败')
+  },
+  async relaunch() {
+    let res = await launchedFormsModel.putLaunchedFormsStatus({
+      form_temp_id: this.data.formDetail._id,
+      end_time: '',
+      type: 'underway'
+    })
+    this.navigateToIndex(res.err_code, '已改为重新收集', '操作失败')
   },
   async exportExcel() {
     wx.showLoading({

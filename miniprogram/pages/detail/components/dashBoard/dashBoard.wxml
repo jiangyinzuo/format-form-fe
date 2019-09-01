@@ -11,6 +11,13 @@
     iconSrc="/static/icon/done.svg"
     text="停止收集" />
   <icon-btn-cmp
+    wx:if="{{scene==='launched' && formType==='ended'}}"
+    class="btn"
+    bindtapIconBtn="onTapBtn"
+    data-btn="relaunch"
+    iconSrc="/static/icon/done.svg"
+    text="继续收集" />
+  <icon-btn-cmp
     class="btn"
     bindtapIconBtn="onTapBtn"
     data-btn="form"

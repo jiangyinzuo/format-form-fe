@@ -1,6 +1,6 @@
 <!--miniprogram/pages/edit/edit.wxml-->
 <view class="container">
-  <input placeholder="请输入表单标题" bindinput="onEditTitle" class="generic-cell" maxlength="30" />
+  <input placeholder="请输入表单标题" bindinput="onEditTitle" class="generic-cell" maxlength="30" value="{{title}}" />
   <block wx:for="{{_questionDetail}}" wx:key="{{index+1}}">
     <view class="generic-cell">
       <image

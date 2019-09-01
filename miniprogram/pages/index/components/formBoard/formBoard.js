@@ -1,6 +1,8 @@
 // components/formBoard/formBoard.js
 import { IndexToDetailStore } from '../../../../dataStore/indexToDetail.js'
 
+import { EditStore } from '../../../edit/store.js'
+
 Component({
   /**
    * 组件的属性列表
@@ -31,6 +33,13 @@ Component({
     showDetail() {
       let store = new IndexToDetailStore()
       store.setFormData(this.properties.form)
+    },
+    navigateToEditPage(event) {
+      console.log(event.target.dataset.form)
+      EditStore.form = event.target.dataset.form
+      wx.navigateTo({
+        url: '/pages/edit/edit?scene=draft',
+      })
     }
   }
 })

@@ -2,6 +2,7 @@
 import { deepClone } from '../../utils/deepClone.js'
 import { LaunchedFormsModel } from '../../models/launchedForms.js'
 import { FillInStore } from '../fillIn/dataStore.js'
+import { EditStore } from './store.js'
 
 let launchedFormsModel = new LaunchedFormsModel()
 
@@ -24,6 +25,10 @@ Page({
   /**
    * @namespace
    * 
+   * @property {string} scece - scene of edit page, values
+   * 'create' for creating a new form or 'draft' for editing
+   * a launched form
+   * 
    * @property {object} _questionDetail - provide for UI
    * @property {string} _questionDetail.type - type of question
    * @property {string} _questionDetail.desc  - desc of question
@@ -35,8 +40,11 @@ Page({
    * @property {string} title - title of the form template
    * @property {object} dashBoardProps - pass it to component 'dash-board-cmp'
    * @property {number} openWith - index of questions to edit, -1 means add new questions.
+   * @property {string} formTempId - form's ObjectId saved in mongodb, used for sharing the form.
    */
   data: {
+    scene: 'create',
+
     _questionDetail: [],
     questionArr: [],
     showDashBoard: false,
@@ -68,11 +76,36 @@ Page({
     endTime: ''
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  onLoad(options) {
+    if (options.scene === 'draft') {
+      this.data.scene = 'draft'
+      console.log('scene: ', this.data.scene)
+      this.data.questionArr = EditStore.form.questions
+      this.data.repeatFilling = EditStore.form.repeat_filling
+      this.data.showSelectRes = EditStore.form.show_select_res
+      this.data.formTempId = EditStore.form._id
 
+      let _questions = []// assigned to this.data._questionDetail
+      for (let i in EditStore.form.questions) {
+        let _element = {
+          data: {
+            type: _DETAIL_TYPE[EditStore.form.questions[i].type],
+            desc: EditStore.form.questions[i].desc,
+            necessary: EditStore.form.questions[i].necessary === 'yes' ? '是否必填: 是' : '是否必填: 否',
+            content: EditStore.form.questions[i].type === 'essay' ? `填空类型: ${_ESSAY_TYPE[EditStore.form.questions[i].detail]}` : EditStore.form.questions[i].detail
+          },
+          showDetail: false
+        }
+        _questions.push(_element)
+      }
+
+      this.setData({
+        title: EditStore.form.title,
+        startTime: EditStore.form.start_time,
+        endTime: EditStore.form.end_time,
+        _questionDetail: _questions
+      })
+    }
   },
 
   /**
@@ -229,23 +262,40 @@ Page({
     if (this.formValidate()) {
       let params = {}  //send to backend
 
-      let res = await launchedFormsModel.sendFormTemp({
-        title: this.data.title,
-        questions: this.data.questionArr,
-        type: event.target.dataset.formtype,
-        show_select_res: this.data.showSelectRes,
-        repeat_filling: this.data.repeatFilling,
-        start_time: this.data.startTime,
-        end_time: this.data.endTime
-      })
+      let res
+      // create or edit the form
+      if (this.data.scene === 'create') {
+        res = await launchedFormsModel.sendFormTemp({
+          title: this.data.title,
+          questions: this.data.questionArr,
+          type: event.target.dataset.formtype,
+          show_select_res: this.data.showSelectRes,
+          repeat_filling: this.data.repeatFilling,
+          start_time: this.data.startTime,
+          end_time: this.data.endTime
+        })
+      } else if (this.data.scene === 'draft') {
+        res = await launchedFormsModel.putLaunchedForm({
+          form_temp_id: this.data.formTempId,
+          title: this.data.title,
+          questions: this.data.questionArr,
+          type: event.target.dataset.formtype,
+          show_select_res: this.data.showSelectRes,
+          repeat_filling: this.data.repeatFilling,
+          start_time: this.data.startTime,
+          end_time: this.data.endTime
+        })
+      }
 
       console.log(res)
-      this.data.formTempId = res.form_temp_id
-      this.setData({
-        showCompeletedPage: true,
-        showShareIcon: event.target.dataset.formtype === 'underway',
-        compeletedPageTitle: event.target.dataset.formtype === 'underway' ? '制作成功' : '保存成功'
-      })
+      if (res.err_code === 0) {
+        this.data.formTempId = res.form_temp_id
+        this.setData({
+          showCompeletedPage: true,
+          showShareIcon: event.target.dataset.formtype === 'underway',
+          compeletedPageTitle: event.target.dataset.formtype === 'underway' ? '制作成功' : '保存成功'
+        })
+      }
     }
   },
   onEditTitle(event) {
