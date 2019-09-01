@@ -18,7 +18,7 @@
 
 .form-board .state {
   position: absolute;
-  right: 20rpx;
+  right: 28rpx;
   top: 30rpx;
   color: #656566;
 }
@@ -30,9 +30,10 @@
 }
 
 .form-board .text .tip {
-  display: inline;
+  display: inline-block;
   color: #656566;
   padding-right: 25rpx;
+  min-width: 140rpx;
 }
 
 .form-board .text .detail-btn {

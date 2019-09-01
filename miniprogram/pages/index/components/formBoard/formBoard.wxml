@@ -27,7 +27,8 @@
     wx:elif="{{form.type==='draft'}}"
     class="mutiable-btn"
     hover-class="none"
-    data-form="form"
+    data-form="{{form}}"
+    bindtap="navigateToEditPage"
   >
     <image class="icon" src="/static/icon/edit-black.svg" />编辑
   </button>

@@ -2,6 +2,7 @@
 import { deepClone } from '../../utils/deepClone.js'
 import { LaunchedFormsModel } from '../../models/launchedForms.js'
 import { FillInStore } from '../fillIn/dataStore.js'
+import { EditStore } from './store.js'
 
 let launchedFormsModel = new LaunchedFormsModel()
 
@@ -35,8 +36,11 @@ Page({
    * @property {string} title - title of the form template
    * @property {object} dashBoardProps - pass it to component 'dash-board-cmp'
    * @property {number} openWith - index of questions to edit, -1 means add new questions.
+   * @property {string} formTempId - form's ObjectId saved in mongodb, used for sharing the form.
    */
   data: {
+    scene: 'create',
+
     _questionDetail: [],
     questionArr: [],
     showDashBoard: false,
@@ -68,11 +72,37 @@ Page({
     endTime: ''
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  onLoad(options) {
+    if (options.scene === 'draft') {
+      console.log(EditStore.form)
+      this.data.scene = 'draft'
 
+      this.data.questionArr = EditStore.form.questions
+      this.data.repeatFilling = EditStore.form.repeat_filling
+      this.data.showSelectRes = EditStore.form.show_select_res
+      this.data.formTempId = EditStore.form._id
+
+      let _questions = []// assigned to this.data._questionDetail
+      for (let i in EditStore.form.questions) {
+        let _element = {
+          data: {
+            type: _DETAIL_TYPE[EditStore.form.questions[i].type],
+            desc: EditStore.form.questions[i].desc,
+            necessary: EditStore.form.questions[i].necessary === 'yes' ? '是否必填: 是' : '是否必填: 否',
+            content: EditStore.form.questions[i].type === 'essay' ? `填空类型: ${_ESSAY_TYPE[EditStore.form.questions[i].detail]}` : EditStore.form.questions[i].detail
+          },
+          showDetail: false
+        }
+        _questions.push(_element)
+      }
+
+      this.setData({
+        title: EditStore.form.title,
+        startTime: EditStore.form.start_time,
+        endTime: EditStore.form.end_time,
+        _questionDetail: _questions
+      })
+    }
   },
 
   /**
